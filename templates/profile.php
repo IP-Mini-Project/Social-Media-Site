@@ -26,10 +26,10 @@
             <ul>
                 <div class="search-box">
                 <input class="search-txt" type="text" name="" placeholder="">
-                <a class="search-btn "href=""><i class="fas fa-search"></i></a>
+                <button class="btn-final" type="submit"><i class="fas fa-search"></i></button>
                 </div>
             
-            <li><a href=""><img class="pfp" src="../static/pfp.jpg" alt=""></a></li>
+            <li><a href=""><img class="pfp" src="pfp.jpg" alt=""></a></li>
             </ul>
             
         </div>
