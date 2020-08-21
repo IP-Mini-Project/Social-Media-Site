@@ -25,7 +25,7 @@
         <div class="acc">
             <ul>
             <li><i class="fas fa-search"></i></li>
-            <li><a href=""><img class="pfp" src="pfp.jpg" alt=""></li></a>
+            <li><a href=""><img class="pfp" src="../static/pfp.jpg" alt=""></a></li>
             </ul>
             
         </div>
