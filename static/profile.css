@@ -91,3 +91,10 @@
     left: 10%;
     
 }
+.btn-final{
+    padding: 0;
+    border: none;
+    background: none;
+    color: #797a7e;
+    cursor: pointer;
+}
