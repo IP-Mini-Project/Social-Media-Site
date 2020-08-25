@@ -2,42 +2,45 @@
 <html>
 <head>
 	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="../static/index.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-	<div class="nav-bar" id="nav-bar">
-		<ol class="nav-bar-obj">
-			<li id="logo"><img src="#"></li>
-			<li id="home"><img src="#"></li>
-			<li id="friends"><img src="#"></li>
-			<li id="chat-box"><img src="#"></li>
-			<li id="search-bar"><img src="#"></li>
-			<li id="nav-bar-emb"><img src="#"></li>
-		</ol>
-	</div>
+	<!--Navigation bar-->
+<div id="nav-placeholder">
 
+</div>
 
-	<div class="club-bar" id="club-bar">
-		<h3>Clubs</h3>
+<script>
+$(function(){
+  $("#nav-placeholder").load("profile.php");
+});
+</script>
+<!--end of Navigation bar-->
+
+<section>
+	<div class="clubs">
 		<ol>
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
-
+			<li>club1</li>
+			<li>club2</li>
 		</ol>
 	</div>
 
-	<div class="status">
-		<input type="text" name="">
-	</div>
+	<div class="center">
+		<div class="status">
+			<img id="pro-icon" src="#" alt="profile">
+			<input id="status" type="text" name="" placeholder="What's happening?">
+			<button id="img-btn"><img src="#" alt="cam"></button>
+			<button id="post-btn">POST</button>
+		</div>
 
-	<div>
-		<ol>
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
-		</ol>
+		<div class="home-post">
+			<p>posts</p>
+		</div>
 	</div>
+</section>
+
+
 
 </body>
 </html>
