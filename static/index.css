@@ -9,18 +9,30 @@ section{
   width: 200px;
   height: auto; 
   background: #ccc;
+  border: 2px solid;
+  border-color: #000000;
+  border-radius: 12px;
   padding: 20px;
   
 }
+ol, ul{
+  list-style: none;
+}
 
-.center {
+.main {
 
   float: left;
   padding: 20px;
   width: 60%;
   background-color: #f1f1f1;
   height: 300px; 
-  text-align: center;
+  
+  margin-left: 20px;
+  padding: 12px 70px 12px 70px;      
+  display: flex;
+  justify-content: space-between;    
+  border-bottom: #9F9191 0.5px solid; 
+
 
 }
 
@@ -31,13 +43,13 @@ section:after {
 }
 
 @media (min-width: 600px) {
-  .center, {
+  .main, {
   	flex: 9;
     width: 100%;
     height: auto;
   }
 
-  .center{
+  .main{
   	order: 1;
   }
 
@@ -49,9 +61,82 @@ section:after {
 }
 
 
-.center .status {
+.main .status-bar {
 
 	border: solid;
 	height: auto;
+  width: 100%;
+  border: groove;
+  border-radius: 10px;
+  position: relative;
 
+}
+
+.fas{
+    font-size: 1.1rem;
+    padding-top: 2px;
+}
+
+.main .status-bar 
+.inp-bar , 
+.cam-post >li{
+    display: inline-flex;
+
+}
+
+
+.main .status-bar .inp-bar {
+  padding: 40px 10px 20px 10px;
+  margin-left: 50px;
+  position: relative;
+}
+
+#pro-icon{
+  padding-top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#inp{
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+/*.main .status-bar .inp-bar >textarea {
+  width: 100%;
+
+}
+*/
+.main .status-bar .cam-post {
+  padding-top: 10px;
+  padding-left: 70px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+#status-area{
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#cam-btn {
+  
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.post-btn {
+  padding-left: 100px;
+  cursor: pointer;
 }
