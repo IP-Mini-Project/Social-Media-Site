@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* container */
+.container{
+    width: 45%;
+    font-family: 'EB Garamond', serif;
+    margin: 50px auto;
+    background-color:white ;
+    padding-bottom: 20px;
+    box-shadow: 10px 10px 10px 10px grey;
+}
+.container img{
+    height: 80%;
+    width: 70%;
+    padding-top: 5px;
+}
+.container .photo {
+    text-align: center;
+    border-bottom: #9F9191 0.5px solid;
+}
+.bio {
+    padding: 3% 0% 0% 5%;
+    
+}
+.bio h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.quote{
+    font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+}
+.bio .fas{
+    padding-right: 10px;
+    line-height: 2rem;
+    padding:0 0 27px 60px;
+}
+.hobb , .bio h3{
+    padding-left: 60px;
+    padding-bottom: 2rem;
+}
+.bio h3{
+    text-decoration: underline;
+}
+.connect-btn{
+    text-align: center;
+}
+.connect{
+    width: 120px;
+    padding: 8px;
+    border-radius: 50px;
+    border-style: none;
+    background-image: linear-gradient(to right, #f6bed6 , #fe91ca, #e36387);
+    color: white;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.connect:hover{
+    transform: scale(1.2);
+}
+/* profile 2 container */
+.container-2{
+    display: flex;
+    padding: 5% 110px;
+    
+}
+.left img{
+    height: 170px;
+    width: auto;
+}
+.left h3, .left .quote2{
+    text-align: center;
+}
+.left{
+    padding: 2px 3% 1% 3%;
+    border: 0.5px solid #797a7e;
+    border-radius: 25px;
+}
+.left .hobb2, .left .fas, .left h4{
+    line-height: 25px;
+}
