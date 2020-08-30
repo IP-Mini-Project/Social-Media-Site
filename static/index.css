@@ -1,5 +1,5 @@
 section{
-	margin-left: 150px;
+	margin-left: 100px;
 	flex-flow: row;
 }
 
@@ -139,4 +139,91 @@ textarea:focus {
 .post-btn {
   padding-left: 100px;
   cursor: pointer;
+}
+
+.container{
+  padding-top: 350px;
+  position: relative;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+  float: right;
+  
+
+}
+
+
+
+
+.container .card {
+    /*background-color: yellow;*/
+    margin: 0 auto;
+    width: 500px;
+    height: 550px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+
+.card .card-header{
+  padding: 15px;
+}
+.card-header .profile-img {
+  display: inline-block;
+  background-color: red;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}
+
+.card-header .profile-info {
+  display: inline-block;
+  
+}
+
+.profile-info .name {
+  font-size: 14px;
+  color: #111;
+  font-weight: 700;
+}
+
+.profile-info .location {
+  font-size: 12px;
+  color: #111;
+
+}
+.card-header .time {
+  display: inline-flex;
+  float: right;
+  font-size: 12px;
+  top: 10px;
+  position: relative;
+}
+
+.card .post-img .img{
+
+  height: 350px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.card .description {
+  display: inline-flex;
+
+}
+
+.description .likes {
+  padding-left: 5px;
+}
+
+.card .caption {
+  display: inline-flex;
+  padding: 10px 5px 5px 20px;
+}
+
+.card .comments {
+  display: inline-flex;
+  border: solid;
 }
