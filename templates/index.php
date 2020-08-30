@@ -54,14 +54,68 @@ $(function(){
 			</ul>
 		</div>
 		<!-- end of whats happening -->
-
-		<!-- Start posts area here -->
-
 	</div>
+	<!-- Start posts area here -->
+	<div>
+		<section class="container" id="container">
+			<div class="card">
+				<div class="card-header">
+					<div class="profile-img">
+						
+					</div>
+					<div class="profile-info">
+						<div class="name">username</div>
+						<div class="location">Mumbai</div>
+					</div>
+					<div class="time">
+						1hr
+					</div>
+					<div class="post-img">
+						<img class="img" src="../static/zendaya.jpg"></div>
+					</div>
+
+					<div class="description">
+						<div class="like-btn"><i class="fas fa-heart"></i></div>
+						<div class="likes">23 likes</div>
+					</div>
+					<div class="caption">
+							<span>username</span> <p>hello this is a caption</p>
+					</div>
+					<hr>
+					<div class="comments">
+						<div class="profile-pic"><img src="../pfp.jpg"></div>
+						<div class="comment"><textarea placeholder="comment here..."></textarea></div>
+						<div class="options"><i class="fas fa-ellipsis-h"></i></div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+</section>
+		<!-- Start posts area here -->
+		<!-- <section class="container">
+			<div class="card">
+				<div class="card-header">
+					<div class="profile-img">
+						
+					</div>
+					<div class="profile-info">
+						<div class="name">username</div>
+						<div class="location">Mumbai</div>
+					</div>
+					<div class="time">
+						1hr
+					</div>
+				</div>
+			</div>
+		</section> -->
+
+	
 	<!-- end of center block  -->
 
 
-</section>
+
 
 
 </body>
