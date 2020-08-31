@@ -77,7 +77,7 @@
 
                         <div class="post-after">
                             <div class="comment-img"><img src="../static/pfp.jpg" id="comment-img"></div>
-                            <div class="comment"><textarea id="text2" rows="2" cols="62" placeholder="add a comment..." class="comment-text"></textarea></div>
+                            <div class="comment"><textarea id="text2" rows="1" cols="62" placeholder="add a comment..." class="comment-text"></textarea></div>
                             <div class="options"><i class="fas fa-ellipsis-h"></i></div>
                         </div>
                     </div>
