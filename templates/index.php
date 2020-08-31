@@ -1,122 +1,91 @@
-<!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-	<title>Home Page</title>
-	<link rel="stylesheet" type="text/css" href="../static/index.css">
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/index.css">
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<!--Navigation bar-->
-<div id="nav-placeholder">
+    <!-- Navbar -->
+    <div id="nav-placeholder">
 
-</div>
+    </div>
+    <script>
+    $(function(){
+    $("#nav-placeholder").load("navbar.php");
+    });
+    </script>
+    <!-- container -->
+    <section id="index">
+        <div class="container">
+            <div class="clubs">
+               <h2>Clubs</h2><hr>
+               <ul>
+                    <li>Sports</li>
+                    <li>Sports</li>
+               </ul>
+            </div>
+            <div class="right-part">
+                <!-- whats happeningarea -->
+                <div class="new-post">
+                    <div class="wrapper">
+                        <div class="newpost-pic">
+                            <img src="../static/pfp.jpg" alt="">
+                        </div>
+                        <div class="newpost-text">
+                            <textarea id="text" name="text-box" rows="4" cols="62" placeholder="What's happening?"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="endline">
+                        <i class="fas fa-camera"></i>
+                        <input type="submit" value="POST" class="btn">
+                    </div>
+                </div>
+                <!-- end of whats happening -->
+                <!-- posts code -->
+                <div class="posts">
+                    <section class="card">
+                        <div class="header">
+                            <div class="prof-img">
+                             </div>
+                             <div class="prof-info">
+                                <div class="username">username</div>
+                                <div class="location">Mumbai</div>
+                            </div>
+                            <div class="time">1hr</div>
+                        </div>
+                        <div class="post-img">
+                            <img src="../static/zendaya.jpg" class="img">
+                        </div>
+                        <div class="footer">
+                        <div class="likes">
+                            <div class="like-icon"><i class="fas fa-heart"></i></div>
+                            <div class="like-count">45 likes</div>
+                        </div>
 
-<script>
-$(function(){
-  $("#nav-placeholder").load("navbar.php");
-});
-</script>
-<!--end of Navigation bar-->
+                        <div class="description">
+                            <div class="user"><span>Username</span> hello this is my first post</div>
+                        </div>
 
-<section>
-	<!-- Clubs-bar -->
-	<div class="clubs">
-		<ol>
-			<li>club1</li>
-			<li>club2</li>
-		</ol>
-	</div>
-	<!-- End of clubs -->
+                        <div class="post-after">
+                            <div class="comment-img"><img src="../static/pfp.jpg" id="comment-img"></div>
+                            <div class="comment"><textarea placeholder="add a comment..." class="comment-text"></textarea></div>
+                            <div class="options"><i class="fas fa-ellipsis-h"></i></div>
+                        </div>
+                    </div>
+                    </section>  
+        
+    
 
-
-	<!-- Start of center block -->
-
-	<div class="main">
-
-		<!-- Start of Whats happpening area -->
-		<div class="status-bar">
-
-
-			<ul class="inp-bar">
-
-				<li><img id="pro-icon" src="../static/pfp.jpg">
-				</li>
-
-				<li id="inp"><textarea rows="4" cols="50" placeholder="What's happening?" id="status-area"></textarea></li>
-			</ul>
-
-			<ul class="cam-post">
-				
-				<li><button id="cam-btn"><i class="fas fa-camera-retro"></i></button></li>
-
-				<li class="post-btn"><button >POST</button></li>
-			</ul>
-		</div>
-		<!-- end of whats happening -->
-	</div>
-	<!-- Start posts area here -->
-	<div>
-		<section class="container" id="container">
-			<div class="card">
-				<div class="card-header">
-					<div class="profile-img">
-						
-					</div>
-					<div class="profile-info">
-						<div class="name">username</div>
-						<div class="location">Mumbai</div>
-					</div>
-					<div class="time">
-						1hr
-					</div>
-					<div class="post-img">
-						<img class="img" src="../static/zendaya.jpg"></div>
-					</div>
-
-					<div class="description">
-						<div class="like-btn"><i class="fas fa-heart"></i></div>
-						<div class="likes">23 likes</div>
-					</div>
-					<div class="caption">
-							<span>username</span> <p>hello this is a caption</p>
-					</div>
-					<hr>
-					<div class="comments">
-						<div class="profile-pic"><img src="../pfp.jpg"></div>
-						<div class="comment"><textarea placeholder="comment here..."></textarea></div>
-						<div class="options"><i class="fas fa-ellipsis-h"></i></div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-
-</section>
-		<!-- Start posts area here -->
-		<!-- <section class="container">
-			<div class="card">
-				<div class="card-header">
-					<div class="profile-img">
-						
-					</div>
-					<div class="profile-info">
-						<div class="name">username</div>
-						<div class="location">Mumbai</div>
-					</div>
-					<div class="time">
-						1hr
-					</div>
-				</div>
-			</div>
-		</section> -->
-
-	
-	<!-- end of center block  -->
-
-
-
-
-
+                </div>
+                <!-- end of posts code -->
+            </div>
+        </div>
+    </section>
 </body>
 </html>
