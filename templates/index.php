@@ -50,7 +50,7 @@
                 <!-- posts code -->
                 <div class="posts">
                     <section class="card">
-                        <div class="header">
+                    	<div class="header">
                             <div class="prof-img">
                              </div>
                              <div class="prof-info">
@@ -69,15 +69,19 @@
                         </div>
 
                         <div class="description">
-                            <div class="user"><span>Username</span> hello this is my first post</div>
+                            <div class="user">
+                            	<div class="username"><p>Username</p></div>
+                            	<div class="caption"><p>Hello this is caption!</p></div>
+                            </div>
                         </div>
 
                         <div class="post-after">
                             <div class="comment-img"><img src="../static/pfp.jpg" id="comment-img"></div>
-                            <div class="comment"><textarea placeholder="add a comment..." class="comment-text"></textarea></div>
+                            <div class="comment"><textarea id="text2" rows="2" cols="62" placeholder="add a comment..." class="comment-text"></textarea></div>
                             <div class="options"><i class="fas fa-ellipsis-h"></i></div>
                         </div>
                     </div>
+                    
                     </section>  
         
     

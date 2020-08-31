@@ -2,7 +2,7 @@
     display: flex;
     padding: 3% 200px;
     
-    max-height: 100vh;
+    max-height: auto;
 }
 .clubs{
     padding: 2% 3% 1% 3%;
@@ -24,7 +24,7 @@ li{
     padding: 2px 3% 1% 3%;
     /* border: 1px solid black; */
     border-radius: 25px;
-    height: 440px;
+    height: auto;
     width: 75%;
     margin-left: 20px;
 }
@@ -132,13 +132,17 @@ li{
 
 .card .post-img .img{
 
-  height: 500px;
+  height: auto;
   width: 100%;
   padding-top: 10px;
 }
 
 .posts .footer {
-    display: inline-block;
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
+
 }
 
 .footer .likes {
@@ -158,7 +162,7 @@ li{
 
 .footer .post-after {
     display: inline-flex;
-    padding-top: 15px;
+    padding-top: 13px;
     width: 100%;
     
 
@@ -185,5 +189,18 @@ li{
 .post-after .options {
     float: right;
 }
+.comment #text2{
+  width: 100%
+  box-sizing: border-box;
+}
 
-
+.user{
+  display: flex;
+  flex-direction: row;
+}
+.username p{
+  font-weight: 600;
+}
+.caption{
+  margin-left: 10px;
+}
