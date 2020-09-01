@@ -11,7 +11,7 @@
     margin: 50px auto;
     background-color:white ;
     padding-bottom: 20px;
-    box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 10px 10px 10px 10px grey;
 }
 .container img{
     height: 80%;
@@ -66,8 +66,11 @@
 }
 /* profile 2 container */
 .container-2{
+    
     display: flex;
-    padding: 5% 110px;
+    padding: 3% 200px;
+    
+    max-height: auto;
     
 }
 .left img{
@@ -81,7 +84,201 @@
     padding: 2px 3% 1% 3%;
     border: 0.5px solid #797a7e;
     border-radius: 25px;
+    height: auto;
+    
+    margin-top: 5px;
+    position: sticky;
+  top: 15%;
 }
 .left .hobb2, .left .fas, .left h4{
     line-height: 25px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    padding: 2px 3% 1% 3%;
+    /* border: 1px solid black; */
+    border-radius: 25px;
+    height: auto;
+    width: 75%;
+    margin-left: 20px;
+}
+/* posts copypaste */
+.right-part .new-post .newpost-pic img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+.new-post{
+    display: flex;
+    flex-direction: column;
+    
+    padding: 20px 30px;
+    border: .5px solid #797a7e;
+    border-radius: 25px;
+    
+}
+.wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.newpost-text{
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+.newpost-text #text{
+    margin-left: 10px;
+    border: none;
+    padding-top: 12px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+.posts{
+    border-radius: 25px;
+    border: .5px solid #797a7e;
+    margin: 20px 0;
+    padding: 20px 30px;
+}
+
+/*.posts .card .header {
+    
+    box-sizing: border-box;
+}
+*/
+.header .prof-img {
+  display: inline-block;
+  background-color: red;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}
+
+.header .prof-info {
+  display: inline-block;
+  background: yellow;
+  
+}
+
+.prof-info .name {
+  font-size: 14px;
+  color: #111;
+  font-weight: 700;
+}
+
+.prof-info .location {
+  font-size: 12px;
+  color: #111;
+
+}
+.header .time {
+  display: inline-flex;
+  float: right;
+  font-size: 12px;
+  top: 10px;
+  position: relative;
+}
+
+.card .post-img .img{
+
+  height: auto;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.posts .footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
+
+}
+
+.footer .likes {
+    display: inline-flex;
+    padding-top: 10px;
+}
+
+.footer .likes .like-count {
+    padding-left: 10px;
+}
+
+.footer .description {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+
+.footer .post-after {
+    display: inline-flex;
+    margin-top: 5px;
+    width: 100%;
+    
+
+}
+
+#comment-img{
+  display: inline-block;
+  
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}
+
+.post-after .comment-text {
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.post-after .options {
+    float: right;
+}
+.comment #text2{
+  width: 100%
+  /* box-sizing: border-box; */
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+
+}
+.username p{
+  font-weight: 600;
+}
+.caption{
+  margin-left: 10px;
+}
+.post-after{
+  padding: 3px 3px;
+  border:.5px solid #797a7e;
+  border-radius: 15px;
+}
+.options .fas{
+  padding-top: 9px;
+}
+.top-section{
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    margin: 0 5px;
+    padding: 3px 20px;
+    border:.5px solid #797a7e ;
+    border-radius: 10px;
+}
+.top-section button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+
 }
