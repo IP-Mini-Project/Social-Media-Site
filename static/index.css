@@ -80,10 +80,25 @@ li{
 .endline .btn{
     padding: 3px 9px;
     background-color: none;
-    border-radius: 25px;
+    /*border-radius: 25px;*/
     border: 1px solid #797a7e;
     cursor: pointer;
+
+    width: 120px;
+    /*padding: 8px;*/
+    border-radius: 50px;
+    border-style: none;
+    background-image: linear-gradient(to right, #00d2ff, #3a7bd5, #00d2ff);
+    color: white;
+    /*cursor: pointer;*/
+    transition: transform .2s;
+
 }
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
 .posts{
     border-radius: 25px;
     border: .5px solid #797a7e;
@@ -109,7 +124,7 @@ li{
 
 .header .prof-info {
   display: inline-block;
-  background: yellow;
+  
   
 }
 
@@ -194,6 +209,7 @@ li{
 .comment #text2{
   width: 100%
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .user{
@@ -214,4 +230,5 @@ li{
 }
 .options .fas{
   padding-top: 9px;
+  padding-left: 1s0px;
 }
