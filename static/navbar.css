@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     border-bottom: #9F9191 0.5px solid; 
-    
+   
 }
 .logo a{
     text-decoration: none;
@@ -70,11 +70,6 @@
     padding: 10px;
     text-decoration: none;
 }
-
-button:focus {
-    outline: none;
-    border: none;
-}
 .search-txt{
     border: none;
     background: none;
@@ -108,4 +103,41 @@ button:focus {
     background: none;
     outline: none;
     cursor: pointer;
+    padding-bottom: 2px;
+}
+.dropdown .corner-img:hover{
+    background: none;
+}
+.dropdown div a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    padding: 10px 25px;
+}
+.dropdown div a:hover{
+    background-color: lightgrey;
+}
+.dropdown div{
+    background-color: #fff;
+    box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: .3s;
+    position: relative;
+    right: 7.8%;
+    padding: 5px 0;
+}
+.dropdown{
+    display: inline-block;
+        
+}
+.dropdown:hover div{
+    position: absolute;
+    opacity: 1;
+    display: block;
+}
+.div .fas{
+    padding: 0 5px;
 }
