@@ -28,20 +28,28 @@ ul {
 	padding-left: 60px;
 }
 
-a {
+.elements a {
 	text-decoration: none;
-	color: black;
+	display: inline-block;
+	color: #000;
 
 }
-a:hover::after {
-  animation: anchor-underline 2s cubic-bezier(0,.5,0,1) infinite;
-  border-color: #457DFB;
+
+.elements a::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background: #000;
+	transition: width .3s;
+     
 }
 
-a:hover {
-	cursor: pointer;
-	text-decoration: underline;
-
-	
-
+.elements a:hover::after {
+	width: 100%;
+	transition: width .3s;
 }
+
+
+
+
