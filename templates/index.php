@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
 </head>
+
+
 <body>
     <!-- Navbar -->
     <div id="nav-placeholder">
