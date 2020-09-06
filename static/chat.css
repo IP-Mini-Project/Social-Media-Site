@@ -1,0 +1,122 @@
+.container-3{
+    display: flex;
+    padding: 3% 200px;
+    
+    max-height: 100vh;
+    
+}
+.heading h3{
+    text-align: center;
+    padding: 10% 2%;
+}
+.left{
+    padding: 2px 0 1% 0;
+    border: .5px solid #797a7e;
+    border-radius: 25px;
+    height: 440px;
+    width: 250px;
+    
+    
+}
+.left .heading{
+    padding: 0 10%;
+}
+.sub-head{
+    overflow-y: scroll;
+    height: 360px;
+    padding: 0 10%;
+    
+}
+.left .fas{
+    color: #1DA1F2;
+}
+.right{
+    
+    border: .5px solid #797a7e;
+    border-radius: 25px;
+    height: 440px;
+    width: 650px;
+    margin-left: 10px;
+    
+}
+.left h4{
+    font-size: 17px;
+    padding: 15px 0;
+}
+.heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.top-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    
+}
+.right .name{
+    padding: 10px;
+    text-align: center;
+    border-bottom: .5px solid #797a7e;
+}
+.msg-box{
+    padding: 15px 40px;
+    overflow-y: scroll;
+    height: 330px;
+}
+.right .their-msg p , .my-msg p{
+    margin: 8px 0;
+    
+    height: auto;
+    width: 50%;
+    border-radius: 5px;
+    padding: 5px 10px;
+    
+}
+.their-msg p{
+    background-color: #E6ECF0;
+}
+.right .my-msg p{
+    
+    text-align: right;
+    background-color: #1DA1F2;
+    color: white;
+    margin: 8px 0 8px auto;
+    
+    
+}
+.my-msg h4{
+    text-align: right;
+}
+.type-msg{
+    
+    display: block;
+    max-width: 100%;
+    border: none;
+    outline: none;
+    margin: 0 17px;
+}
+.bottom-section{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    margin: 0 20px;
+    border: .5px solid #797a7e;
+    border-radius: 25px;
+    
+}
+.bottom-section button{
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+button img{
+    height: 20px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    
+}
