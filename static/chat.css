@@ -1,6 +1,6 @@
 .container-3{
     display: flex;
-    padding: 3% 200px;
+    padding: 2% 180px ;
     
     max-height: 100vh;
     
@@ -11,9 +11,9 @@
 }
 .left{
     padding: 2px 0 1% 0;
-    border: .5px solid #797a7e;
+    border: 1px solid #797a7e;
     border-radius: 25px;
-    height: 440px;
+    height: 490px;
     width: 250px;
     
     
@@ -23,18 +23,22 @@
 }
 .sub-head{
     overflow-y: scroll;
-    height: 360px;
+    height: 420px;
     padding: 0 10%;
     
+    
+}
+::-webkit-scrollbar{
+    display: none;
 }
 .left .fas{
     color: #1DA1F2;
 }
 .right{
     
-    border: .5px solid #797a7e;
+    border: 1px solid #797a7e;
     border-radius: 25px;
-    height: 440px;
+    height: 490px;
     width: 650px;
     margin-left: 10px;
     
@@ -59,12 +63,13 @@
 .right .name{
     padding: 10px;
     text-align: center;
-    border-bottom: .5px solid #797a7e;
+    border-bottom: 1px solid #797a7e;
 }
 .msg-box{
     padding: 15px 40px;
     overflow-y: scroll;
-    height: 330px;
+    height: 390px;
+    
 }
 .right .their-msg p , .my-msg p{
     margin: 8px 0;
@@ -80,7 +85,7 @@
 }
 .right .my-msg p{
     
-    text-align: right;
+    text-align: left;
     background-color: #1DA1F2;
     color: white;
     margin: 8px 0 8px auto;
@@ -103,7 +108,7 @@
     justify-content: space-around;
     padding: 5px 0;
     margin: 0 20px;
-    border: .5px solid #797a7e;
+    border: 1px solid #797a7e;
     border-radius: 25px;
     
 }
