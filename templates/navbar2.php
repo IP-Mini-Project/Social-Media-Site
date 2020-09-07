@@ -7,15 +7,7 @@
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-	 <!-- Navbar -->
-    <div id="nav-placeholder">
-
-    </div>
-    <script>
-    $(function(){
-    $("#nav-placeholder").load("navbar.php");
-    });
-    </script>
+	
 
 
 	<div class="navbar2">
