@@ -3,17 +3,17 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-let answerbtn1 = document.querySelector('#btn-one')
-let answerbtn2 = document.querySelector('#btn-two')
-let answerbtn3 = document.querySelector('#btn-three')
-let answerbtn4 = document.querySelector('#btn-four')
+// let answerbtn1 = document.querySelector('#btn-one')
+// let answerbtn2 = document.querySelector('#btn-two')
+// let answerbtn3 = document.querySelector('#btn-three')
+// let answerbtn4 = document.querySelector('#btn-four')
 
 let shuffledQuestions, currentQuestionIndex
 
-answerbtn1.addEventListener('click' , () => answerbtn1.style.backgroundColor = 'red')
-answerbtn2.addEventListener('click' , () => answerbtn2.style.backgroundColor = 'red')
-answerbtn3.addEventListener('click' , () => answerbtn3.style.backgroundColor = 'red')
-answerbtn4.addEventListener('click' , () => answerbtn.style.backgroundColor = 'red')
+// answerbtn1.addEventListener('click' , () => answerbtn1.style.backgroundColor = 'red')
+// answerbtn2.addEventListener('click' , () => answerbtn2.style.backgroundColor = 'red')
+// answerbtn3.addEventListener('click' , () => answerbtn3.style.backgroundColor = 'red')
+// answerbtn4.addEventListener('click' , () => answerbtn.style.backgroundColor = 'red')
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
