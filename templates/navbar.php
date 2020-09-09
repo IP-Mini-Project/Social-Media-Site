@@ -18,17 +18,18 @@
             <a href="http://"><h3>LOGO</h3></a>
         </div>
         <div class="middle">
-            <ul>
-            <li><a href="#"><i class="fas fa-house-user"></i></a></li>
-            <li><a href="#"><i class="fas fa-users"></i></a></li>
-            <li><a href="#"><i class="fas fa-comment-alt"></i></a></li>
-            <li><a href="#"><i class="fas fa-bell"></i></a></li>
-            </ul>
+            
+            <a href="#"><i class="fas fa-house-user"></i></a>
+            <a href="#"><i class="fas fa-users"></i></a>
+            <a href="#"><i class="fas fa-comment-alt"></i></a>
+            <a href="#"><i class="fas fa-bell"></i></a>
+            
             
         </div>
+        
         <div class="acc">
         <form action="navbar.php">
-            <ul>
+            
                 <div class="search-box">
                 <input class="search-txt" type="text" name="" placeholder="">
                 <button class="btn-final" type="submit"><i class="fas fa-search"></i></button>
@@ -36,14 +37,14 @@
             
             
             <div class="dropdown">
-            <li><button class="corner-img"><img class="pfp" src="../static/pfp.jpg" alt=""></button></li>
+                <button class="corner-img"><img class="pfp" src="../static/pfp.jpg" alt=""></button>
                 <div class="div">
                 <a href="#"><i class="fas fa-user"></i> Profile</a> 
                 <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>   
                 
             </div>
-            </ul>
+            
         </form>    
         </div>
     </div>

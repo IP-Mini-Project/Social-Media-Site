@@ -8,16 +8,21 @@
 .navbar{
     padding: 12px 110px 12px 110px;      
     display: flex;
-    justify-content: space-between;
-    border-bottom: #9F9191 0.5px solid; 
-   
+    justify-content: space-around;
+    border-bottom: #9F9191 1px solid; 
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    min-height: 7.5vh;
 }
 .logo a{
     text-decoration: none;
     color: black;
 }
 .navbar .middle , .navbar .acc{
-    display: inline-flex;
+    display: flex;
 }
 .navbar .middle li {
     text-decoration-style: none;
@@ -27,7 +32,7 @@
     cursor: pointer;
     text-decoration: none;
     color: black;
-    padding: 40px;
+    padding: 0 40px;
 }
 .acc li{
     text-decoration-style: none;
@@ -43,21 +48,24 @@
     height: 20px;
     border-radius: 50%;
     border: 0.5px solid;
+    
 }
 .middle ul, .acc ul{
     list-style: none;
     display: flex;
-    justify-items: center;
+    justify-content: center;
 }
+
 .search-box{
     background: white;
     height: 23px;
     border-radius: 40px;
     padding: 0 5px 0 7px;
-    border: 0.5px solid #797a7e;
+    border: 1px solid #797a7e;
+    display: flex;
     
 }
-.search-btn{
+/* .search-btn{
     color: #797a7e;
     float: right;
     width: 18px;
@@ -69,12 +77,12 @@
     align-items: center;
     padding: 10px;
     text-decoration: none;
-}
+} */
 .search-txt{
     border: none;
     background: none;
     outline: none;
-    float: left;
+    
     padding: 0;
     color: black;
     transition: 0.4s;
@@ -84,12 +92,24 @@
 
 .acc{
     margin-left: 100px;
+    
+}
+form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .middle{
     position: relative;
     left: 10.5%;
-    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4vh;
 }
+
+
 .btn-final{
     padding: 0;
     border: none;
@@ -99,11 +119,11 @@
 }
 .corner-img{
     border: none;
-    padding: 0;
+    padding-left: 10px;
     background: none;
     outline: none;
     cursor: pointer;
-    padding-bottom: 2px;
+    
 }
 .dropdown .corner-img:hover{
     background: none;
@@ -140,4 +160,26 @@
 }
 .div .fas{
     padding: 0 5px;
+}
+@media only screen and (max-width: 760px){
+    .middle{
+        position: absolute;
+        left: 0;
+        height: 6vh;
+        top: 9vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100vw;
+        border-bottom: 1px solid #797a7e;
+        
+        
+    }
+    .logo{
+        padding-right: 10px;
+    }
+    .navbar{
+        border-bottom: none;
+    }
+
 }
