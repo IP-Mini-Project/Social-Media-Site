@@ -19,10 +19,10 @@
         </div>
         <div class="middle">
             
-            <a href="#"><i class="fas fa-house-user"></i></a>
-            <a href="#"><i class="fas fa-users"></i></a>
-            <a href="#"><i class="fas fa-comment-alt"></i></a>
-            <a href="#"><i class="fas fa-bell"></i></a>
+            <a href="index.php"><i class="fas fa-house-user"></i></a>
+            <a href="roommate.php"><i class="fas fa-users"></i></a>
+            <a href="chat.php"><i class="fas fa-comment-alt"></i></a>
+            <a href="notification.php"><i class="fas fa-bell"></i></a>
             
             
         </div>
