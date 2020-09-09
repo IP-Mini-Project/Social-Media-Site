@@ -6,12 +6,16 @@
 
 /* container */
 .container{
-    width: 45%;
+    width: 40%;
     font-family: 'EB Garamond', serif;
     margin: 50px auto;
     background-color:white ;
     padding-bottom: 20px;
-    box-shadow: 10px 10px 10px 10px grey;
+    -webkit-box-shadow: 1px 2px 39px -18px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px -18px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px -18px rgba(0,0,0,0.75);
+    
+    
 }
 .container img{
     height: 80%;
