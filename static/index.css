@@ -213,8 +213,7 @@ li{
 }
 .comment #text2{
   width: 100%
-  box-sizing: border-box;
-  overflow: hidden;
+  
 }
 
 .user{
