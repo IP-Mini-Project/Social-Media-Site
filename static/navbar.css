@@ -10,12 +10,15 @@
     display: flex;
     justify-content: space-around;
     border-bottom: #9F9191 1px solid; 
-    z-index: 2;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100vw;
     height: auto;
     min-height: 7.5vh;
+    position: fixed;
+    overflow: hidden;
+    background-color: white;
 }
 .logo a{
     text-decoration: none;
@@ -166,14 +169,15 @@ form{
         position: absolute;
         left: 0;
         height: 6vh;
-        top: 9vh;
+        top: 8vh;
         display: flex;
         align-items: flex-start;
         justify-content: center;
         width: 100vw;
         border-bottom: 1px solid #797a7e;
-        
-        
+        position: fixed;
+        background-color: white;
+        padding-top: 1vh;
     }
     .logo{
         padding-right: 10px;
