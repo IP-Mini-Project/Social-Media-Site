@@ -8,7 +8,7 @@
 .container{
     width: 40%;
     font-family: 'EB Garamond', serif;
-    margin: 50px auto;
+    margin: 12vh auto 25px auto;
     background-color:white ;
     padding-bottom: 20px;
     -webkit-box-shadow: 1px 2px 39px -18px rgba(0,0,0,0.75);
@@ -24,7 +24,7 @@
 }
 .container .photo {
     text-align: center;
-    border-bottom: #9F9191 0.5px solid;
+    border-bottom: #9F9191 1px solid;
 }
 .bio {
     padding: 3% 0% 0% 5%;
@@ -73,7 +73,7 @@
     
     display: flex;
     padding: 3% 200px;
-    margin-top: 8vh;
+    margin-top: 5vh;
     max-height: auto;
     
 }
@@ -86,13 +86,13 @@
 }
 .left{
     padding: 2px 3% 1% 3%;
-    border: 0.5px solid #797a7e;
+    border: 1px solid #797a7e;
     border-radius: 25px;
-    height: auto;
+    height: 84vh;
     
     margin-top: 5px;
     position: sticky;
-  top: 15%;
+  top: 12%;
 }
 .left .hobb2, .left .fas, .left h4{
     line-height: 25px;
@@ -118,7 +118,7 @@
     flex-direction: column;
     
     padding: 20px 30px;
-    border: .5px solid #797a7e;
+    border: 1px solid #797a7e;
     border-radius: 25px;
     
 }
@@ -141,7 +141,7 @@
 }
 .posts{
     border-radius: 25px;
-    border: .5px solid #797a7e;
+    border: 1px solid #797a7e;
     margin: 20px 0;
     padding: 20px 30px;
 }
@@ -164,7 +164,7 @@
 
 .header .prof-info {
   display: inline-block;
-  background: yellow;
+  
   
 }
 
@@ -264,7 +264,7 @@
 }
 .post-after{
   padding: 3px 3px;
-  border:.5px solid #797a7e;
+  border:1px solid #797a7e;
   border-radius: 15px;
 }
 .options .fas{
@@ -276,7 +276,7 @@
     background-color: whitesmoke;
     margin: 0 5px;
     padding: 3px 20px;
-    border:.5px solid #797a7e ;
+    border:1px solid #797a7e ;
     border-radius: 10px;
 }
 .top-section button{

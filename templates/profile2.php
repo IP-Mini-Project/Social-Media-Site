@@ -48,6 +48,7 @@
                 <button>EDIT PROFILE</button>
                 </div>
             </div>
+            <div class="post-wrapper">
             <div class="posts">
                 <section class="card">
                     <div class="header">
@@ -86,6 +87,11 @@
                         </div>
                     </div>
                 </section>
+            </div>
+            
+            
+                    
+                
 
             </div>
             
