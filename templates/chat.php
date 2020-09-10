@@ -64,7 +64,9 @@
         <div class="right">
             <div class="top-section">
                 <div class="name">
+                    <i class="fas fa-arrow-left back"></i>
                     <h2>Zendaya Coleman</h2>
+                    <i class="fas fa-info"></i>
                 </div>
                 <div class="msg-box">
                     <!-- their msg -->
