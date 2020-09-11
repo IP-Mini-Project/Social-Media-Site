@@ -29,32 +29,38 @@
                 <h3><i class="fas fa-edit"></i></h3>
             </div>
             <div class="sub-head">
-            <div class="group">
-                <h4><i class="fas fa-hashtag"></i> Class of 2020</h4><hr>
+            <div class="group name">
+                <h4><i class="fas fa-hashtag"></i> Class of 2020</h4>
             </div>
-            <div class="club">
-                <h4><i class="fas fa-cannabis"></i> Sports Club</h4> <hr>
-            </div>
-            <div class="name">
-                <h4><i class="fas fa-at"></i> Zendaya</h4><hr>
+            <div class="club name">
+                <h4><i class="fas fa-cannabis"></i> Sports Club</h4> 
             </div>
             <div class="name">
-                <h4><i class="fas fa-at"></i> Zendaya</h4><hr>
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
             </div>
             <div class="name">
-                <h4><i class="fas fa-at"></i> Zendaya</h4><hr>
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
             </div>
             <div class="name">
-                <h4><i class="fas fa-at"></i> Zendaya</h4><hr>
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
             </div>
             <div class="name">
-                <h4><i class="fas fa-at"></i> Zendaya</h4><hr>
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
             </div>
             <div class="name">
-                <h4><i class="fas fa-at"></i> Zendaya</h4><hr>
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
             </div>
             <div class="name">
-                <h4><i class="fas fa-at"></i> Zendaya</h4><hr>
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
+            </div>
+            <div class="name">
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
+            </div>
+            <div class="name">
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
+            </div>
+            <div class="name">
+                <h4><i class="fas fa-at"></i> Zendaya</h4>
             </div>
             </div>
             
