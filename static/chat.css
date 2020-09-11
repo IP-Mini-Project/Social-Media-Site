@@ -208,9 +208,7 @@ button img{
         height: auto;
         
     }
-    .msg-box{
-        /* height: 75vh; */
-    }
+    
     .right .their-msg p , .my-msg p{
         width: 70%;
     }
