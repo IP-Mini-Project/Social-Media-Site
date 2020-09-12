@@ -5,7 +5,7 @@
     <link rel="stylesheet"  href="../static/roommate.css">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
-    <script defer src="../js/roommate.js"></script>
+    <script type="module" defer src="../js/roommate.js"></script>
 
 </head>
 <body>
@@ -38,10 +38,10 @@
     	<div id="question-container" class="hide">
      		<div id="question" class="question">Question</div>
       		<div id="answer-buttons" class="btn-grid">
-		        <button id = "btn-one " class="ans btn">Answer 1</button>
-		        <button id = "btn-two " class="ans btn">Answer 2</button>
-		        <button id = "btn-three " class="ans btn">Answer 3</button>
-		        <button id = "btn-four " class="ans btn">Answer 4</button>
+		        <button id = "btn-one " class="active btn"><span id="icon" class="icon"> </span> Answer 1</button>
+		        <button id = "btn-two " class="active btn"><span id="icon" class="icon"> </span> Answer 2</button>
+		        <button id = "btn-three " class="active btn"><span id="icon" class="icon"> </span> Answer 3</button>
+		        <button id = "btn-four " class="active btn"><span id="icon" class="icon"> </span> Answer 4</button>
 		      </div>
    		</div>
    		<div class="controls">
