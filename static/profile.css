@@ -10,13 +10,13 @@ body{
 /* container */
 .container{
     width: 40%;
+    
     font-family: 'EB Garamond', serif;
     margin: 12vh auto 25px auto;
     background-color:white ;
     padding-bottom: 20px;
-    -webkit-box-shadow: 1px 2px 39px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 2px 39px -18px rgba(0,0,0,0.75);
-    box-shadow: 1px 2px 39px -18px rgba(0,0,0,0.75);
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+    border-radius: 25px;
     
     
 }
@@ -27,7 +27,7 @@ body{
 }
 .container .photo {
     text-align: center;
-    border-bottom: #9F9191 1px solid;
+    border-bottom: 1px solid rgba(166,173,201,.2);
 }
 .bio {
     padding: 3% 0% 0% 5%;
