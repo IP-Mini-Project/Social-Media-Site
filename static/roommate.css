@@ -58,6 +58,22 @@
 	background-color: transparent;
 }
 
+.btn-grid > button:active ,
+{
+	background-color: orange;
+
+}
+
+.btn-grid > button:hover{
+  background-color: orange;
+}
+
+.btn-grid > button:focus{
+  background-color: orange;
+}
+
+
+
 .btn:hover {
   transform: scale(1.2);
 }
@@ -72,9 +88,7 @@
 	background-image: linear-gradient(to right, #00d2ff, #3a7bd5, #00d2ff);
 }
 
-button:click {
-	background-color: red;
-}
+
 
 .hide {
 	display: none;
