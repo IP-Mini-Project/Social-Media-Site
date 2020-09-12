@@ -17,7 +17,7 @@
     height: auto;
     min-height: 7.5vh;
     position: fixed;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: white;
 }
 .logo a{
@@ -160,6 +160,7 @@ form{
     position: absolute;
     opacity: 1;
     display: block;
+    
 }
 .div .fas{
     padding: 0 5px;

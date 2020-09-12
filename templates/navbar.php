@@ -46,10 +46,11 @@
                         <a href="#"><i class="fas fa-user"></i> Profile</a>
                         <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
+                </div>
             </form>
         </div>
 
 
     </div>
-    </div>
+    
 </body>
