@@ -59,6 +59,7 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
+    startButton.innerText = 'Submit'
     startButton.innerText = 'Restart'
     startButton.classList.remove('hide')
   }
@@ -165,9 +166,28 @@ const questions = [
    }
  ]
 
+// $('.btn').mousedown(function () {
+//   var classList = $(this).attr('class');
+//   // console.log(classList);
+//   var classArr = classList.split(" ");
+//   // console.log(classArr);
+//   var this_group = classArr[0];
 
+//   if($(this).hasClass('active')) {
+//     $(this).removeClass('active');
+//      $(this).text();
+//   } else {
+//     // $('[class='thisgroup).prop('checked', false);
+//     $('.'+this_group+'.active').text();
+//     // console.log($('.'+this_group+'.active').text());
+//     $('.'+this_group).removeClass('active');
 
-
+//     // console.log('group' + findValueWeight(prompt_values, $('.'+this_group).text()));
+//     // $(this).prop('checked', true);
+//     $(this).addClass('active');
+//     $(this).text();
+//   }
+// })
 
 
 
