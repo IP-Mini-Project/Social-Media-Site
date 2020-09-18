@@ -1,3 +1,8 @@
+<?php
+ include_once('server.php'); 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,53 +24,69 @@
 	<div class="limiter">
 		<div class="container-login100" >
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+				<form action="register.php" class="login100-form validate-form" method="post">
+						<?php include('errors.php'); ?>
 					<span class="login100-form-title p-b-49">
-						New Member
+						Welcome !
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
-						<span class="label-input100">Name</span>
-						<input class="input100" type="text" name="username" placeholder="Type your name">
+						<span class="label-input100">Userame</span>
+						<input class="input100" type="text" name="username" placeholder="Type your username" required> 
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
+							
+					</div>
+					<br>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Name is required">
+						<span class="label-input100">Name</span>
+						<input class="input100" type="text" name="name" placeholder="Name" required>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+						
+					</div>
+					<br>
+
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email id is required">
+						<span class="label-input100">Email id</span>
+						<input class="input100" type="email" name="email" placeholder="Enter your Email id" required>
+						<span class="focus-input100" data-symbol="&#64;"></span>
 					</div>
 					<br>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Phone is required">
 						<span class="label-input100">Phone</span>
-						<input class="input100" type="number" name="Phone" placeholder="Enter your Phone number" > 
-						<span class="focus-input100" data-symbol="&#9743;"></span>
+						<input class="input100" type="phone" name="phone" placeholder="Enter your Phone number" required > 
+						<span class="focus-input100" data-symbol="&#9743;">
+							
 					</div>
 					<br>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Gender is required">
 						<span class="label-input100">Gender</span><br><br>
-  							<form action="">
- 								 <input type="radio" name="gender" value="male"> Male 			
-  								<input type="radio" name="gender" value="female"> Female    
-  								<input type="radio" name="gender" value="other"> Other
-							</form>
-					</div>
+  							
+ 								 <input type="radio" name="gender" value="m" required> Male 			
+  								<input type="radio" name="gender" value="f" required> Female    
+  								<input type="radio" name="gender" value="o" required> Other
+								
+						</div>
 					<br>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email id is required">
-						<span class="label-input100">Email id</span>
-						<input class="input100" type="text" name="username" placeholder="Enter your Email id">
-						<span class="focus-input100" data-symbol="&#64;"></span>
-					</div>
 					<br>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">New Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Type your password">
+						<input class="input100" type="password" name="password_1" placeholder="Type your password" required>
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
+						
 					</div>
 					<br>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100"> Re-Enter Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Re-Enter your password">
+						<input class="input100" type="password" name="password_2" placeholder="Re-Enter your password" required>
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
+						
 					</div>
 					<br>
 					<br>
@@ -73,7 +94,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button type="submit" class="login100-form-btn" name="reg_user">
 								Register
 							</button>
 						</div>
