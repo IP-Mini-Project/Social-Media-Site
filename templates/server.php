@@ -11,7 +11,10 @@ $errors = array();
 $db = mysqli_connect('localhost' , 'root', '', 'social') or die("could not connect");
 if (isset($_POST['reg_user'])) {
 $username = mysqli_escape_string($db, $_POST['username']);
+$name = mysqli_escape_string($db, $_POST['name']);
 $email = mysqli_escape_string($db, $_POST['email']);
+$phone = mysqli_escape_string($db, $_POST['phone']);
+$gender = mysqli_escape_string($db, $_POST['gender']);
 $password_1 = mysqli_escape_string($db, $_POST['password_1']);
 $password_2 = mysqli_escape_string($db, $_POST['password_2']);
 
@@ -20,8 +23,21 @@ if (empty($username)) {
 	array_push($errors, "Username is required");
 }
 
+if (empty($name)) {
+	array_push($errors, "name is required");
+}
+
 if (empty($email)) {
 	array_push($errors, "Email is required");
+}
+
+
+if (empty($phone)) {
+	array_push($errors, "phone is required");
+}
+
+if (empty($gender)) {
+	array_push($errors, "gender is required");
 }
 
 if (empty($password_1)) {
@@ -33,7 +49,7 @@ if (empty($password_2)) {
 }
 
 
-$user_check_query = "SELECT * FROM user WHERE username = '$username' or email = '$email' LIMIT 1";
+$user_check_query = "SELECT * FROM user WHERE username = '$username' or email = '$email' or phone = '$phone' LIMIT 1";
 
 $results = mysqli_query($db, $user_check_query);
 $user = mysqli_fetch_assoc($results);
@@ -43,11 +59,13 @@ if($user) {
 	if($user['username'] === $username){array_push($errors, "Username is exists");}
 
 	if($user['email'] === $email){array_push($errors, "Email exists");}
+
+	if($user['phone'] === $phone){array_push($errors, "phone exists");}
 }
 
 if (count($errors) == 0) {
 	$password = md5($password_1);
-	$query = "INSERT INTO user (username,email,password) VALUES ('$username','$email','$password')";
+	$query = "INSERT INTO user (username,name,email,phone,gender,password) VALUES ('$username','$name','$email','$phone','$gender','$password')";
 
 	mysqli_query($db,$query);
 	$_SESSION['username'] = $username;
