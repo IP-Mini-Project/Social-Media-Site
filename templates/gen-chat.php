@@ -38,7 +38,7 @@ session_start();
             </div>
             <div class="sub-head">
                 <div class="group name">
-                    <h4><i class="fas fa-hashtag"></i> Class of 2020</h4>
+                <a href="gen-chat.php"><h4><i class="fas fa-hashtag"></i> General Chat</h4></a>
                 </div>
                 <div class="club name">
                     <h4><i class="fas fa-cannabis"></i> Sports Club</h4>

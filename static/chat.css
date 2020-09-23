@@ -170,7 +170,13 @@ button img{
     font-size: small;
     font-style: italic;
 }
-
+.group a{
+    text-decoration: none;
+    color: black;
+}
+.group:hover{
+    background-color: #F8F6FC;
+}
 @media only screen and (max-width: 760px){
     .left{
         position: absolute;
