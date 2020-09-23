@@ -25,7 +25,7 @@
 
             <a href="index.php"><i class="fas fa-house-user"></i></a>
             <a href="roommate.php"><i class="fas fa-users"></i></a>
-            <a href="chat.php"><i class="fas fa-comment-alt"></i></a>
+            <a href="gen-chat.php"><i class="fas fa-comment-alt"></i></a>
             <a href="notification.php"><i class="fas fa-bell"></i></a>
 
 
@@ -43,7 +43,7 @@
                 <div class="dropdown">
                     <button class="corner-img"><img class="pfp" src="../static/pfp.jpg" alt=""></button>
                     <div class="div">
-                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="profile2.php"><i class="fas fa-user"></i> Profile</a>
                         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </div>
