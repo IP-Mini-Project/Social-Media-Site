@@ -44,7 +44,7 @@
                     <button class="corner-img"><img class="pfp" src="../static/pfp.jpg" alt=""></button>
                     <div class="div">
                         <a href="#"><i class="fas fa-user"></i> Profile</a>
-                        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </div>
             </form>
