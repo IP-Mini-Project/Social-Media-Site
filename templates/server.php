@@ -71,7 +71,7 @@ if (count($errors) == 0) {
 	$_SESSION['username'] = $username;
 	$_SESSION['success'] = "YOU are now logged in";
 
-	header('location: login2.php');
+	header('location: login.php');
 } 
 }
 //login user
