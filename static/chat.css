@@ -99,7 +99,7 @@ body{
     margin: 8px 0;
     
     height: auto;
-    width: 50%;
+    width: 100%;
     border-radius: 5px;
     padding: 5px 10px;
     
@@ -162,7 +162,21 @@ button img{
 .right .top-section .name .fas{
     visibility: hidden;
 }
-
+.nametime{
+    display: flex;
+    justify-content: space-between;
+}
+.timestamp{
+    font-size: small;
+    font-style: italic;
+}
+.group a{
+    text-decoration: none;
+    color: black;
+}
+.group:hover{
+    background-color: #F8F6FC;
+}
 @media only screen and (max-width: 760px){
     .left{
         position: absolute;

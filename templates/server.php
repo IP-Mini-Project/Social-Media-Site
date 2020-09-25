@@ -70,7 +70,11 @@ if (count($errors) == 0) {
 	mysqli_query($db,$query);
 	$_SESSION['username'] = $username;
 	$_SESSION['success'] = "YOU are now logged in";
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 2b733814b55367c356571d476c1da50762645a1e
 	header('location: login.php');
 } 
 }
