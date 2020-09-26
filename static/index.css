@@ -23,6 +23,23 @@ body{
 }
 li{
     list-style: none;
+    font-size: 1.1rem;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clubs a{
+  text-decoration: none;
+  color: black;
+  
+}
+.clubs i{
+  padding-right: 10px;
+}
+.clubs li:hover{
+  transform: scale(1.1);
+  transition: .1s ease-in;
 }
 
 *:focus{

@@ -29,8 +29,9 @@
             <div class="clubs">
                <h2>Clubs</h2><hr>
                <ul>
-                    <li>Sports</li>
-                    <li>Sports</li>
+                    <a href="decision.php"><li><i class="fas fa-table-tennis"></i>SPORTS</li></a>
+                    <!-- <a href="decision.php"><li>SPORTS</li></a> -->
+                    
                </ul>
             </div>
             <div class="right-part">

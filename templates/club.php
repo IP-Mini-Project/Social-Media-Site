@@ -1,3 +1,9 @@
+<?php
+include("connection.php");
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +29,7 @@
     });
     </script>
     <!-- middle section -->
+    <form action="" method="post">
     <div class="container">
         <div class="photo">
             <img src="../static/kids.png" alt="">
@@ -33,12 +40,26 @@
             <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     
             <div class="join-btn">
-                <button class="join">JOIN</button>
+                <button class="join" name="join">JOIN</button>
             </div>
             
         </div>
         
     </div>
+    </form>
 
 </body>
 </html>
+
+<?php 
+    if (isset($_POST['join'])) {
+        $username=$_SESSION['username'];
+
+        $insert = "INSERT INTO sportsclub(username) VALUES ('$username')";
+        $query = mysqli_query($db, $insert);
+
+        if ($query) {
+            header("Location:sports_chat.php");
+        }
+    }
+?>
