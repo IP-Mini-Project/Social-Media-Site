@@ -262,6 +262,10 @@ li{
   padding-top: 9px;
   padding-left: 10px;
 }
+/* .post-div{
+  display: flex;
+  flex-direction: column-reverse;
+} */
 @media only screen and (max-width: 760px){
   .container{
       margin-top: 20%;
