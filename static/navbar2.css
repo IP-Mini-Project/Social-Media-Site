@@ -7,18 +7,21 @@ ul {
 .navbar2{
 	display: flex;
 	justify-content: space-between;
-	padding-top: 15px;
+	padding: 15px 0;
 	position: fixed;
+	background-color: white;
+	top: 8vh;
+	width: 100%;
+	padding-left: 13%;
 	
-	top: 9vh;
-	
-
 }
 
 .navbar2 .elements {
-	display: inline-flex;
-	padding-left: 50px;
-
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 40%;
+	
 }
 
 .fas, .far {
@@ -27,9 +30,9 @@ ul {
 }
 
 
-.elements > * {
+/* .elements > * {
 	padding-left: 60px;
-}
+} */
 
 .elements a {
 	text-decoration: none;
@@ -52,11 +55,24 @@ ul {
 	width: 100%;
 	transition: width .3s;
 }
-
+.elements li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 @media only screen and (max-width: 760px){
 	.navbar2{
-		top: 15vh;
+		top: 13vh;
+		padding-right: 13%;
+	}
+	.navbar2 .elements{
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 1020){
+	.navbar2 .elements{
+		width: 100%;
 	}
 }
 
