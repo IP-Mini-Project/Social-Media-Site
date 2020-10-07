@@ -151,7 +151,7 @@ body{
 .posts{
     border-radius: 25px;
     /* border: 1px solid #797a7e; */
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
     padding: 20px 30px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
@@ -224,8 +224,8 @@ body{
 }
 
 .footer .description {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     
 }
 
@@ -298,6 +298,10 @@ body{
     cursor: pointer;
     font-weight: 600;
 
+}
+.btn-trans{
+    background-color: transparent;
+    border: none;
 }
 @media only screen and (max-width: 760px){
     .container, .container-2{

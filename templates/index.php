@@ -1,15 +1,19 @@
-<?php 
+<?php
 include("connection.php");
+
 session_start();
+
+
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/index.css">
-    
+    <link rel="stylesheet" href="../static/index2.css">
+
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
 </head>
@@ -21,53 +25,56 @@ session_start();
 
     </div>
     <script>
-    $(function(){
-    $("#nav-placeholder").load("navbar.php");
-    });
+        $(function() {
+            $("#nav-placeholder").load("navbar.php");
+        });
     </script>
     <!-- container -->
     <section id="index">
         <div class="container">
             <div class="clubs">
-               <h2>Clubs</h2><hr>
-               <ul>
-                    <a href="decision.php"><li><i class="fas fa-table-tennis"></i>SPORTS</li></a>
+                <h2>Clubs</h2>
+                <hr>
+                <ul>
+                    <a href="decision.php">
+                        <li><i class="fas fa-table-tennis"></i>SPORTS</li>
+                    </a>
                     <!-- <a href="decision.php"><li>SPORTS</li></a> -->
-                    
-               </ul>
+
+                </ul>
             </div>
             <div class="right-part">
                 <!-- whats happeningarea -->
-                
-                    <div class="new-post">
-                        <div class="wrapper">
-                            <div class="newpost-pic">
-                                <img src="../static/pfp.jpg" alt="">
-                            </div>
-                            <form action="index.php" method="post" enctype="multipart/form-data" >
+
+                <div class="new-post">
+                    <div class="wrapper">
+                        <div class="newpost-pic">
+                            <img src="../static/pfp.jpg" alt="">
+                        </div>
+                        <form action="index.php" method="post" enctype="multipart/form-data">
                             <div class="newpost-text">
                                 <textarea id="text" name="text-box" rows="4" cols="62" placeholder="What's happening?"></textarea>
                             </div>
-                        </div>
-                        <input type="hidden" name="size" value="1000000">
-                        <div class="endline">
-                        <!-- <i class="fas fa-camera"></i> --> <input type="file" name="image">
-                            <input type="submit" value="POST" class="btn" name="post"> </form>
-                        </div>
                     </div>
-                
+                    <input type="hidden" name="size" value="1000000">
+                    <div class="endline">
+                        <!-- <i class="fas fa-camera"></i> --> <input type="file" name="image">
+                        <input type="submit" value="POST" class="btn" name="post"> </form>
+                    </div>
+                </div>
 
 
-                <?php 
-                    $msg = "";
-                    if (isset($_POST['post'])) {
 
-                        $image = $_FILES['image']['name'];
+                <?php
+                $msg = "";
+                if (isset($_POST['post'])) {
+
+                    $image = $_FILES['image']['name'];
                     // Get text
                     $image_text = mysqli_real_escape_string($db, $_POST['text-box']);
 
                     // image file directory
-                    $target = "../post-images/".basename($image);
+                    $target = "../post-images/" . basename($image);
 
                     $sql = "INSERT INTO post (image, text, likes, username) VALUES ('$image', '$image_text','0', '{$_SESSION['username']}')";
                     // execute query
@@ -75,28 +82,31 @@ session_start();
 
                     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
                         $msg = "Image uploaded successfully";
-                    }else{
+                    } else {
                         $msg = "Failed to upload image";
                     }
                 }
                 $result = mysqli_query($db, "SELECT * FROM post");
-                    
                 
                 ?>
                 <!-- end of whats happening -->
                 <!-- posts code -->
                 <div class="post-div" style="display: flex;flex-direction: column-reverse;">
-                <?php 
-                
-                while ($row = mysqli_fetch_array($result)) {
-                   $time = $row['time'];
-                   $username= $row['username'];
-                   $text = $row['text'];
-                   $likes = $row['likes'];
+                    <?php
 
 
-                   echo " 
+
+                    while ($row = mysqli_fetch_array($result)) {
+                        $time = $row['time'];
+                        $username = $row['username'];
+                        $text = $row['text'];
+                        $likes = $row['likes'];
+                        $post_id = $row['id'];
+
+
+                        echo " 
                    <div class='posts'>
+                   <form action='index.php' method='post'>
                     <section class='card'>
                     	<div class='header'>
                             <div class='prof-img'>
@@ -108,36 +118,44 @@ session_start();
                             <div class='time'>$time</div>
                         </div>
                         <div class='post-img'>
-                            <img src='../post-images/".$row['image']."' class='img'>
+                            <img src='../post-images/" . $row['image'] . "' class='img'>
                         </div>
                         <div class='footer'>
-                        <div class='likes'>
-                            <div class='like-icon'><i class='fas fa-heart'></i></div>
-                            <div class='like-count'>$likes</div>
-                        </div>
+                            <div class='likes'>
+                                <div class='like-icon'>
+                                <a href='' data-id='$post_id'>
+                                <i id='btn' class='far fa-heart like-btn'></i><span class='like_count'></span>
+                                </a>
+                                </div>
+                                <div class='like-count'></div>
+                            </div>
 
-                        <div class='description'>
-                            <div class='user'>
-                            	<div class='username'><p>$username</p></div>
-                            	<div class='caption'><p>$text</p></div>
+                            <div class='description'>
+                                <div class='user'>
+                                    <div class='username'><p>$username</p></div>
+                                    <div class='caption'><p>$text</p></div>
+                                </div>
+                            </div>
+
+                            <div class='post-after'>
+                                
+                                <div class='comment-img'><img src='../static/pfp.jpg' id='comment-img'></div>
+                                <div class='comment'><textarea id='text2' rows='1' cols='250' placeholder='add a comment...' class='comment-text'></textarea></div>
+                                <div class='options'><button type='submit' name='send' class='btn-trans'><i class='fas fa-ellipsis-h' ></i></button></div>
+                                </form>
                             </div>
                         </div>
-
-                        <div class='post-after'>
-                            <div class='comment-img'><img src='../static/pfp.jpg' id='comment-img'></div>
-                            <div class='comment'><textarea id='text2' rows='1' cols='250' placeholder='add a comment...' class='comment-text'></textarea></div>
-                            <div class='options'><i class='fas fa-ellipsis-h' ></i></div>
-                        </div>
-                    </div>
-                    
                     </section>  
-        
-    
-
+                    </form>
                 </div>
                    ";
-                  }
-                ?>
+                        
+                    }
+
+
+
+
+                    ?>
                 </div>
                 <!-- <div class="posts">
                     <section class="card">
@@ -182,5 +200,7 @@ session_start();
             </div>
         </div>
     </section>
+<script src="../js/index.js"></script>
 </body>
+
 </html>

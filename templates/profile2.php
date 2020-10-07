@@ -1,3 +1,12 @@
+<?php
+include("connection.php");
+
+session_start();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +38,7 @@
             <div class="photo">
                 <img src="../static/zendaya.jpg" alt="">
             </div>
-            <h3>Zendaya Coleman</h3><br>
+            <?php echo "<h3>{$_SESSION['username']}</h3><br>"; ?>
             <p class="quote2">~Some random quote..</p><br>
             <p><i class="fas fa-university"></i>University of Texas</p>
             <p><i class="fas fa-map-marker-alt"></i> US</p>
@@ -48,8 +57,73 @@
                 <button>EDIT PROFILE</button>
                 </div>
             </div>
-            <div class="post-wrapper">
-            <div class="posts">
+
+            <?php 
+                $result = mysqli_query($db, "SELECT * FROM post WHERE username='{$_SESSION['username']}' ");
+            
+            
+            ?>
+
+            <div class="post-wrapper" style="display: flex;flex-direction: column-reverse;">
+            <?php 
+                while ($row = mysqli_fetch_array($result)) {
+                    $time = $row['time'];
+                    $username = $row['username'];
+                    $text = $row['text'];
+                    $likes = $row['likes'];
+                    $post_id = $row['id'];
+
+
+                    echo " 
+                    <div class='posts'>
+                    <form action='index.php' method='post'>
+                     <section class='card'>
+                         <div class='header'>
+                             <div class='prof-img'>
+                              </div>
+                              <div class='prof-info'>
+                                 <div class='username'>$username</div>
+                                 <div class='location'>Mumbai</div>
+                             </div>
+                             <div class='time'>$time</div>
+                         </div>
+                         <div class='post-img'>
+                             <img src='../post-images/" . $row['image'] . "' class='img'>
+                         </div>
+                         <div class='footer'>
+                             <div class='likes'>
+                                 <div class='like-icon'>
+                                 <a href='' data-id='$post_id'>
+                                 <i id='btn' class='far fa-heart like-btn'></i><span class='like_count'></span>
+                                 </a>
+                                 </div>
+                                 <div class='like-count'></div>
+                             </div>
+ 
+                             <div class='description'>
+                                 <div class='user'>
+                                     <div class='username'><p>$username</p></div>
+                                     <div class='caption'><p>$text</p></div>
+                                 </div>
+                             </div>
+ 
+                             <div class='post-after'>
+                                 
+                                 <div class='comment-img'><img src='../static/pfp.jpg' id='comment-img'></div>
+                                 <div class='comment'><textarea id='text2' rows='1' cols='250' placeholder='add a comment...' class='comment-text'></textarea></div>
+                                 <div class='options'><button type='submit' name='send' class='btn-trans'><i class='fas fa-ellipsis-h' ></i></button></div>
+                                 </form>
+                             </div>
+                         </div>
+                     </section>  
+                     </form>
+                 </div>
+                    ";
+                         
+                     }
+ 
+            ?>
+            <!-- <div class="posts">
                 <section class="card">
                     <div class="header">
                         <div class="prof-img">
@@ -87,7 +161,7 @@
                         </div>
                     </div>
                 </section>
-            </div>
+            </div> -->
             
             
                     
