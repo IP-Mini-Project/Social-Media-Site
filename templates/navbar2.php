@@ -14,7 +14,7 @@
 		<ul class="elements">
 			<li class="friends"><i class="fas fa-users"></i><a href="#"> Friends</a></li>
 			<li class="study-buddy"><i class="fas fa-book-reader"></i><a href="#">study buddy</a></li>
-			<li class="room-mate"><i class="fas fa-building"></i><a href="#">roommate</a></li>
+			<li class="room-mate"><i class="fas fa-theater-masks"></i><a href="#">roommate</a></li>
 
 		</ul>
 	</div>
