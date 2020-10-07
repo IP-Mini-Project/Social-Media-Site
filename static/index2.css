@@ -277,6 +277,22 @@ body{
     background-color: transparent;
     border: none;
 }
+.upload-box{
+  background-color: white;
+  width: 40%;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);;
+}
+  input[type=file]::-webkit-file-upload-button {
+    border: none;
+    color: white;
+    padding: 10px 9px;
+    border-radius: 50px;
+    background-color: #000000;
+    transition: 1s;
+    outline: none;
+    cursor: pointer;
+  }
   @media only screen and (max-width: 760px){
     .container{
         margin-top: 20%;

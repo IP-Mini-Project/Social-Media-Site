@@ -58,7 +58,7 @@ session_start();
                     </div>
                     <input type="hidden" name="size" value="1000000">
                     <div class="endline">
-                        <!-- <i class="fas fa-camera"></i> --> <input type="file" name="image">
+                        <!-- <i class="fas fa-camera"></i> --> <input type="file" name="image" class="upload-box">
                         <input type="submit" value="POST" class="btn" name="post"> </form>
                     </div>
                 </div>
