@@ -101,10 +101,10 @@ session_start();
                             <div class="prof-img"><?php  ?>
                              </div>
                              <div class="prof-info">
-                                <div class="username"><?php echo $username = $row['username']; ?></div>
+                                <div class="username"><?php echo $row['username']; ?></div>
                                 <div class="location">Mumbai</div>
                             </div>
-                            <div class="time"><?php echo $time = $row['time']; ?></div>
+                            <div class="time"><?php echo $row['time']; ?></div>
                         </div>
                         <div class="post-img">
                             <img src="../post-images/ ' . $row['image'] . ' " class='img'>
@@ -112,14 +112,16 @@ session_start();
                         <div class="footer">
                         <div class="likes">
                             
-                            <div class="like-icon"><input type="submit" name="like_btn" value='<i class="fas fa-heart"></i>'></div>
-                            <div class="like-count">45 likes</div>
+                            <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
+      <span class="glyphicon glyphicon-thumbs-up" name =" type" onclick="like_update('<?php echo $row['id']?>')"> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</span>
+     </a>
+                            </div>
                         </div>
 
                         <div class="description">
                             <div class="user">
-                            	<div class="username"><p><?php echo $username = $row['username']; ?></p></div>
-                            	<div class="caption"><p><?php echo $text = $row['text']; ?></p></div>
+                            	<div class="username"><p><?php echo $row['username']; ?></p></div>
+                            	<div class="caption"><p><?php echo  $row['text']; ?></p></div>
                             </div>
                         </div>
 
@@ -142,5 +144,21 @@ session_start();
     </section>
 <script src="../js/index.js"></script>
 </body>
+<script>
+  function like_update(id){
+   jQuery.ajax({
+    url:'notif.php',
+    type:'post',
+    data:'type=like&id='+id,
+    success:function(result){
+     var cur_count=jQuery('#like_loop_'+id).html();
+     cur_count++;
+     jQuery('#like_loop_'+id).html(cur_count);
+   
+    }
+   });
+  } 
+  </script>
 
+ 
 </html>
