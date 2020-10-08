@@ -30,8 +30,15 @@ session_start();
 
     <?php 
         if (isset($_POST['upload'])) {
-            print_r($_POST);
-            print_r($_FILES);
+            // print_r($_POST);
+            // print_r($_FILES);
+
+            if (isset($_FILES['file']['name']) && $_FILES['file']['name']!= "") {
+                $fileName= $_FILES['file']['name'];
+                move_uploaded_file($_FILES['file']['tmp_name'], "../profile-pics/" . $fileName);
+            }
+
+            
         }
     ?>
 
@@ -52,7 +59,7 @@ session_start();
                     echo "<img src='$pfp' alt='nope'>";
                 ?>
                     <div class="inputb">
-                        <input type="file" name="image" class="upload-box">
+                        <input type="file" name="file" class="upload-box">
                         <input type="submit" value="UPLOAD" class="btn" name="upload">
                     </div>
                        
