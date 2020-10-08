@@ -39,7 +39,7 @@ h2{
     padding-left: 60px;
     margin-bottom: 10px;
 }
-input[type='text']{
+.txt{
     width: 300px;
 }
 input[type='password'] , .un{

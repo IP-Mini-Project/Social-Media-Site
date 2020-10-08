@@ -28,6 +28,13 @@ session_start();
     </script>
     <!-- container -->
 
+    <?php 
+        if (isset($_POST['upload'])) {
+            print_r($_POST);
+            print_r($_FILES);
+        }
+    ?>
+
     <div class="container">
         <h2>User Profile</h2>
         <form action="editprofile.php" method="post" enctype="multipart/form-data">
@@ -46,7 +53,7 @@ session_start();
                 ?>
                     <div class="inputb">
                         <input type="file" name="image" class="upload-box">
-                        <input type="submit" value="UPLOAD" class="btn" name="post">
+                        <input type="submit" value="UPLOAD" class="btn" name="upload">
                     </div>
                        
                     
@@ -59,7 +66,7 @@ session_start();
                     <h3>Name:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Name" class="txt">
                 </div>
             </div>
             <div class="one">
@@ -67,7 +74,7 @@ session_start();
                     <h3>Email:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Email" class="txt">
                 </div>
             </div>
             <div class="one">
@@ -75,7 +82,7 @@ session_start();
                     <h3>Phone:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="123">
+                    <input type="text" placeholder="123" class="txt">
                 </div>
             </div>
             <div class="one">
