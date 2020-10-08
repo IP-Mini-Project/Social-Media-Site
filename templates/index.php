@@ -97,10 +97,10 @@ session_start();
                 ?>
                 <!-- end of whats happening -->
                 <!-- posts code -->
-               
+                <?php while ($row = mysqli_fetch_array($result)): ?>
                 <div class="posts">
                  <!-- php while loop -->
-                 <?php while ($row = mysqli_fetch_array($result)): ?>
+                 
 
                     <section class="card">
                     	<div class="header">
@@ -113,7 +113,7 @@ session_start();
                             <div class="time"><?php echo $row['time']; ?></div>
                         </div>
                         <div class="post-img">
-                            <img src="../post-images/ ' . $row['image'] . ' " class='img'>
+                            <?php echo "<img src='../post-images/" . $row['image'] . "' class='img'>"; ?>
                         </div>
                         <div class="footer">
                         <div class="likes">
@@ -140,10 +140,11 @@ session_start();
                     
                     </section>  
         
-                       <?php endwhile; ?>
+                       
     
 
                 </div>
+                <?php endwhile; ?>
                 <!-- end of posts code -->
             </div>
         </div>
