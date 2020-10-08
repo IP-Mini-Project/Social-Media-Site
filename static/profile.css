@@ -303,6 +303,12 @@ body{
     background-color: transparent;
     border: none;
 }
+.top-section a{
+    text-decoration: none;
+    font-size: .9rem;
+    color: black;
+    font-weight: bold;
+}
 @media only screen and (max-width: 760px){
     .container, .container-2{
         margin-top: 20%;

@@ -49,7 +49,13 @@ session_start();
                 <div class="new-post">
                     <div class="wrapper">
                         <div class="newpost-pic">
-                            <img src="../static/pfp.jpg" alt="">
+                        <?php 
+                            $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                            $row = mysqli_fetch_array($sql);
+                            $pfp = $row['pfp'];
+                            
+                            echo "<img src='$pfp' alt='nope'>";
+                        ?>
                         </div>
                         <form action="index.php" method="post" enctype="multipart/form-data">
                             <div class="newpost-text">
