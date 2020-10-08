@@ -11,7 +11,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="../static/index2.css">
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -119,7 +119,7 @@ session_start();
                         <div class="likes">
                             
                             <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
-      <span class="glyphicon glyphicon-thumbs-up" name =" type" onclick="like_update('<?php echo $row['id']?>')"> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</span>
+      <button class="like-btn" name =" type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
      </a>
                             </div>
                         </div>
