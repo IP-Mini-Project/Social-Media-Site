@@ -65,7 +65,8 @@ if($user) {
 
 if (count($errors) == 0) {
 	$password = md5($password_1);
-	$query = "INSERT INTO user (username,name,email,phone,gender,password) VALUES ('$username','$name','$email','$phone','$gender','$password')";
+	$profilePic = "../profile-pics/pfp.png";
+	$query = "INSERT INTO user (username,name,email,phone,gender,password,pfp) VALUES ('$username','$name','$email','$phone','$gender','$password','$profilePic')";
 
 	mysqli_query($db,$query);
 	$_SESSION['username'] = $username;
@@ -93,6 +94,7 @@ if (isset($_POST['login_user'])) {
 
 	if (count($errors) == 0) {
 	$password = md5($password_1);
+	
 	$query = "SELECT * FROM user WHERE username = '$username' AND password = '$password' ";
 	$results = mysqli_query($db, $query);	
 	if (mysqli_num_rows($results)) {

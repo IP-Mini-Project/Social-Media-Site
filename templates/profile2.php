@@ -36,7 +36,14 @@ session_start();
     <div class="container-2">
         <div class="left">
             <div class="photo">
-                <img src="../static/zendaya.jpg" alt="">
+                <?php 
+                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                $row = mysqli_fetch_array($sql);
+                $pfp = $row['pfp'];
+                
+                echo "<img src='$pfp' alt='nope'>";
+                ?>
+                <!-- <img src="../static/zendaya.jpg" alt=""> -->
             </div>
             <?php echo "<h3>{$_SESSION['username']}</h3><br>"; ?>
             <p class="quote2">~Some random quote..</p><br>
@@ -51,10 +58,10 @@ session_start();
         <div class="right">
             <div class="top-section">
                 <div class="post-btn">
-                    <button>POSTS</button>
+                    <a href="">POSTS</a>
                 </div>
                 <div class="edit-btn">
-                <button>EDIT PROFILE</button>
+                <a href="editprofile.php">EDIT PROFILE</a> 
                 </div>
             </div>
 
