@@ -34,8 +34,13 @@ session_start();
             // print_r($_FILES);
 
             if (isset($_FILES['file']['name']) && $_FILES['file']['name']!= "") {
-                $fileName= $_FILES['file']['name'];
-                move_uploaded_file($_FILES['file']['tmp_name'], "../profile-pics/" . $fileName);
+                $fileName= "../profile-pics/" . $_FILES['file']['name'];
+                move_uploaded_file($_FILES['file']['tmp_name'],  $fileName);
+
+                $query = mysqli_query($db,"UPDATE user SET pfp= '$fileName' WHERE username= '{$_SESSION['username']}' ");
+                // if (file_exits($fileName)) {
+                   
+                // }
             }
 
             

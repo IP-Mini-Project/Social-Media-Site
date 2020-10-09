@@ -46,7 +46,16 @@ session_start();
 
 
                 <div class="dropdown">
-                    <button class="corner-img"><img class="pfp" src="../static/pfp.jpg" alt=""></button>
+                    <button class="corner-img">
+                        <?php 
+                        $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                        $row = mysqli_fetch_array($sql);
+                        $pfp = $row['pfp'];
+                        
+                        echo "<img class='pfp' src='$pfp' alt='nope'>";
+                    ?>
+                </button>
+                    <!-- <img class="pfp" src="../static/pfp.jpg" alt=""> -->
                     <div class="div">
                         <a href="profile2.php"><i class="fas fa-user"></i> Profile</a>
                         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
