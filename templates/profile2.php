@@ -71,65 +71,69 @@ session_start();
             
             ?>
 
+            <!-- posts code -->
             <div class="post-wrapper" style="display: flex;flex-direction: column-reverse;">
-            <?php 
-                while ($row = mysqli_fetch_array($result)) {
-                    $time = $row['time'];
-                    $username = $row['username'];
-                    $text = $row['text'];
-                    $likes = $row['likes'];
-                    $post_id = $row['id'];
+                <!-- php while loop -->
+                <?php while ($row = mysqli_fetch_array($result)): ?>
+                    <?php $result2 = mysqli_query($db, "SELECT * FROM user WHERE username= '{$row['username']}'"); ?>
+                    <?php while ($row2 = mysqli_fetch_array($result2)): $pfpurl= $row2['pfp']?>
+                        
+                <div class="posts">
+                 
+                    <section class="card">
+                    	<div class="header">
+                            <div class="prof-img"><?php echo "<img src='$pfpurl' class='top-img'>"; ?>
+                             </div>
+                             <div class="prof-info">
+                                <div class="username"><?php echo $row['username']; ?></div>
+                                <div class="location">Mumbai</div>
+                            </div>
+                            <div class="time"><?php echo $row['time']; ?></div>
+                        </div>
+                        <div class="post-img">
+                            <?php echo "<img src='../post-images/" . $row['image'] . "' class='img'>"; ?>
+                        </div>
+                        <div class="footer">
+                        <div class="likes">
+                            
+                            <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
+      <button class="like-btn" name =" type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
+     </a>
+                            </div>
+                        </div>
 
+                        <div class="description">
+                            <div class="user">
+                            	<div class="username"><p><?php echo $row['username']; ?></p></div>
+                            	<div class="caption"><p><?php echo  $row['text']; ?></p></div>
+                            </div>
+                        </div>
 
-                    echo " 
-                    <div class='posts'>
-                    <form action='index.php' method='post'>
-                     <section class='card'>
-                         <div class='header'>
-                             <div class='prof-img'>
-                              </div>
-                              <div class='prof-info'>
-                                 <div class='username'>$username</div>
-                                 <div class='location'>Mumbai</div>
-                             </div>
-                             <div class='time'>$time</div>
-                         </div>
-                         <div class='post-img'>
-                             <img src='../post-images/" . $row['image'] . "' class='img'>
-                         </div>
-                         <div class='footer'>
-                             <div class='likes'>
-                                 <div class='like-icon'>
-                                 <a href='' data-id='$post_id'>
-                                 <i id='btn' class='far fa-heart like-btn'></i><span class='like_count'></span>
-                                 </a>
-                                 </div>
-                                 <div class='like-count'></div>
-                             </div>
- 
-                             <div class='description'>
-                                 <div class='user'>
-                                     <div class='username'><p>$username</p></div>
-                                     <div class='caption'><p>$text</p></div>
-                                 </div>
-                             </div>
- 
-                             <div class='post-after'>
-                                 
-                                 <div class='comment-img'><img src='../static/pfp.jpg' id='comment-img'></div>
-                                 <div class='comment'><textarea id='text2' rows='1' cols='250' placeholder='add a comment...' class='comment-text'></textarea></div>
-                                 <div class='options'><button type='submit' name='send' class='btn-trans'><i class='fas fa-ellipsis-h' ></i></button></div>
-                                 </form>
-                             </div>
-                         </div>
-                     </section>  
-                     </form>
-                 </div>
-                    ";
-                         
-                     }
- 
-            ?>
+                        <div class="post-after">
+                            <div class="comment-img">
+                            <?php 
+                                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                                $row = mysqli_fetch_array($sql);
+                                $pfp = $row['pfp'];
+                                
+                                echo "<img src='$pfp' alt='nope' id='comment-img'>";
+                            ?>    
+                            </div>
+                            <div class="comment"><textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text"></textarea></div>
+                            <div class="options"><i class="fas fa-ellipsis-h" ></i></div>
+                        </div>
+                    </div>
+                    
+                    </section>  
+        
+                       
+    
+
+                </div>
+                <?php endwhile; ?>
+                <?php endwhile; ?>
+                </div>
+                <!-- end of posts code -->
             <!-- <div class="posts">
                 <section class="card">
                     <div class="header">

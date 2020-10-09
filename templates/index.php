@@ -99,7 +99,7 @@ session_start();
                 ?>
                 <!-- end of whats happening -->
                 <!-- posts code -->
-
+                <div class="post-wrapper" style="display: flex;flex-direction: column-reverse;">
                 <!-- php while loop -->
                 <?php while ($row = mysqli_fetch_array($result)): ?>
                     <?php $result2 = mysqli_query($db, "SELECT * FROM user WHERE username= '{$row['username']}'"); ?>
@@ -159,6 +159,7 @@ session_start();
                 </div>
                 <?php endwhile; ?>
                 <?php endwhile; ?>
+                </div>
                 <!-- end of posts code -->
             </div>
         </div>
