@@ -143,16 +143,20 @@ body{
   */
   .header .prof-img {
     display: inline-block;
-    background-image: url(../static/pfp.jpg);
-    background-size: cover;
-    height: 30px;
-    width: 30px;
+    /* background-image: url(../static/pfp.jpg);
+    background-size: cover; */
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     position: relative;
     top: 3px;
     margin-right: 5px;
   }
-  
+  .top-img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
   .header .prof-info {
     display: inline-block;
     

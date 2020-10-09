@@ -93,18 +93,23 @@ session_start();
                     }
                 }
                 $result = mysqli_query($db, "SELECT * FROM post");
+
+                
                 
                 ?>
                 <!-- end of whats happening -->
                 <!-- posts code -->
-                <?php while ($row = mysqli_fetch_array($result)): ?>
-                <div class="posts">
-                 <!-- php while loop -->
-                 
 
+                <!-- php while loop -->
+                <?php while ($row = mysqli_fetch_array($result)): ?>
+                    <?php $result2 = mysqli_query($db, "SELECT * FROM user WHERE username= '{$row['username']}'"); ?>
+                    <?php while ($row2 = mysqli_fetch_array($result2)): $pfpurl= $row2['pfp']?>
+                        
+                <div class="posts">
+                 
                     <section class="card">
                     	<div class="header">
-                            <div class="prof-img"><?php  ?>
+                            <div class="prof-img"><?php echo "<img src='$pfpurl' class='top-img'>"; ?>
                              </div>
                              <div class="prof-info">
                                 <div class="username"><?php echo $row['username']; ?></div>
@@ -152,6 +157,7 @@ session_start();
     
 
                 </div>
+                <?php endwhile; ?>
                 <?php endwhile; ?>
                 <!-- end of posts code -->
             </div>
