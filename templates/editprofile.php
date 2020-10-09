@@ -83,10 +83,26 @@ session_start();
             </div>
             <div class="one">
                 <div class="title">
-                    <h3>Email:</h3>
+                    <h3>Bio:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="Email" class="txt">
+                    <input type="text" placeholder="bio" class="txt" name="bio">
+                </div>
+            </div>
+            <div class="one">
+                <div class="title">
+                    <h3>College:</h3>
+                </div>
+                <div class="inputb">
+                    <input type="text" placeholder="College" class="txt" name="college">
+                </div>
+            </div>
+            <div class="one">
+                <div class="title">
+                    <h3>Country:</h3>
+                </div>
+                <div class="inputb">
+                    <input type="text" placeholder="Country" class="txt" name="country">
                 </div>
             </div>
             <div class="one">
@@ -114,7 +130,7 @@ session_start();
                 </div>
             </div>
             <div class="submit-btn">
-                <input type="submit" value="SUBMIT">
+                <input type="submit" value="SUBMIT" name="submit">
             </div>
         </div>
         </form>
@@ -122,3 +138,14 @@ session_start();
     
 </body>
 </html>
+
+<?php 
+        if (isset($_POST['submit'])) {
+            $college = $_POST['college'];
+            $country = $_POST['country'];
+            $bio= $_POST['bio'];
+            $insert = "UPDATE user SET college= '$college' , country='$country', bio='$bio' WHERE username= '{$_SESSION['username']}' ";
+            $query = mysqli_query($db, $insert);
+        }
+
+?>

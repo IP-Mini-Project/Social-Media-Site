@@ -66,7 +66,10 @@ if($user) {
 if (count($errors) == 0) {
 	$password = md5($password_1);
 	$profilePic = "../profile-pics/pfp.png";
-	$query = "INSERT INTO user (username,name,email,phone,gender,password,pfp) VALUES ('$username','$name','$email','$phone','$gender','$password','$profilePic')";
+	$college= "Your college";
+	$country = "Country";
+	$bio= "~bio..";
+	$query = "INSERT INTO user (username,name,email,phone,gender,password,pfp,college,country,bio) VALUES ('$username','$name','$email','$phone','$gender','$password','$profilePic','$college','$country','$bio')";
 
 	mysqli_query($db,$query);
 	$_SESSION['username'] = $username;

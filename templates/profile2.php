@@ -46,9 +46,34 @@ session_start();
                 <!-- <img src="../static/zendaya.jpg" alt=""> -->
             </div>
             <?php echo "<h3>{$_SESSION['username']}</h3><br>"; ?>
-            <p class="quote2">~Some random quote..</p><br>
-            <p><i class="fas fa-university"></i>University of Texas</p>
-            <p><i class="fas fa-map-marker-alt"></i> US</p>
+            <p class="quote2">
+            <?php 
+                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                $row = mysqli_fetch_array($sql);
+                $bio = $row['bio'];
+                
+                echo "$bio";
+                ?>
+            </p><br>
+            <p><i class="fas fa-university"></i>
+            <?php 
+                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                $row = mysqli_fetch_array($sql);
+                $college = $row['college'];
+                
+                echo "$college";
+                ?>
+            </p>
+            <p><i class="fas fa-map-marker-alt"></i> 
+            <?php 
+                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                $row = mysqli_fetch_array($sql);
+                $country = $row['country'];
+                
+                echo "$country";
+                ?>
+            </p>
+            </p>
             <h4>Hobbies</h4>
             <p class="hobb2">-Acting</p>
             <p class="hobb2">-Acting</p>
