@@ -132,7 +132,15 @@ session_start();
                         </div>
 
                         <div class="post-after">
-                            <div class="comment-img"><img src="../static/pfp.jpg" id="comment-img"></div>
+                            <div class="comment-img">
+                            <?php 
+                                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                                $row = mysqli_fetch_array($sql);
+                                $pfp = $row['pfp'];
+                                
+                                echo "<img src='$pfp' alt='nope' id='comment-img'>";
+                            ?>    
+                            </div>
                             <div class="comment"><textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text"></textarea></div>
                             <div class="options"><i class="fas fa-ellipsis-h" ></i></div>
                         </div>
