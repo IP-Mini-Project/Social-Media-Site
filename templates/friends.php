@@ -1,3 +1,11 @@
+<?php
+include("connection.php");
+
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,39 +37,24 @@
     </script>
     <!-- End of Nav2 -->
     <!-- container -->
+    
+    
     <div class="container">
+        <?php 
+            $q1= "SELECT * FROM user";
+            $r1= mysqli_query($db, $q1);
+            while ($row = mysqli_fetch_array($r1)): $pfpurl= $row['pfp']; $name= $row['username'];
+        ?>
         <div class="friends-wrap">
             <div class="img-div">
-                <img src="../static/zendaya.jpg" alt="">
+                <?php echo "<img src='$pfpurl' alt='error'>"; ?>
             </div>
             <div class="name-div">
-                <h2>Zendaya</h2>
+                <?php echo "<h2>$name</h2>"; ?>
             </div>
         </div>
-        <div class="friends-wrap">
-            <div class="img-div">
-                <img src="../static/zendaya.jpg" alt="">
-            </div>
-            <div class="name-div">
-                <h2>Zendaya</h2>
-            </div>
-        </div>
-        <div class="friends-wrap">
-            <div class="img-div">
-                <img src="../static/zendaya.jpg" alt="">
-            </div>
-            <div class="name-div">
-                <h2>Zendaya</h2>
-            </div>
-        </div>
-        <div class="friends-wrap">
-            <div class="img-div">
-                <img src="../static/zendaya.jpg" alt="">
-            </div>
-            <div class="name-div">
-                <h2>Zendaya</h2>
-            </div>
-        </div>
+        <?php endwhile; ?>
     </div>
+    
 </body>
 </html>
