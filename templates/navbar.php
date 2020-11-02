@@ -37,14 +37,16 @@ session_start();
         </div>
 
         <div class="acc">
-            <form action="navbar.php">
-
+            <form action="searchprof.php" method="POST">
                 <div class="search-box">
-                    <input class="search-txt" type="text" name="" placeholder="">
-                    <button class="btn-final" type="submit"><i class="fas fa-search"></i></button>
+                    <input class="search-txt" type="text" placeholder="" id="search" name="search" autocomplete="off">
+                    <button class="btn-final" type="submit" name="submit"><i class="fas fa-search"></i></button>
                 </div>
-
-
+                <div class="list-grp" id="show-list">
+                    
+                    
+                </div>
+            </form>
                 <div class="dropdown">
                     <button class="corner-img">
                         <?php 
@@ -53,18 +55,44 @@ session_start();
                         $pfp = $row['pfp'];
                         
                         echo "<img class='pfp' src='$pfp' alt='nope'>";
-                    ?>
-                </button>
+                        ?>
+                    </button>
                     <!-- <img class="pfp" src="../static/pfp.jpg" alt=""> -->
                     <div class="div">
                         <a href="profile2.php"><i class="fas fa-user"></i> Profile</a>
                         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </div>
-            </form>
+            
         </div>
 
 
     </div>
-    
+   <script>
+       $(document).ready(function () {
+  // Send Search Text to the server
+  $("#search").keyup(function () {
+    let searchText = $(this).val();
+    if (searchText != "") {
+      $.ajax({
+        url: "action.php",
+        method: "post",
+        data: {
+          query: searchText,
+        },
+        success: function (response) {
+          $("#show-list").html(response);
+        },
+      });
+    } else {
+      $("#show-list").html("");
+    }
+  });
+  // Set searched text in input field on click of search button
+  $(document).on("click", "a", function () {
+    $("#search").val($(this).text());
+    $("#show-list").html("");
+  });
+});
+   </script> 
 </body>
