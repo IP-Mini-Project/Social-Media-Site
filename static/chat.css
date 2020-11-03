@@ -227,3 +227,7 @@ button img{
         width: 70%;
     }
 }
+.bottom-section form{
+    display: flex;
+    flex-direction: row;
+}

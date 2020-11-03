@@ -37,7 +37,7 @@ session_start();
         </div>
 
         <div class="acc">
-            <form action="searchprof.php" method="POST">
+            <form action="searchprof.php" method="POST" class="navform">
                 <div class="search-box">
                     <input class="search-txt" type="text" placeholder="" id="search" name="search" autocomplete="off">
                     <button class="btn-final" type="submit" name="submit"><i class="fas fa-search"></i></button>
