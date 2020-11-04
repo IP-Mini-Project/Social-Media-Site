@@ -82,12 +82,14 @@ session_start();
                     // image file directory
                     $target = "../post-images/" . basename($image);
 
-                    $sql = "INSERT INTO post (image, text, likes, username) VALUES ('$image', '$image_text','0', '{$_SESSION['username']}')";
+                    $sql = "INSERT INTO post ( username, image, text, likes) VALUES ('{$_SESSION['username']}', '$image', '$image_text','0')";
                     // execute query
                     mysqli_query($db, $sql);
 
                     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
                         $msg = "Image uploaded successfully";
+                        $update = "UPDATE user set post_count=post_count + 1 WHERE username='{$_SESSION['username']}'";
+                        mysqli_query($db, $update);
                     } else {
                         $msg = "Failed to upload image";
                     }
@@ -108,7 +110,7 @@ session_start();
                 <div class="posts">
                  
                     <section class="card">
-                    	<div class="header">
+                        <div class="header">
                             <div class="prof-img"><?php echo "<img src='$pfpurl' class='top-img'>"; ?>
                              </div>
                              <div class="prof-info">
@@ -124,18 +126,22 @@ session_start();
                         <div class="likes">
                             
                             <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
-      <button class="like-btn" name =" type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
+      <button class="like-btn" name ="type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
      </a>
                             </div>
                         </div>
 
                         <div class="description">
                             <div class="user">
-                            	<div class="username"><p><?php echo $row['username']; ?></p></div>
-                            	<div class="caption"><p><?php echo  $row['text']; ?></p></div>
+                                <div class="username"><p><?php echo $row['username']; ?></p></div>
+                                <div class="caption"><p><?php echo  $row['text']; ?></p></div>
                             </div>
                         </div>
-
+                        
+                        <div class="comments">
+                            <div class="auth_prof"></div>
+                            <div class="commentt"><p></p></div>
+                        </div>
                         <div class="post-after">
                             <div class="comment-img">
                             <?php 
@@ -147,6 +153,7 @@ session_start();
                             ?>    
                             </div>
                             <div class="comment"><textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text"></textarea></div>
+                            <div class="add-comment"><button class="post-comment">comment</button></div>
                             <div class="options"><i class="fas fa-ellipsis-h" ></i></div>
                         </div>
                     </div>
@@ -169,7 +176,7 @@ session_start();
 <script>
   function like_update(id){
    jQuery.ajax({
-    url:'notif.php',
+    url:'like.php',
     type:'post',
     data:'type=like&id='+id,
     success:function(result){
