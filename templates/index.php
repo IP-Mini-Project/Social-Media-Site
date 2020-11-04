@@ -186,6 +186,10 @@ session_start();
    
     }
    });
+   $(document).on("click", "a", function () {
+    $("#search").val("");
+    
+  });
   } 
   </script>
 
