@@ -1,5 +1,5 @@
 <?php 
-	include ('connection.php'); 
+	include ('server.php'); 
 	$get_id = $_GET['post_id'];
 	$get_comment = "select * from comments where post_id = '$get_id' ORDER by 1 DESC";
 
