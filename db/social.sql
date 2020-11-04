@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2020 at 08:33 AM
+-- Generation Time: Nov 04, 2020 at 12:42 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -73,7 +73,9 @@ INSERT INTO `genchat` (`id`, `msg`, `username`, `time`) VALUES
 (35, 'whos this', 'bun', '2020-09-23 11:13:06'),
 (36, 'im sam', 'sam', '2020-09-23 11:19:21'),
 (37, 'no', 'sam', '2020-09-23 15:20:11'),
-(38, 'hi', 'sun', '2020-09-26 07:00:17');
+(38, 'hi', 'sun', '2020-09-26 07:00:17'),
+(39, 'hola', 'jack', '2020-10-09 07:25:45'),
+(42, 'ssup', 'sun', '2020-11-03 07:18:23');
 
 -- --------------------------------------------------------
 
@@ -97,8 +99,9 @@ CREATE TABLE `post` (
 INSERT INTO `post` (`id`, `image`, `text`, `time`, `likes`, `username`) VALUES
 (3, 'alexander-popov-3InMDrsuYrk-unsplash.jpg', 'ssup', '2020-10-05 21:11:54', 6, 'sam'),
 (4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 0, 'sam'),
-(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 0, 'bun'),
-(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 0, 'sun');
+(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 2, 'bun'),
+(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 0, 'sun'),
+(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 0, 'jack');
 
 -- --------------------------------------------------------
 
@@ -122,7 +125,8 @@ INSERT INTO `sportschat` (`id`, `username`, `message`, `time`) VALUES
 (2, 'bun', 'hi?', '2020-09-23 20:58:27'),
 (3, 'bun', 'hi?', '2020-09-23 20:58:54'),
 (4, 'sam', 'hello', '2020-09-23 21:15:40'),
-(5, 'sun', 'sun here', '2020-09-26 12:47:34');
+(5, 'sun', 'sun here', '2020-09-26 12:47:34'),
+(6, 'zendaya', 'oh hi\r\n', '2020-10-09 12:12:32');
 
 -- --------------------------------------------------------
 
@@ -142,7 +146,8 @@ CREATE TABLE `sportsclub` (
 INSERT INTO `sportsclub` (`id`, `username`) VALUES
 (2, 'bun'),
 (3, 'sam'),
-(5, 'sun');
+(5, 'sun'),
+(6, 'zendaya');
 
 -- --------------------------------------------------------
 
@@ -158,19 +163,23 @@ CREATE TABLE `user` (
   `phone` int(10) NOT NULL,
   `gender` char(2) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `pfp` varchar(200) NOT NULL
+  `pfp` varchar(200) NOT NULL,
+  `college` varchar(400) NOT NULL,
+  `country` varchar(200) NOT NULL,
+  `bio` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `name`, `email`, `phone`, `gender`, `password`, `pfp`) VALUES
-(1, 'ashwati', 'Ashwati Rao', 'ashwatisrao@gmail.com', 2147483647, 'f', '2852f697a9f8581725c6fc6a5472a2e5', '../profile-pics/pfp.png'),
-(2, 'sam', 'sam', 'sam@gmail.com', 1234567890, 'f', '332532dcfaa1cbf61e2a266bd723612c', '../profile-pics/jonathan-petersson-W8V3G-Nk8FE-unsplash.jpg'),
-(3, 'bun', 'bun', 'bun@gmail.com', 2147483647, 'm', '93aced76e8e70b113e0162fbe96788a6', '../profile-pics/hm.jpg'),
-(4, 'sun', 'sun', 'sun@email.com', 1234666666, 'm', 'ebd556e6dfc99dbed29675ce1c6c68e5', '../profile-pics/sun.jpg'),
-(5, 'jack', 'jack', 'jack@email.com', 1234554321, 'm', '4ff9fc6e4e5d5f590c4f2134a8cc96d1', '../profile-pics/6195a912213e5d50c3916711470290da.jpg');
+INSERT INTO `user` (`id`, `username`, `name`, `email`, `phone`, `gender`, `password`, `pfp`, `college`, `country`, `bio`) VALUES
+(2, 'sam', 'sam', 'sam@gmail.com', 1234567890, 'f', '332532dcfaa1cbf61e2a266bd723612c', '../profile-pics/1Ye0m.png', '', '', ''),
+(3, 'bun', 'bun', 'bun@gmail.com', 2147483647, 'm', '93aced76e8e70b113e0162fbe96788a6', '../profile-pics/hm.jpg', 'MIT', 'USA', ''),
+(4, 'sun', 'sun', 'sun@email.com', 1234666666, 'm', 'ebd556e6dfc99dbed29675ce1c6c68e5', '../profile-pics/sun.jpg', 'MIT', 'USA', 'hello'),
+(5, 'jack', 'jack', 'jack@email.com', 1234554321, 'm', '4ff9fc6e4e5d5f590c4f2134a8cc96d1', '../profile-pics/tom.jpg', '', '', ''),
+(6, 'zendaya', 'zendaya', 'zend@gmail.com', 1222222222, 'f', '776437f0b6bdb2202e982dde46320662', '../profile-pics/pfp.png', '', '', ''),
+(7, 'jay', 'jay', 'jay@gmail.com', 1234567888, 'm', 'baba327d241746ee0829e7e88117d4d5', '../profile-pics/pfp.png', 'MIT', 'USA', 'hello');
 
 --
 -- Indexes for dumped tables
@@ -215,31 +224,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `genchat`
 --
 ALTER TABLE `genchat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sportschat`
 --
 ALTER TABLE `sportschat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `sportsclub`
 --
 ALTER TABLE `sportsclub`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
