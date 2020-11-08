@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/profile.css">
+    <link rel="stylesheet" href="../static/profile3.css">
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
     <!-- fonts -->
@@ -78,14 +78,14 @@ if (isset($_POST['submit'])) {
 
         </div>
         <div class="right">
-            <div class="top-section">
+            <!-- <div class="top-section">
                 <div class="post-btn">
                     <a href="">POSTS</a>
                 </div>
                 <div class="edit-btn">
                 <a href="editprofile.php">EDIT PROFILE</a> 
                 </div>
-            </div>
+            </div> -->
 
             <?php 
                 $result = mysqli_query($db, "SELECT * FROM post WHERE username='$username' ");
