@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
+include("comments.php");
 
-session_start();
 
 
 ?>
@@ -118,6 +118,7 @@ session_start();
                                 <div class="location">Mumbai</div>
                             </div>
                             <div class="time"><?php echo $row['time']; ?></div>
+                                <?php echo $row['id'] ?>
                         </div>
                         <div class="post-img">
                             <?php echo "<img src='../post-images/" . $row['image'] . "' class='img'>"; ?>
@@ -146,14 +147,20 @@ session_start();
                             <div class="comment-img">
                             <?php 
                                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
-                                $row = mysqli_fetch_array($sql);
-                                $pfp = $row['pfp'];
+                                $row2 = mysqli_fetch_array($sql);
+                                $pfp = $row2['pfp'];
                                 
                                 echo "<img src='$pfp' alt='nope' id='comment-img'>";
                             ?>    
                             </div>
-                            <div class="comment"><textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text"></textarea></div>
-                            <div class="add-comment"><button class="post-comment">comment</button></div>
+                            <div class="comment">
+                                <form action="index.php" method="post">
+                    <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <div class="add-comment">
+                                <button type="submit" class="post-comment" name="post-comment">comment</button></div>
+                        </form>
+                    </div>
                             <div class="options"><i class="fas fa-ellipsis-h" ></i></div>
                         </div>
                     </div>
@@ -171,6 +178,7 @@ session_start();
             </div>
         </div>
     </section>
+
 <script src="../js/index.js"></script>
 </body>
 <script>
