@@ -11,7 +11,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friends</title>
+    <title>Users</title>
     <link rel="stylesheet" href="../static/friends.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
@@ -50,7 +50,7 @@ session_start();
                 <?php echo "<img src='$pfpurl' alt='error'>"; ?>
             </div>
             <div class="name-div">
-                <?php echo "<h2>$name</h2>"; ?>
+                <?php echo "<a class='fren' href='details2.php?name={$row['username']}'><h2>$name</h2></a>"; ?>
             </div>
         </div>
         <?php endwhile; ?>

@@ -30,6 +30,14 @@ h2{
     text-align: center;
     margin: 5px 0;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+.fren:hover{
+    font-size: 1.15em;
+    transition: .1s ease-in;
+}
 @media only screen and (max-width: 1117px){
 	.container{
 		padding: 3% 10% ;
