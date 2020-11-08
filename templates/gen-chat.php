@@ -43,7 +43,7 @@ session_start();
                 <!-- <div class="club name">
                     <h4><i class="fas fa-cannabis"></i> Sports Club</h4>
                 </div> -->
-                <div class="name">
+                <!-- <div class="name">
                     <h4><i class="fas fa-at"></i> Zendaya</h4>
                 </div>
                 <div class="name">
@@ -69,7 +69,7 @@ session_start();
                 </div>
                 <div class="name">
                     <h4><i class="fas fa-at"></i> Zendaya</h4>
-                </div>
+                </div> -->
             </div>
 
 
