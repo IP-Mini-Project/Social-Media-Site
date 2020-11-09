@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2020 at 04:10 PM
+-- Generation Time: Nov 09, 2020 at 07:17 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -167,6 +167,13 @@ CREATE TABLE `roommate` (
   `relationship` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `roommate`
+--
+
+INSERT INTO `roommate` (`username`, `accomodate`, `gender`, `roomate`, `alarm`, `bedtime`, `tidiness`, `noise`, `guests`, `weekends`, `relationship`) VALUES
+('sun', 'On-campus', 'male', 'male', 'Before 8am', 'Before 10pm', 'Tidy AF', 'Nothing', 'The more the merrier!', 'Watch Netflix', 'Respectful but separate');
+
 -- --------------------------------------------------------
 
 --
@@ -231,6 +238,9 @@ CREATE TABLE `user` (
   `college` varchar(400) NOT NULL,
   `country` varchar(200) NOT NULL,
   `bio` varchar(200) NOT NULL,
+  `hob1` varchar(200) NOT NULL,
+  `hob2` varchar(200) NOT NULL,
+  `hob3` varchar(200) NOT NULL,
   `post_count` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -238,13 +248,13 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `name`, `email`, `phone`, `gender`, `password`, `pfp`, `college`, `country`, `bio`, `post_count`) VALUES
-(2, 'sam', 'sam', 'sam@gmail.com', 1234567890, 'f', '332532dcfaa1cbf61e2a266bd723612c', '../profile-pics/1Ye0m.png', '', '', '', 0),
-(3, 'bun', 'bun', 'bun@gmail.com', 2147483647, 'm', '93aced76e8e70b113e0162fbe96788a6', '../profile-pics/hm.jpg', 'MIT', 'USA', '', 0),
-(4, 'sun', 'sun', 'sun@email.com', 1234666666, 'm', 'ebd556e6dfc99dbed29675ce1c6c68e5', '../profile-pics/sun.jpg', 'MIT', 'USA', 'hello', 1),
-(5, 'jack', 'jack', 'jack@email.com', 1234554321, 'm', '4ff9fc6e4e5d5f590c4f2134a8cc96d1', '../profile-pics/tom.jpg', '', '', '', 0),
-(6, 'zendaya', 'zendaya', 'zend@gmail.com', 1222222222, 'f', '776437f0b6bdb2202e982dde46320662', '../profile-pics/pfp.png', '', '', '', 0),
-(7, 'jay', 'jay', 'jay@gmail.com', 1234567888, 'm', 'baba327d241746ee0829e7e88117d4d5', '../profile-pics/pfp.png', 'MIT', 'USA', 'hello', 0);
+INSERT INTO `user` (`id`, `username`, `name`, `email`, `phone`, `gender`, `password`, `pfp`, `college`, `country`, `bio`, `hob1`, `hob2`, `hob3`, `post_count`) VALUES
+(2, 'sam', 'sam', 'sam@gmail.com', 1234567890, 'f', '332532dcfaa1cbf61e2a266bd723612c', '../profile-pics/1Ye0m.png', '', '', '', '', '', '', 0),
+(3, 'bun', 'bun', 'bun@gmail.com', 2147483647, 'm', '93aced76e8e70b113e0162fbe96788a6', '../profile-pics/hm.jpg', 'MIT', 'USA', '', '', '', '', 0),
+(4, 'sun', 'sun', 'sun@email.com', 1234666666, 'm', 'ebd556e6dfc99dbed29675ce1c6c68e5', '../profile-pics/sun.jpg', 'MIT', 'USA', 'hello', '', '', '', 1),
+(5, 'jack', 'jack', 'jack@email.com', 1234554321, 'm', '4ff9fc6e4e5d5f590c4f2134a8cc96d1', '../profile-pics/tom.jpg', '', '', '', '', '', '', 0),
+(6, 'zendaya', 'zendaya', 'zend@gmail.com', 1222222222, 'f', '8f3a01e2e3b200aaf980d8ea6abd2ae6', '../profile-pics/pfp.png', 'HT', 'US', 'hello', 'Acting', 'Dancing', 'Singing', 0),
+(7, 'jay', 'jay', 'jay@gmail.com', 1234567888, 'm', 'baba327d241746ee0829e7e88117d4d5', '../profile-pics/pfp.png', 'MIT', 'USA', 'hello', '', '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -308,7 +318,7 @@ ALTER TABLE `comm`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `genchat`
