@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2020 at 03:09 PM
+-- Generation Time: Nov 09, 2020 at 04:10 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -24,17 +24,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comm`
+--
+
+CREATE TABLE `comm` (
+  `id` int(11) NOT NULL,
+  `comment` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comm`
+--
+
+INSERT INTO `comm` (`id`, `comment`) VALUES
+(1, 'n m,n'),
+(2, 'blah blah bah'),
+(3, 'vhvhgvhg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
   `comment_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `comment` varchar(255) NOT NULL,
   `comment_author` varchar(255) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `post_id`, `username`, `comment`, `comment_author`, `date`) VALUES
+(1, 10, '', 'JSJFJXN', 'sun', '2020-11-08 16:52:02'),
+(3, 11, '', 'JDNJVNDVJCN', 'sun', '2020-11-08 16:53:09');
 
 -- --------------------------------------------------------
 
@@ -114,11 +142,30 @@ CREATE TABLE `post` (
 INSERT INTO `post` (`id`, `image`, `text`, `time`, `likes`, `username`) VALUES
 (3, 'alexander-popov-3InMDrsuYrk-unsplash.jpg', 'ssup', '2020-10-05 21:11:54', 6, 'sam'),
 (4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 0, 'sam'),
-(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 2, 'bun'),
-(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 16, 'sun'),
-(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 5, 'jack'),
-(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 0, 'sun'),
-(12, '', 'hello', '2020-11-04 18:51:29', 0, 'sun');
+(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 7, 'bun'),
+(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 30, 'sun'),
+(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 17, 'jack'),
+(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 6, 'sun');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roommate`
+--
+
+CREATE TABLE `roommate` (
+  `username` varchar(255) NOT NULL,
+  `accomodate` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `roomate` varchar(255) NOT NULL,
+  `alarm` varchar(255) NOT NULL,
+  `bedtime` varchar(255) NOT NULL,
+  `tidiness` varchar(255) NOT NULL,
+  `noise` varchar(255) NOT NULL,
+  `guests` varchar(255) NOT NULL,
+  `weekends` varchar(255) NOT NULL,
+  `relationship` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -204,10 +251,17 @@ INSERT INTO `user` (`id`, `username`, `name`, `email`, `phone`, `gender`, `passw
 --
 
 --
+-- Indexes for table `comm`
+--
+ALTER TABLE `comm`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`comment_id`);
+  ADD PRIMARY KEY (`comment_id`),
+  ADD UNIQUE KEY `post_id` (`post_id`);
 
 --
 -- Indexes for table `genchat`
@@ -245,10 +299,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `comm`
+--
+ALTER TABLE `comm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `genchat`
@@ -260,7 +320,7 @@ ALTER TABLE `genchat`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `sportschat`
@@ -279,6 +339,16 @@ ALTER TABLE `sportsclub`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
