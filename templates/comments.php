@@ -1,4 +1,5 @@
 <?php 
+	include ('connection.php');
 	include ('server.php');
 
 
@@ -12,10 +13,10 @@
         $comment = mysqli_escape_string($db, $_POST['comment']);
         $comment_auth = $_SESSION['username'];
 
-        $get_username = "SELECT username FROM post WHERE id='$post_id'";
-        $username = mysqli_fetch_assoc($db, $get_username);
+        // $get_username = "SELECT username FROM post WHERE id='$post_id'";
+        // $username = mysqli_fetch_assoc($db, $get_username);
 
-        $query = "INSERT INTO comments (post_id,username,comment,comment_author) VALUES ('$post_id','$username','$comment','$comment_auth')";
+        $query = "INSERT INTO comments (post_id,comment,comment_author) VALUES ('$post_id','$comment','$comment_auth')";
          mysqli_query($db, $query);
 
 }
