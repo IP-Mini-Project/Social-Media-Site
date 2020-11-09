@@ -13,7 +13,9 @@ session_start();
     $bio = $row['bio'];
     $college = $row['college'];
     $country = $row['country'];
-    
+    $hob1= $row['hob1'];
+    $hob2= $row['hob2'];
+    $hob3= $row['hob3'];
     
  
 
@@ -72,9 +74,9 @@ session_start();
             </p>
             </p>
             <h4>Hobbies</h4>
-            <p class="hobb2">-Acting</p>
-            <p class="hobb2">-Acting</p>
-            <p class="hobb2">-Acting</p>
+            <p class="hobb2">-<?php echo "$hob1"; ?></p>
+            <p class="hobb2">-<?php echo "$hob2"; ?></p>
+            <p class="hobb2">-<?php echo "$hob3"; ?></p>
 
         </div>
         <div class="right">
