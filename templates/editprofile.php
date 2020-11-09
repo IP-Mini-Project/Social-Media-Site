@@ -73,20 +73,13 @@ session_start();
                 
             </div>
             
-            <div class="one">
-                <div class="title">
-                    <h3>Name:</h3>
-                </div>
-                <div class="inputb">
-                    <input type="text" placeholder="Name" class="txt">
-                </div>
-            </div>
+            
             <div class="one">
                 <div class="title">
                     <h3>Bio:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="bio" class="txt" name="bio">
+                    <input type="text" placeholder="bio" class="txt bio" name="bio">
                 </div>
             </div>
             <div class="one">
@@ -107,26 +100,35 @@ session_start();
             </div>
             <div class="one">
                 <div class="title">
-                    <h3>Phone:</h3>
+                    <h3>Hobbie 1:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="123" class="txt">
+                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob1">
                 </div>
             </div>
             <div class="one">
                 <div class="title">
-                    <h3>Username:</h3>
+                    <h3>Hobbie 2:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="Userame" class="un">
+                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob2">
                 </div>
             </div>
+            <div class="one">
+                <div class="title">
+                    <h3>Hobbie 3:</h3>
+                </div>
+                <div class="inputb">
+                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob3">
+                </div>
+            </div>
+            
             <div class="one">
                 <div class="title">
                     <h3>Password:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="password" placeholder="pw">
+                    <input type="password" placeholder="pw" name="pw">
                 </div>
             </div>
             <div class="submit-btn">
@@ -144,7 +146,12 @@ session_start();
             $college = $_POST['college'];
             $country = $_POST['country'];
             $bio= $_POST['bio'];
-            $insert = "UPDATE user SET college= '$college' , country='$country', bio='$bio' WHERE username= '{$_SESSION['username']}' ";
+            $pw = $_POST['pw'];
+            $pw= md5($pw);
+            $hob1 = $_POST['hob1'];
+            $hob2 = $_POST['hob2'];
+            $hob3 = $_POST['hob3'];
+            $insert = "UPDATE user SET college= '$college' , country='$country', bio='$bio', password='$pw', hob1='$hob1', hob2='$hob2', hob3='$hob3' WHERE username= '{$_SESSION['username']}' ";
             $query = mysqli_query($db, $insert);
         }
 

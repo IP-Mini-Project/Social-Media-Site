@@ -75,9 +75,34 @@ session_start();
             </p>
             </p>
             <h4>Hobbies</h4>
-            <p class="hobb2">-Acting</p>
-            <p class="hobb2">-Acting</p>
-            <p class="hobb2">-Acting</p>
+            <p class="hobb2">-
+            <?php 
+                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                $row = mysqli_fetch_array($sql);
+                $hob1 = $row['hob1'];
+                
+                echo "$hob1";
+                ?>
+            </p>
+            <p class="hobb2">-
+            <?php 
+                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                $row = mysqli_fetch_array($sql);
+                $hob2 = $row['hob2'];
+                
+                echo "$hob2";
+                ?>
+            </p>
+            <p class="hobb2">-
+            <?php 
+                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                $row = mysqli_fetch_array($sql);
+                $hob3 = $row['hob3'];
+                
+                echo "$hob3";
+                ?>
+            </p>
+            </p>
 
         </div>
         <div class="right">

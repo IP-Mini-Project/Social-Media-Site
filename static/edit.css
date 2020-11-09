@@ -46,9 +46,13 @@ input[type='password'] , .un{
     width: 300px;
     margin-right: 7px;
     box-sizing: content-box;
+    margin-left: 20px;
 }
 .submit-btn{
     display: flex;
     justify-content: center;
     margin: 20px 0;
+}
+.bio{
+    margin-left: 25px;
 }
