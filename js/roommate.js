@@ -83,42 +83,42 @@ const questions = [
   {
     question: 'Where are you planning to live?',
     answers: [
-      { text: 'On-campus'},
-      { text: 'Off-campus' }
+      { text: 'On-campus' ,value: 'On' },
+      { text: 'Off-campus' , value: 'Off'}
     ]
   },
 
   {
     question: 'Which gender do you identify with the most?',
     answers: [
-      { text: 'Female'},
-      { text: 'Male'},
-      { text: 'Non-binary'}
+      { text: 'Female' ,value: 'F'},
+      { text: 'Male' ,value: 'M'},
+      { text: 'Non-binary' ,value: 'B'}
     ]
   },
   {
     question: 'Who do you want to share the room with?',
     answers: [
-      { text: 'Male'},
-      { text: 'Female'},
-      { text: 'Non-binary'}
+      { text: 'Male',value: 'F'},
+      { text: 'Female',value: 'M'},
+      { text: 'Non-binary',value: 'B'}
       ]
   },
   {
     question: 'When does your weekday alarm go off?',
     answers: [
-      { text: 'Before 8am'},
-      { text: 'Around 10am'},
-      { text: 'After 12pm '}
+      { text: 'Before 8am', ,value: '8'},
+      { text: 'Around 10am',value: '10'},
+      { text: 'After 12pm ',value: '12'}
     ]
   },
 
   {
     question: 'When do you typically head to bed?',
     answers: [
-      { text: 'Before 10pm'},
-      { text: 'Around midnight'},
-      { text: 'After 2am '}
+      { text: 'Before 10pm' value: '8'},
+      { text: 'Around midnight' value: '8'},
+      { text: 'After 2am 'value: '8'}
     ]
   },
   {
