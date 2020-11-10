@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2020 at 07:17 PM
+-- Generation Time: Nov 10, 2020 at 03:17 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -20,26 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `social`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `comm`
---
-
-CREATE TABLE `comm` (
-  `id` int(11) NOT NULL,
-  `comment` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `comm`
---
-
-INSERT INTO `comm` (`id`, `comment`) VALUES
-(1, 'n m,n'),
-(2, 'blah blah bah'),
-(3, 'vhvhgvhg');
 
 -- --------------------------------------------------------
 
@@ -118,7 +98,27 @@ INSERT INTO `genchat` (`id`, `msg`, `username`, `time`) VALUES
 (37, 'no', 'sam', '2020-09-23 15:20:11'),
 (38, 'hi', 'sun', '2020-09-26 07:00:17'),
 (39, 'hola', 'jack', '2020-10-09 07:25:45'),
-(42, 'ssup', 'sun', '2020-11-03 07:18:23');
+(42, 'ssup', 'sun', '2020-11-03 07:18:23'),
+(43, 'gg', 'sun', '2020-11-10 09:20:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `likes`
+--
+
+CREATE TABLE `likes` (
+  `post_id` int(12) NOT NULL,
+  `username` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`post_id`, `username`) VALUES
+(4, 'sun'),
+(5, 'sun');
 
 -- --------------------------------------------------------
 
@@ -140,12 +140,12 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `image`, `text`, `time`, `likes`, `username`) VALUES
-(3, 'alexander-popov-3InMDrsuYrk-unsplash.jpg', 'ssup', '2020-10-05 21:11:54', 6, 'sam'),
-(4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 0, 'sam'),
-(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 7, 'bun'),
-(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 30, 'sun'),
-(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 17, 'jack'),
-(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 6, 'sun');
+(3, 'alexander-popov-3InMDrsuYrk-unsplash.jpg', 'ssup', '2020-10-05 21:11:54', 28, 'sam'),
+(4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 30, 'sam'),
+(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 48, 'bun'),
+(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 52, 'sun'),
+(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 25, 'jack'),
+(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 18, 'sun');
 
 -- --------------------------------------------------------
 
@@ -164,15 +164,39 @@ CREATE TABLE `roommate` (
   `noise` varchar(255) NOT NULL,
   `guests` varchar(255) NOT NULL,
   `weekends` varchar(255) NOT NULL,
-  `relationship` varchar(255) NOT NULL
+  `relationship` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `roommate`
 --
 
-INSERT INTO `roommate` (`username`, `accomodate`, `gender`, `roomate`, `alarm`, `bedtime`, `tidiness`, `noise`, `guests`, `weekends`, `relationship`) VALUES
-('sun', 'On-campus', 'male', 'male', 'Before 8am', 'Before 10pm', 'Tidy AF', 'Nothing', 'The more the merrier!', 'Watch Netflix', 'Respectful but separate');
+INSERT INTO `roommate` (`username`, `accomodate`, `gender`, `roomate`, `alarm`, `bedtime`, `tidiness`, `noise`, `guests`, `weekends`, `relationship`, `status`) VALUES
+('sun', 'On-campus', 'male', 'female', 'Before 8am', 'Around midnight', 'I put most things away', 'Nothing', 'Usually fine; but inform first', 'Watch Netflix', 'I\'d like us to be friends', 1),
+('sun', 'On-campus', 'male', 'female', 'Before 8am', 'Around midnight', 'I put most things away', 'Nothing', 'Usually fine; but inform first', 'Watch Netflix', 'I\'d like us to be friends', 1),
+('sun', 'On-campus', 'male', 'female', 'Before 8am', 'Around midnight', 'I put most things away', 'Nothing', 'Usually fine; but inform first', 'Watch Netflix', 'I\'d like us to be friends', 1),
+('sun', '', '', '', 'Before 8am', 'Before 10pm', 'Tidy AF', 'Anything', 'Usually fine; but inform first', 'Watch Netflix', 'Best Friends Forever!', 1),
+('sun', 'On-campus', 'male', 'female', 'Before 8am', 'After 2am', 'Where\'s the floor?', 'Anything', 'Usually fine; but inform first', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'On-campus', 'male', 'female', 'Before 8am', 'After 2am', 'Where\'s the floor?', 'Anything', 'Usually fine; but inform first', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'On-campus', 'male', 'female', 'Before 8am', 'After 2am', 'Where\'s the floor?', 'Anything', 'Usually fine; but inform first', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'Off-campus', 'male', 'other', 'Around 10am', 'Before 10pm', 'Tidy AF', 'Some things', 'I\'d prefer no guests', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'Off-campus', 'male', 'other', 'Around 10am', 'Before 10pm', 'Tidy AF', 'Some things', 'I\'d prefer no guests', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'Off-campus', 'male', 'other', 'Around 10am', 'Before 10pm', 'Tidy AF', 'Some things', 'I\'d prefer no guests', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'Off-campus', 'male', 'other', 'Around 10am', 'Before 10pm', 'Tidy AF', 'Some things', 'I\'d prefer no guests', 'Go to a lit party', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
+('jack', '', '', '', '', '', 'I put most things away', '', '', '', '', 1),
+('jack', '', '', '', '', '', 'I put most things away', '', '', '', '', 1),
+('jack', 'Off-campus', 'female', 'male', 'Before 8am', 'Before 10pm', 'Where\'s the floor?', 'Some things', 'I\'d prefer no guests', 'Watch Netflix', 'Respectful but separate', 1);
 
 -- --------------------------------------------------------
 
@@ -197,7 +221,9 @@ INSERT INTO `sportschat` (`id`, `username`, `message`, `time`) VALUES
 (3, 'bun', 'hi?', '2020-09-23 20:58:54'),
 (4, 'sam', 'hello', '2020-09-23 21:15:40'),
 (5, 'sun', 'sun here', '2020-09-26 12:47:34'),
-(6, 'zendaya', 'oh hi\r\n', '2020-10-09 12:12:32');
+(6, 'zendaya', 'oh hi\r\n', '2020-10-09 12:12:32'),
+(7, 'sun', 'how r u??', '2020-11-10 14:50:35'),
+(8, 'sun', 'how r u??', '2020-11-10 14:51:09');
 
 -- --------------------------------------------------------
 
@@ -249,22 +275,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `name`, `email`, `phone`, `gender`, `password`, `pfp`, `college`, `country`, `bio`, `hob1`, `hob2`, `hob3`, `post_count`) VALUES
-(2, 'sam', 'sam', 'sam@gmail.com', 1234567890, 'f', '332532dcfaa1cbf61e2a266bd723612c', '../profile-pics/1Ye0m.png', '', '', '', '', '', '', 0),
 (3, 'bun', 'bun', 'bun@gmail.com', 2147483647, 'm', '93aced76e8e70b113e0162fbe96788a6', '../profile-pics/hm.jpg', 'MIT', 'USA', '', '', '', '', 0),
-(4, 'sun', 'sun', 'sun@email.com', 1234666666, 'm', 'ebd556e6dfc99dbed29675ce1c6c68e5', '../profile-pics/sun.jpg', 'MIT', 'USA', 'hello', '', '', '', 1),
 (5, 'jack', 'jack', 'jack@email.com', 1234554321, 'm', '4ff9fc6e4e5d5f590c4f2134a8cc96d1', '../profile-pics/tom.jpg', '', '', '', '', '', '', 0),
-(6, 'zendaya', 'zendaya', 'zend@gmail.com', 1222222222, 'f', '8f3a01e2e3b200aaf980d8ea6abd2ae6', '../profile-pics/pfp.png', 'HT', 'US', 'hello', 'Acting', 'Dancing', 'Singing', 0),
-(7, 'jay', 'jay', 'jay@gmail.com', 1234567888, 'm', 'baba327d241746ee0829e7e88117d4d5', '../profile-pics/pfp.png', 'MIT', 'USA', 'hello', '', '', '', 0);
+(7, 'jay', 'jay', 'jay@gmail.com', 1234567888, 'm', 'baba327d241746ee0829e7e88117d4d5', '../profile-pics/pfp.png', 'MIT', 'USA', 'hello', '', '', '', 0),
+(2, 'sam', 'sam', 'sam@gmail.com', 1234567890, 'f', '332532dcfaa1cbf61e2a266bd723612c', '../profile-pics/1Ye0m.png', '', '', '', '', '', '', 0),
+(4, 'sun', 'sun', 'sun@email.com', 1234666666, 'm', 'ebd556e6dfc99dbed29675ce1c6c68e5', '../profile-pics/sun.jpg', 'MIT', 'USA', 'hello', '', '', '', 1),
+(6, 'zendaya', 'zendaya', 'zend@gmail.com', 1222222222, 'f', '8f3a01e2e3b200aaf980d8ea6abd2ae6', '../profile-pics/pfp.png', 'HT', 'US', 'hello', 'Acting', 'Dancing', 'Singing', 0);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `comm`
---
-ALTER TABLE `comm`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `comments`
@@ -302,29 +322,24 @@ ALTER TABLE `sportsclub`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `comm`
---
-ALTER TABLE `comm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `genchat`
 --
 ALTER TABLE `genchat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `post`
@@ -336,7 +351,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `sportschat`
 --
 ALTER TABLE `sportschat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sportsclub`
