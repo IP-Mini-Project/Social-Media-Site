@@ -186,7 +186,7 @@
          
         </div>
 
-          <input type="submit" name="questions">
+          <input type="submit" name="questions" >
       </div>
   
 
@@ -195,6 +195,17 @@
 if(isset($_POST['questions'])){
 
 
+  $username =$_SESSION['username'];
+
+  $check = mysqli_query($db,"SELECT * FROM roommate WHERE username = $username ");
+  $row2 = mysqli_fetch_array($check);
+  if (mysqli_num_rows($row2)>0) {
+
+    echo "Already Submitted";
+  }
+
+  else {
+    $username =$_SESSION['username'];
 
     $accomodate = mysqli_escape_string($db,$_POST['accomodate']);
 
@@ -216,32 +227,32 @@ if(isset($_POST['questions'])){
 
   $relationship = mysqli_escape_string($db,$_POST['relationship']);
 
-  $username =$_SESSION['username'];
   
-  echo $accomodate;
-  echo $gender ;
-  echo $roomate ;
-  echo $alarm ;
-  echo $bedtime ;
-  echo $tidiness ;
-  echo $noise ;
-  echo $guests ;
-  echo $weekends ;
-  echo $relationship ;
-  echo $username;
-  $query = "INSERT INTO roommate (username,accomodate,gender,roomate,alarm,bedtime,tidiness,noise,guests,weekends,relationship) VALUES ('$username','$accomodate','$gender','$roomate','$alarm','$bedtime','$tidiness','$noise','$guests','$weekends','$relationship')";
+  
+  $query = "INSERT INTO roommate (username,accomodate,gender,roomate,alarm,bedtime,tidiness,noise,guests,weekends,relationship,status) VALUES ('$username','$accomodate','$gender','$roomate','$alarm','$bedtime','$tidiness','$noise','$guests','$weekends','$relationship','1')";
   mysqli_query($db,$query);
 
-
-
-
-} ?>
-
+  // $status = "UPDATE roommate SET status = 1"
 
 
 
 
+}
+}
+ ?>
 
 
+
+
+<div class="display-users">
+  
+  <?php $result = mysqli_query($db, "SELECT * FROM roommate"); ?>
+  <?php while ($row = mysqli_fetch_array($result)): ?>
+  <?php if ($row['status'] == 1): ?>
+   
+    <a href="profile2.php"><?php echo $row['username']; ?></a>
+  <?php endif; ?>
+  <?php endwhile; ?>
+</div>
 </body>
 </html>
