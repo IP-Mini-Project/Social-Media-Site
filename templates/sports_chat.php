@@ -34,13 +34,13 @@ session_start();
         <div class="left">
             <div class="heading">
                 <h3>CHATS</h3>
-                <h3><i class="fas fa-edit"></i></h3>
+                <!-- <h3><i class="fas fa-edit"></i></h3> -->
             </div>
             <div class="sub-head">
-                <div class="group name">
+                <!-- <div class="group name">
                 <a href="gen-chat.php"><h4><i class="fas fa-hashtag"></i> General Chat</h4></a>
-                </div>
-                <div class="club name">
+                </div> -->
+                <div class="club2 name">
                 <a href="sports_chat.php" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Sports Club</h4></a>
                 </div>
                 <!-- <div class="name">
