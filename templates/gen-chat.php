@@ -34,7 +34,7 @@ session_start();
         <div class="left">
             <div class="heading">
                 <h3>CHATS</h3>
-                <h3><i class="fas fa-edit"></i></h3>
+                <!-- <h3><i class="fas fa-edit"></i></h3> -->
             </div>
             <div class="sub-head">
                 <div class="group name">
