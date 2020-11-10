@@ -126,8 +126,9 @@ include("comments.php");
                         <div class="footer">
                         <div class="likes">
                             
-                            <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
-      <button class="like-btn" name ="type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
+                            <div class="like-icon"><a href="javascript:void(0)" >
+                            <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>"> <!-- class="btn btn-info btn-lg" -->
+      <button id="btn-like" class="like-btn" name ="type" onclick="(like_update('<?php echo $row['id']?>'))"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
      </a>
                             </div>
                         </div>
@@ -154,28 +155,12 @@ include("comments.php");
                             ?>    
                             </div>
                             <div class="comment">
-                                <form action=" " id="frmComment" method="post">
-    <div class="row">
-        <label> Name: </label> <span id="name-info"></span><input
-            class="form-field" id="name" type="text" name="user">
-    </div>
-    <div class="row">
-        <label for="mesg"> Message : <span id="message-info"></span></label>
-        <textarea class="form-field" id="message" name="message" rows="4"></textarea>
-
-    </div>
-    <div class="row">
-        <input type="hidden" name="add" value="post" />
-        <button type="submit" name="submit" id="submit"
-            class="btn-add-comment">Add Comment</button>
-        <img src="LoaderIcon.gif" id="loader" />
-    </div>
-</form>
+                                
                                 <form action="index.php" method="post">
                     <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
                                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                             <div class="add-comment">
-                                <button type="submit" class="post-comment" name="post-comment">comment</button></div>
+                                <button type="submit" class="post-comment" name="post-comment" >comment</button></div>
                         </form>
                     </div>
                             <div class="options"><i class="fas fa-ellipsis-h" ></i></div>
@@ -199,18 +184,24 @@ include("comments.php");
 <script src="../js/index.js"></script>
 </body>
 <script>
+   
   function like_update(id){
+
    jQuery.ajax({
     url:'like.php',
     type:'post',
     data:'type=like&id='+id,
     success:function(result){
+
+     // jQuery('#btn-like'+id).attr("disabled", true);
      var cur_count=jQuery('#like_loop_'+id).html();
      cur_count++;
      jQuery('#like_loop_'+id).html(cur_count);
    
+   
     }
    });
+   
    $(document).on("click", "a", function () {
     $("#search").val("");
     
