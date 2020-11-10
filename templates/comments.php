@@ -1,5 +1,5 @@
 <?php 
-	include ('connection.php');
+	
 	include ('server.php');
 
 
@@ -17,8 +17,8 @@
         // $username = mysqli_fetch_assoc($db, $get_username);
 
         $query = "INSERT INTO comments (post_id,comment,comment_author) VALUES ('$post_id','$comment','$comment_auth')";
-         mysqli_query($db, $query);
 
+         mysqli_query($db, $query);
 }
 
 
