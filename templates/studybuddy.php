@@ -54,20 +54,24 @@
       <button id="start-btn" class="start-btn btn">Start</button>
       <button id="next-btn" class="next-btn btn hide">Next</button> -->
 
-
+      <center>
           <form action="roommate.php" method="post">
       <div class="questions">
         <div class="q1">
-          <p class="question">Where are you planning to live?</p>
+          <p class="question">What year in college are you?</p>
           
-          <input type="radio" id="on-camp" name="accomodate" value="On-campus">
-          <label for="On-campus">On-campus</label><br>
-          <input type="radio" id="off-camp" name="accomodate" value="Off-campus">
-          <label for="Off-campus">Off-campus</label><br>
+          <input type="radio" id="fresh" name="year" value="Freshman">
+          <label for="Freshman">Freshman</label><br>
+          <input type="radio" id="sophomore" name="year" value="Sophomore">
+          <label for="Sophomore">Sophomore</label><br>
+          <input type="radio" id="junior" name="year" value="Junior">
+          <label for="Junior">Junior</label><br>
+          <input type="radio" id="senior" name="year" value="Senior">
+          <label for="Senior">Senior</label><br>
           
           
-         
-        </div>
+
+        </div><br><br>
 
         
         <div class="q2">
@@ -81,48 +85,53 @@
           <label for="other">Non-Binary</label>
           
          
-        </div>
+        </div><br><br>
 
         <div class="q3">
-          <p class="question">Who would you like to share the room with?</p>
+          <p class="question">Who would you like to study with?</p>
           
-          <input type="radio" id="male" name="roomate" value="male">
+          <input type="radio" id="male" name="studybuddy" value="male">
           <label for="male">Male</label><br>
-          <input type="radio" id="female" name="roomate" value="female">
+          <input type="radio" id="female" name="study" value="female">
           <label for="female">Female</label><br>
-          <input type="radio" id="other" name="roomate" value="other">
+          <input type="radio" id="other" name="study" value="other">
           <label for="other">Non-Binary</label>
+          <input type="radio" id="other" name="study" value="other">
+          <label for="other">Any</label>
           
          
-        </div>
+        </div><br><br>
 
         <div class="q4">
-          <p class="question">When does your weekday alarm go off?</p>
+          <p class="question">What is your major?</p>
           
-          <input type="radio" id="8" name="alarm" value="Before 8am">
+          <!-- <input type="radio" id="8" name="alarm" value="Before 8am">
           <label for="Before 8am">Before 8am</label><br>
           <input type="radio" id="10" name="alarm" value="Around 10am">
           <label for="Around 10am">Around 10am</label><br>
           <input type="radio" id="12" name="alarm" value="After 12pm">
-          <label for="After 12pm">After 12pm</label>
-          
+          <label for="major">After 12pm</label> -->
+          <input type="text" name="major">
          
-        </div>
+        </div><br><br>
 
         <div class="q5">
-          <p class="question">When do you typically head to bed?</p>
+          <p class="question">Where do you like to study?</p>
           
-          <input type="radio" id="10pm" name="bedtime" value="Before 10pm">
-          <label for="Before 10pm">Before 10pm</label><br>
-          <input type="radio" id="12am" name="bedtime" value="Around midnight">
-          <label for="Around midnight">Around midnight</label><br>
-          <input type="radio" id="2am" name="bedtime" value="After 2am">
-          <label for="After 2am">After 2am</label>
+          <input type="radio" id="apt" name="place" value="Appartment">
+          <label for="Appartment">Appartment</label><br>
+          <input type="radio" id="class" name="place" value="Classroom">
+          <label for="Classroom">Classroom</label><br>
+          <input type="radio" id="lbrary" name="place" value="Library">
+          <label for="Library">Library</label><br>
+          <input type="radio" id="outside" name="place" value="Outside">
+          <label for="Outside">Outside</label><br>
+          
           
          
-        </div>
+        </div><br><br>
 
-        <div class="q6">
+       <!--  <div class="q6">
           <p class="question">How tidy are you?</p>
           
           <input type="radio" id="tidy" name="tidiness" value="Tidy AF">
@@ -185,7 +194,7 @@
           <label for="Best Friends Forever!">Best Friends Forever!</label>
          
         </div>
-
+ -->
           <input type="submit" name="questions" >
       </div>
   
@@ -196,30 +205,20 @@ if(isset($_POST['questions'])){
 
 
 
-    $accomodate = mysqli_escape_string($db,$_POST['accomodate']);
+    $year = mysqli_escape_string($db,$_POST['year']);
 
   $gender = mysqli_escape_string($db,$_POST['gender']);
 
-  $roomate = mysqli_escape_string($db,$_POST['roomate']);
+  $studybuddy = mysqli_escape_string($db,$_POST['studybuddy']);
 
-  $alarm = mysqli_escape_string($db,$_POST['alarm']);
+  $major = mysqli_escape_string($db,$_POST['major']);
 
-  $bedtime = mysqli_escape_string($db,$_POST['bedtime']);
-
-  $tidiness = mysqli_escape_string($db,$_POST['tidiness']);
-
-  $noise = mysqli_escape_string($db,$_POST['noise']);
-
-  $guests = mysqli_escape_string($db,$_POST['guests']);
-
-  $weekends = mysqli_escape_string($db,$_POST['weekends']);
-
-  $relationship = mysqli_escape_string($db,$_POST['relationship']);
+  $place = mysqli_escape_string($db,$_POST['place']);
 
   $username =$_SESSION['username'];
   
   
-  $query = "INSERT INTO roommate (username,accomodate,gender,roomate,alarm,bedtime,tidiness,noise,guests,weekends,relationship,status) VALUES ('$username','$accomodate','$gender','$roomate','$alarm','$bedtime','$tidiness','$noise','$guests','$weekends','$relationship','1')";
+  $query = "INSERT INTO studybuddy (username,year,gender,studybyddy,major,place) VALUES ('$username','$year','$gender','$studybuddy','$major','$place')";
   mysqli_query($db,$query);
 
   // $status = "UPDATE roommate SET status = 1"
@@ -242,5 +241,7 @@ if(isset($_POST['questions'])){
   <?php endif; ?>
   <?php endwhile; ?>
 </div>
+</form>
+</center>
 </body>
 </html>

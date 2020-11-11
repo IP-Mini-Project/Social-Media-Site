@@ -121,7 +121,7 @@ session_start();
                         <div class="likes">
                             
                             <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
-      <button class="like-btn" name =" type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
+      <button class="like-btn" name ="type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
      </a>
                             </div>
                         </div>
@@ -207,6 +207,27 @@ session_start();
         </div>
         
     </div>
+
+    <script>
+   
+  function like_update(id){
+
+   jQuery.ajax({
+    url:'like.php',
+    type:'post',
+    data:'type=like&id='+id,
+    success:function(result){
+
+     // jQuery('#btn-like'+id).attr("disabled", true);
+     var cur_count=jQuery('#like_loop_'+id).html();
+     cur_count++;
+     jQuery('#like_loop_'+id).html(cur_count);
+   
+   
+    }
+   });
+}
+   </script>
 </body>
 
 </html>

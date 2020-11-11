@@ -233,6 +233,27 @@ session_start();
         </div>
         
     </div>
+
+    <script>
+   
+  function like_update(id){
+
+   jQuery.ajax({
+    url:'like.php',
+    type:'post',
+    data:'type=like&id='+id,
+    success:function(result){
+
+     // jQuery('#btn-like'+id).attr("disabled", true);
+     var cur_count=jQuery('#like_loop_'+id).html();
+     cur_count++;
+     jQuery('#like_loop_'+id).html(cur_count);
+   
+   
+    }
+   });
+}
+   </script>
 </body>
 
 </html>
