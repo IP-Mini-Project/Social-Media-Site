@@ -41,13 +41,13 @@ session_start();
                 <a href="gen-chat.php"><h4><i class="fas fa-hashtag"></i> General Chat</h4></a>
                 </div> -->
                 <div class="club2 name">
-                <a href="sports_chat.php" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Sports Club</h4></a>
+                <a href="decision.php?name=sports" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Sports Club</h4></a>
                 </div>
                 <div class="club2 name">
-                <a href="arts_chat.php" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Arts Club</h4></a>
+                <a href="decision.php?name=arts" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Arts Club</h4></a>
                 </div>
                 <div class="club2 name">
-                <a href="codin_chat.php" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Coding Club</h4></a>
+                <a href="decision.php?name=coding" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Coding Club</h4></a>
                 </div>
                 <!-- <div class="name">
                     <h4><i class="fas fa-at"></i> Zendaya</h4>
