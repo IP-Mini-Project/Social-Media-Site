@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2020 at 03:17 PM
+-- Generation Time: Nov 11, 2020 at 07:44 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -20,6 +20,84 @@ SET time_zone = "+00:00";
 --
 -- Database: `social`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artclub`
+--
+
+CREATE TABLE `artclub` (
+  `id` int(11) NOT NULL,
+  `username` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `artclub`
+--
+
+INSERT INTO `artclub` (`id`, `username`) VALUES
+(1, 'sun');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `arts_chat`
+--
+
+CREATE TABLE `arts_chat` (
+  `id` int(11) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `message` text NOT NULL,
+  `time` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `arts_chat`
+--
+
+INSERT INTO `arts_chat` (`id`, `username`, `message`, `time`) VALUES
+(1, 'sun', 'hello', '2020-11-11 12:06:20'),
+(2, 'sun', 'i love to draw', '2020-11-11 12:07:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `codeclub`
+--
+
+CREATE TABLE `codeclub` (
+  `id` int(11) NOT NULL,
+  `username` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `codeclub`
+--
+
+INSERT INTO `codeclub` (`id`, `username`) VALUES
+(0, 'sun');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `code_chat`
+--
+
+CREATE TABLE `code_chat` (
+  `id` int(11) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `message` text NOT NULL,
+  `time` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `code_chat`
+--
+
+INSERT INTO `code_chat` (`id`, `username`, `message`, `time`) VALUES
+(0, 'sun', 'hello\r\n', '2020-11-11 12:13:22'),
+(0, 'sun', 'i love to code', '2020-11-11 12:13:31');
 
 -- --------------------------------------------------------
 
@@ -118,7 +196,11 @@ CREATE TABLE `likes` (
 
 INSERT INTO `likes` (`post_id`, `username`) VALUES
 (4, 'sun'),
-(5, 'sun');
+(5, 'sun'),
+(11, 'sun'),
+(11, 'sun'),
+(11, 'sun'),
+(11, 'sun');
 
 -- --------------------------------------------------------
 
@@ -145,7 +227,7 @@ INSERT INTO `post` (`id`, `image`, `text`, `time`, `likes`, `username`) VALUES
 (5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 48, 'bun'),
 (8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 52, 'sun'),
 (10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 25, 'jack'),
-(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 18, 'sun');
+(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 22, 'sun');
 
 -- --------------------------------------------------------
 
@@ -287,6 +369,18 @@ INSERT INTO `user` (`id`, `username`, `name`, `email`, `phone`, `gender`, `passw
 --
 
 --
+-- Indexes for table `artclub`
+--
+ALTER TABLE `artclub`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `arts_chat`
+--
+ALTER TABLE `arts_chat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
@@ -330,6 +424,18 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `artclub`
+--
+ALTER TABLE `artclub`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `arts_chat`
+--
+ALTER TABLE `arts_chat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
@@ -357,7 +463,7 @@ ALTER TABLE `sportschat`
 -- AUTO_INCREMENT for table `sportsclub`
 --
 ALTER TABLE `sportsclub`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
