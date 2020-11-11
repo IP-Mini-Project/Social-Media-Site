@@ -46,6 +46,9 @@ session_start();
                 <div class="club2 name">
                 <a href="arts_chat.php" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Arts Club</h4></a>
                 </div>
+                <div class="club2 name">
+                <a href="codin_chat.php" style="text-decoration: none; color:black; "><h4><i class="fas fa-table-tennis"></i> Coding Club</h4></a>
+                </div>
                 <!-- <div class="name">
                     <h4><i class="fas fa-at"></i> Zendaya</h4>
                 </div>
