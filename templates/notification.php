@@ -1,7 +1,12 @@
 <?php
-include("connection.php");
+include("server.php");
 
-session_start();
+$like = mysqli_query($db, "SELECT * FROM likes");
+
+$comment = mysqli_query($db, "SELECT * FROM comments");
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +37,13 @@ session_start();
         <div class="head">
             <h3>Notifications</h3>
         </div>
+        <?php while ($row = mysqli_fetch_array($like)) : ?>
+            <div class="noti"><p><?php echo $row['username']; ?> liked your post</p></div>
+        <?php endwhile; ?>
+
+        <?php while ($row2 = mysqli_fetch_array($comment)) : ?>
+            <div class="noti"><p><?php echo $row2['comment_author']; ?> commented on your post</p></div>
+        <?php endwhile; ?>
         <div class="body-wrap">
             <div class="liked noti">
                 <a href="">

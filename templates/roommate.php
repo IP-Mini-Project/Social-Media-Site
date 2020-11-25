@@ -194,17 +194,6 @@
 <?php 
 if(isset($_POST['questions'])){
 
-
-  $username =$_SESSION['username'];
-
-  $check = mysqli_query($db,"SELECT * FROM roommate WHERE username = $username ");
-  $row2 = mysqli_fetch_array($check);
-  if (mysqli_num_rows($row2)>0) {
-
-    echo "Already Submitted";
-  }
-
-  else {
     $username =$_SESSION['username'];
 
     $accomodate = mysqli_escape_string($db,$_POST['accomodate']);
@@ -237,7 +226,7 @@ if(isset($_POST['questions'])){
 
 
 
-}
+
 }
  ?>
 
