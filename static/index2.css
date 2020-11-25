@@ -1,5 +1,5 @@
 body{
-    background-color: #F8F6FC;
+    background-color: #0e0e13;
   }
   .container{
       display: flex;
@@ -14,25 +14,33 @@ body{
       height: 81vh;
       width: 40vw;
       
-      text-align: center;
+      text-align: left;
       line-height: 2rem;
       position: sticky;
       top: 13%;
-      background-color: white;
-      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+      background-color: #1C1C24;
+      /* box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); */
   }
   li{
       list-style: none;
-      font-size: 1.1rem;
+      font-size: 1rem;
     padding-top: 10px;
+    /* margin-left: 20px; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
   }
   .clubs a{
     text-decoration: none;
     color: black;
     
+  }
+  .clubs h2{
+    text-transform: uppercase;
+    font-size: 16px;
+    /* padding-bottom: 1%; */
+    color: #777781;
+    /* margin-left: 20px; */
   }
   .clubs i{
     padding-right: 10px;
@@ -69,8 +77,8 @@ body{
       padding: 20px 30px;
       /* border: .5px solid #797a7e; */
       border-radius: 25px;
-      background-color: white;
-      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+      background-color: #1C1C24;
+      /* box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); */
   }
   .wrapper{
       display: flex;
@@ -94,8 +102,8 @@ body{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      background-color: white;
-      box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+      background-color: #1C1C24;
+      /* box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); */
   }
   .endline{
       margin: 5px;
@@ -108,17 +116,18 @@ body{
       padding-right: 80px;
   }
   .endline .btn{
-      padding: 3px 9px;
+      padding: 0% 5%;
       background-color: none;
       /*border-radius: 25px;*/
-      border: 1px solid #797a7e;
+      /* border: 1px solid #797a7e; */
       cursor: pointer;
   
-      width: 120px;
+      /* width: 120px; */
       /*padding: 8px;*/
       border-radius: 50px;
       border-style: none;
-      background-image: linear-gradient(to right, #00d2ff, #3a7bd5, #00d2ff);
+      /* background-image: linear-gradient(to right, #00d2ff, #3a7bd5, #00d2ff); */
+      background-color: #343441;
       color: white;
       /*cursor: pointer;*/
       transition: transform .2s;
@@ -127,6 +136,7 @@ body{
   
   .btn:hover {
     transform: scale(1.2);
+    background-color: #1DA1F2;
   }
   
   .posts{
@@ -205,6 +215,10 @@ body{
   .footer .likes .like-count {
       padding-left: 10px;
   }
+  /* .like-btn{
+    background-color: transparent;
+    border: none;
+  } */
   
   .footer .description {
       padding-top: 5px;
@@ -236,14 +250,20 @@ body{
       width: 100%;
       outline: none;
       border: none;
+
   }
   
   .post-after .options {
       float: right;
   }
   .comment #text2{
-    width: 100%
+    width: 100%;
+    background-color: transparent;
     
+  }
+  #text{
+    background-color: transparent;
+    color: #D9D9D9;
   }
   
   .user{
@@ -282,17 +302,17 @@ body{
     border: none;
 }
 .upload-box{
-  background-color: white;
+  /* background-color: white; */
   width: 40%;
   border-radius: 50px;
-  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);;
+  /* box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);; */
 }
   input[type=file]::-webkit-file-upload-button {
     border: none;
     color: white;
     padding: 10px 9px;
     border-radius: 50px;
-    background-color: #000000;
+    background-color: #343441;
     transition: 1s;
     outline: none;
     cursor: pointer;

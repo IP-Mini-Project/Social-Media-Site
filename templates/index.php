@@ -35,7 +35,7 @@ include("comments.php");
         <div class="container">
             <div class="clubs">
                 <h2>Clubs</h2>
-                <hr>
+                
                 <ul>
                     <a href="decision.php?name=sports">
                         <li><i class="fas fa-table-tennis"></i>SPORTS</li>
