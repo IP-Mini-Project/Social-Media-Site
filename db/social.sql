@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2020 at 07:44 AM
+-- Generation Time: Nov 25, 2020 at 09:54 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -119,8 +119,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `post_id`, `username`, `comment`, `comment_author`, `date`) VALUES
-(1, 10, '', 'JSJFJXN', 'sun', '2020-11-08 16:52:02'),
-(3, 11, '', 'JDNJVNDVJCN', 'sun', '2020-11-08 16:53:09');
+(1, 11, '', 'hey there sun', 'sun', '2020-11-24 13:06:42'),
+(2, 10, '', 'hey jack', 'sun', '2020-11-24 13:06:59');
 
 -- --------------------------------------------------------
 
@@ -187,20 +187,21 @@ INSERT INTO `genchat` (`id`, `msg`, `username`, `time`) VALUES
 
 CREATE TABLE `likes` (
   `post_id` int(12) NOT NULL,
-  `username` varchar(255) NOT NULL
+  `username` varchar(255) NOT NULL,
+  `post_username` varchar(225) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `likes`
 --
 
-INSERT INTO `likes` (`post_id`, `username`) VALUES
-(4, 'sun'),
-(5, 'sun'),
-(11, 'sun'),
-(11, 'sun'),
-(11, 'sun'),
-(11, 'sun');
+INSERT INTO `likes` (`post_id`, `username`, `post_username`, `time`) VALUES
+(4, 'sun', '', '2020-11-24 13:48:05'),
+(3, 'sun', '', '2020-11-24 13:48:05'),
+(5, 'sun', '', '2020-11-24 13:48:05'),
+(8, 'sun', '', '2020-11-24 13:48:05'),
+(10, 'sun', '', '2020-11-24 13:53:52');
 
 -- --------------------------------------------------------
 
@@ -222,12 +223,12 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `image`, `text`, `time`, `likes`, `username`) VALUES
-(3, 'alexander-popov-3InMDrsuYrk-unsplash.jpg', 'ssup', '2020-10-05 21:11:54', 28, 'sam'),
-(4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 30, 'sam'),
-(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 48, 'bun'),
-(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 52, 'sun'),
-(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 25, 'jack'),
-(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 22, 'sun');
+(3, 'alexander-popov-3InMDrsuYrk-unsplash.jpg', 'ssup', '2020-10-05 21:11:54', 30, 'sam'),
+(4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 32, 'sam'),
+(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 50, 'bun'),
+(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 57, 'sun'),
+(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 33, 'jack'),
+(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 46, 'sun');
 
 -- --------------------------------------------------------
 
@@ -278,7 +279,12 @@ INSERT INTO `roommate` (`username`, `accomodate`, `gender`, `roomate`, `alarm`, 
 ('jack', 'Off-campus', 'female', 'female', 'Around 10am', 'Around midnight', 'I put most things away', 'Anything', 'Usually fine; but inform first', 'Hangout with friends', 'Best Friends Forever!', 1),
 ('jack', '', '', '', '', '', 'I put most things away', '', '', '', '', 1),
 ('jack', '', '', '', '', '', 'I put most things away', '', '', '', '', 1),
-('jack', 'Off-campus', 'female', 'male', 'Before 8am', 'Before 10pm', 'Where\'s the floor?', 'Some things', 'I\'d prefer no guests', 'Watch Netflix', 'Respectful but separate', 1);
+('jack', 'Off-campus', 'female', 'male', 'Before 8am', 'Before 10pm', 'Where\'s the floor?', 'Some things', 'I\'d prefer no guests', 'Watch Netflix', 'Respectful but separate', 1),
+('sun', 'On-campus', 'female', 'female', 'Before 8am', 'Before 10pm', 'I put most things away', 'Nothing', 'I\'d prefer no guests', 'Hangout with friends', 'Best Friends Forever!', 1),
+('sun', 'On-campus', 'female', 'female', 'Before 8am', 'Before 10pm', 'I put most things away', 'Nothing', 'I\'d prefer no guests', 'Hangout with friends', 'Best Friends Forever!', 1),
+('sun', 'On-campus', 'male', 'female', '', '', 'Tidy AF', '', 'I\'d prefer no guests', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'Off-campus', 'other', 'other', 'After 12pm', 'After 2am', 'Where\'s the floor?', 'Nothing', 'The more the merrier!', 'Go to a lit party', 'Best Friends Forever!', 1),
+('sun', 'Off-campus', 'other', 'other', 'After 12pm', 'After 2am', 'Where\'s the floor?', 'Nothing', 'The more the merrier!', 'Go to a lit party', 'Best Friends Forever!', 1);
 
 -- --------------------------------------------------------
 
@@ -439,7 +445,7 @@ ALTER TABLE `arts_chat`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `genchat`

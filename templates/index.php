@@ -19,6 +19,7 @@ include("comments.php");
 </head>
 
 
+
 <body>
     <!-- Navbar -->
     <div id="nav-placeholder">
@@ -135,7 +136,8 @@ include("comments.php");
                                         <div class="likes">
 
                                             <div class="like-icon"><a href="javascript:void(0)">
-                                                    <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>"> <!-- class="btn btn-info btn-lg" -->
+                                                    <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>">
+                                                    <input type="hidden" name="post-user" value="<?php echo $row['username']; ?>"> <!-- class="btn btn-info btn-lg" -->
                                                     <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span>)</button>
                                                 </a>
                                             </div>
@@ -152,12 +154,13 @@ include("comments.php");
                                             </div>
                                         </div>
 
-                                        <div class="comments">
+                                        <!-- <div class="comments">
                                             <div class="auth_prof"></div>
                                             <div class="commentt">
                                                 <p></p>
                                             </div>
-                                        </div>
+                                        </div> -->
+                                        <div class="comments_listing"></div>
                                         <div class="post-after">
                                             <div class="comment-img">
                                                 <?php
@@ -172,9 +175,10 @@ include("comments.php");
 
                                                 <form action="index.php" method="post">
                                                     <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
-                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                    <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
                                                     <div class="add-comment">
                                                         <button type="submit" class="post-comment" name="post-comment">comment</button>
+                                                        
                                                     </div>
                                                 </form>
                                             </div>
@@ -204,7 +208,7 @@ include("comments.php");
         jQuery.ajax({
             url: 'like.php',
             type: 'post',
-            data: 'type=like&id=' + id,
+            data: 'type=like'+'&id='+id+'&username='+post-user,
             success: function(result) {
 
                 // jQuery('#btn-like'+id).attr("disabled", true);
@@ -221,7 +225,11 @@ include("comments.php");
 
         });
     }
+
+
 </script>
+
+
 
 
 </html>

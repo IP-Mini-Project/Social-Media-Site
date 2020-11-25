@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Navbar2</title>
+	
 	<link rel="stylesheet" type="text/css" href="../static/navbar2.css">
 	<script src="https://kit.fontawesome.com/14d91ba717.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
