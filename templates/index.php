@@ -228,7 +228,15 @@ include("comments.php");
         });
     }
 
+    // animation
 
+    $(document).ready(function(){
+        $(".far.fa-heart").click(function(){
+            $(this).removeClass("far fa-heart");
+            $(this).toggleClass("fas fa-heart newh");
+            $(this).addClass("fas fa-heart");
+        });
+    });
 </script>
 
 
