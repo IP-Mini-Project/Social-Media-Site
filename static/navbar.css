@@ -10,7 +10,7 @@
     padding: 12px 110px 12px 110px;      
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid rgba(166,173,201,.2); 
+    /* border-bottom: 1px solid rgba(166,173,201,.2);  */
     z-index: 100;
     left: 0;
     top: 0;

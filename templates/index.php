@@ -138,7 +138,7 @@ include("comments.php");
                                             <div class="like-icon"><a href="javascript:void(0)">
                                                     <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>">
                                                     <input type="hidden" name="post-user" value="<?php echo $row['username']; ?>"> <!-- class="btn btn-info btn-lg" -->
-                                                    <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span>)</button>
+                                                    <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))"><p><i class="far fa-heart"></i> <span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span> likes</p></button>
                                                 </a>
                                             </div>
                                         </div>
