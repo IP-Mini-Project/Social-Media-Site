@@ -39,7 +39,7 @@ $comment = mysqli_query($db, "SELECT * FROM comments");
         </div>
 
 
-        <?php $noti = "SELECT * FROM notifications " ?>
+        <?php $noti = mysqli_query($db,"SELECT * FROM notifications WHERE username='{$_SESSION['username']}' "); ?>
         <?php while ($row = mysqli_fetch_array($noti)) : ?>
             <?php if ($row['type'] == 0): ?>
                 

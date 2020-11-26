@@ -209,7 +209,7 @@ include("comments.php");
         jQuery.ajax({
             url: 'like.php',
             type: 'post',
-            data: 'type=like'+'&id=' + id,
+            data: 'type=like'+'&id=' + id ,
             success: function(result) {
 
                 // jQuery('#btn-like'+id).attr("disabled", true);
