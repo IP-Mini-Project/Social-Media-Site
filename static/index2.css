@@ -190,6 +190,7 @@ body{
     font-size: 12px;
     top: 10px;
     position: relative;
+    margin-top: 2px;
   }
   
   .card .post-img .img{
@@ -271,7 +272,7 @@ body{
     flex-direction: row;
   
   }
-  .username p{
+  .username{
     font-weight: 600;
   }
   .caption{

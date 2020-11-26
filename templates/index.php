@@ -124,7 +124,7 @@ include("comments.php");
                                         </div>
                                         <div class="prof-info">
                                             <div class="username"><?php echo $row['username']; ?></div>
-                                            
+                                            <div class="loc" style="font-size: 7px;visibility: hidden;">Mumbai</div>
                                         </div>
                                         <div class="time"><?php echo $row['time']; ?></div>
                                         <!-- <?php echo $row['id'] ?> -->
