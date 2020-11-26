@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2020 at 08:47 AM
+-- Generation Time: Nov 26, 2020 at 12:30 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -119,9 +119,12 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `post_id`, `username`, `comment`, `comment_author`, `date`) VALUES
-(1, 11, '', 'hey there sun', 'sun', '2020-11-24 13:06:42'),
-(2, 10, '', 'hey jack', 'sun', '2020-11-24 13:06:59'),
-(15, 5, 'bun', 'hi bun im sun', 'sun', '2020-11-26 07:38:23');
+(1, 11, 'sun', 'oh you guys went bowling!', 'bun', '2020-11-26 10:33:26'),
+(2, 10, 'jack', 'another bowling session without me!!! :(', 'bun', '2020-11-26 10:34:02'),
+(3, 8, 'sun', 'that looks fun sun', 'bun', '2020-11-26 10:34:24'),
+(4, 5, 'bun', 'arcade is love <3', 'bun', '2020-11-26 10:34:54'),
+(5, 4, 'sam', 'pretty lights for everyone', 'bun', '2020-11-26 10:35:13'),
+(6, 3, 'sam', 'this is enchanting', 'bun', '2020-11-26 10:35:27');
 
 -- --------------------------------------------------------
 
@@ -198,25 +201,9 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`post_id`, `username`, `post_username`, `time`) VALUES
-(4, 'sun', '', '2020-11-24 13:48:05'),
-(3, 'sun', '', '2020-11-24 13:48:05'),
-(5, 'sun', '', '2020-11-24 13:48:05'),
-(8, 'sun', '', '2020-11-24 13:48:05'),
-(10, 'sun', '', '2020-11-24 13:53:52'),
-(0, 'sun', '', '2020-11-26 05:59:30'),
-(0, 'sun', '', '2020-11-26 05:59:30'),
-(0, 'sun', '', '2020-11-26 05:59:31'),
-(0, 'sun', '', '2020-11-26 05:59:32'),
-(0, 'sun', '', '2020-11-26 06:08:58'),
-(0, 'sun', '', '2020-11-26 06:09:03'),
-(11, 'sun', '', '2020-11-26 06:14:25'),
-(11, 'sun', '', '2020-11-26 06:14:31'),
-(11, 'sun', '', '2020-11-26 06:25:24'),
-(10, 'sun', '', '2020-11-26 06:26:12'),
-(5, 'sun', '', '2020-11-26 06:28:05'),
-(11, 'sun', '', '2020-11-26 06:29:43'),
-(10, 'sun', '', '2020-11-26 07:32:57'),
-(5, 'sun', '', '2020-11-26 07:35:35');
+(5, 'bun', 'bun', '2020-11-26 11:22:23'),
+(8, 'bun', 'sun', '2020-11-26 11:22:41'),
+(11, 'jack', 'sun', '2020-11-26 11:24:35');
 
 -- --------------------------------------------------------
 
@@ -229,22 +216,42 @@ CREATE TABLE `notifications` (
   `username` varchar(255) NOT NULL,
   `originator` varchar(255) NOT NULL,
   `id` int(11) NOT NULL,
-  `post_id` int(11) NOT NULL
+  `post_id` int(11) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT 1,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `notifications`
 --
 
-INSERT INTO `notifications` (`type`, `username`, `originator`, `id`, `post_id`) VALUES
-(1, '', 'sun', 1, 11),
-(0, 'sun', 'sun', 2, 10),
-(1, '', 'sun', 3, 11),
-(0, 'sun', 'sun', 4, 5),
-(1, '', 'sun', 5, 11),
-(1, '', 'sun', 6, 11),
-(1, 'bun', 'sun', 7, 5),
-(1, 'bun', 'sun', 8, 5);
+INSERT INTO `notifications` (`type`, `username`, `originator`, `id`, `post_id`, `status`, `time`) VALUES
+(0, 'sun', 'sun', 2, 10, 1, '2020-11-26 11:29:34'),
+(0, 'sun', 'sun', 4, 5, 1, '2020-11-26 11:29:34'),
+(1, 'bun', 'sun', 7, 5, 1, '2020-11-26 11:29:34'),
+(1, 'bun', 'sun', 8, 5, 1, '2020-11-26 11:29:34'),
+(1, 'sun', 'bun', 9, 11, 1, '2020-11-26 11:29:34'),
+(1, 'jack', 'bun', 10, 10, 1, '2020-11-26 11:29:34'),
+(1, 'sun', 'bun', 11, 8, 1, '2020-11-26 11:29:34'),
+(1, 'bun', 'bun', 12, 5, 1, '2020-11-26 11:29:34'),
+(1, 'sam', 'bun', 13, 4, 1, '2020-11-26 11:29:34'),
+(1, 'sam', 'bun', 14, 3, 1, '2020-11-26 11:29:34'),
+(0, 'bun', 'bun', 15, 11, 1, '2020-11-26 11:29:34'),
+(0, 'bun', 'bun', 16, 11, 1, '2020-11-26 11:29:34'),
+(0, 'Array', 'bun', 17, 11, 1, '2020-11-26 11:29:34'),
+(0, 'Array', 'bun', 18, 11, 1, '2020-11-26 11:29:34'),
+(0, 'sun', 'bun', 20, 11, 1, '2020-11-26 11:29:34'),
+(0, 'jack', 'bun', 21, 10, 1, '2020-11-26 11:29:34'),
+(0, 'sun', 'bun', 22, 8, 1, '2020-11-26 11:29:34'),
+(0, 'bun', 'bun', 23, 5, 1, '2020-11-26 11:29:34'),
+(0, 'sam', 'bun', 24, 4, 1, '2020-11-26 11:29:34'),
+(0, 'bun', 'bun', 25, 5, 1, '2020-11-26 11:29:34'),
+(0, 'sun', 'bun', 26, 8, 1, '2020-11-26 11:29:34'),
+(1, 'sun', 'jack', 27, 11, 1, '2020-11-26 11:29:34'),
+(1, 'bun', 'jack', 28, 5, 1, '2020-11-26 11:29:34'),
+(1, 'sam', 'jack', 29, 4, 1, '2020-11-26 11:29:34'),
+(0, 'sun', 'jack', 30, 11, 1, '2020-11-26 11:29:34'),
+(1, 'sam', 'jack', 31, 4, 1, '2020-11-26 11:29:34');
 
 -- --------------------------------------------------------
 
@@ -267,11 +274,11 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`id`, `image`, `text`, `time`, `likes`, `username`) VALUES
 (3, 'alexander-popov-3InMDrsuYrk-unsplash.jpg', 'ssup', '2020-10-05 21:11:54', 30, 'sam'),
-(4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 32, 'sam'),
-(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 52, 'bun'),
-(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 57, 'sun'),
-(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 35, 'jack'),
-(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 50, 'sun');
+(4, 'dong-cheng-rLT8w_yYTZs-unsplash.jpg', 'wow', '2020-10-05 21:35:36', 33, 'sam'),
+(5, 'erik-mclean-gbfqWoaTmdg-unsplash.jpg', 'hi im bun', '2020-10-05 21:46:49', 54, 'bun'),
+(8, 'alexander-popov-9vDdkxSCAD4-unsplash.jpg', 'check 123', '2020-10-07 18:57:55', 59, 'sun'),
+(10, 'karla-rivera-yFBdywTfwaQ-unsplash.jpg', 'yayy', '2020-10-09 12:56:23', 36, 'jack'),
+(11, 'z.jpg', 'hello', '2020-11-04 18:42:52', 60, 'sun');
 
 -- --------------------------------------------------------
 
@@ -494,7 +501,7 @@ ALTER TABLE `arts_chat`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `genchat`
@@ -506,7 +513,7 @@ ALTER TABLE `genchat`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `post`
