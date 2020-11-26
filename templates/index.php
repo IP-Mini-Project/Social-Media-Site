@@ -52,6 +52,7 @@ include("comments.php");
                     </a>
                 </ul>
             </div>
+            <i class="fas fa-bars"></i>
             <div class="right-part">
                 <!-- whats happeningarea -->
 
@@ -234,7 +235,7 @@ include("comments.php");
         $(".far.fa-heart").click(function(){
             $(this).removeClass("far fa-heart");
             $(this).toggleClass("fas fa-heart newh");
-            $(this).addClass("fas fa-heart");
+            $(this).addClass("fas fa-heart newh");
         });
     });
 </script>

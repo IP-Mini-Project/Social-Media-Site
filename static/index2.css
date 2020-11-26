@@ -93,7 +93,7 @@ body{
   .newpost-text{
       display: flex;
       align-items: center;
-      width: 500px;
+      width: max-content;
   }
   .newpost-text #text{
       margin-left: 10px;
@@ -179,6 +179,9 @@ body{
     display: inline-block;
     
     
+  }
+  .fa-bars::before{
+    display: none;
   }
   
   .prof-info .name {
@@ -338,11 +341,49 @@ body{
     outline: none;
     cursor: pointer;
   }
-  @media only screen and (max-width: 760px){
+  
+  @media only screen and (max-width: 1030px){
     .container{
-        margin-top: 20%;
+        margin-top: 5%;
+        /* overflow: hidden; */
+        padding: 3% 8% 3% 5%;
+        position: relative;
+    }
+    .clubs{
+      position: absolute;
+        
+        left: 0;
+        width: 45%;
+        background-color: #0e0e13;
+        border-radius: unset;
+        z-index: 2;
+        height: 100%;
+        top: 13.5vh;
+        transform: translateX(-100%);
+    }
+    .fa-bars::before{
+      display: block;
+      z-index: 100;
+      /* margin: 10px 10px 0 0; */
+      position: sticky;
+      position: -webkit-sticky;
+      top: 15%;
+      margin-right: 10px;
+
+    }
+    .right-part{
+      width: -webkit-fill-available;
+      margin: auto;
+    }
+    .newpost-text{
+      width: auto;
     }
   }
   .newh{
     color: red;
+  }
+  @media only screen and (max-width: 760px){
+    .container{
+      margin-top: 20%;
+    }
   }

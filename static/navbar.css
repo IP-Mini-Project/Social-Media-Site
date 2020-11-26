@@ -169,14 +169,14 @@
         position: absolute;
         left: 0;
         height: 6vh;
-        top: 8vh;
+        top: 7.8vh;
         display: flex;
         align-items: flex-start;
         justify-content: center;
         width: 100vw;
         border-bottom: 1px solid rgba(166,173,201,.2);
         position: fixed;
-        background-color: white;
+        background-color: #1C1C24;
         padding-top: 1vh;
     }
     .logo{
