@@ -124,7 +124,7 @@ include("comments.php");
                                         </div>
                                         <div class="prof-info">
                                             <div class="username"><?php echo $row['username']; ?></div>
-                                            <div class="location">Mumbai</div>
+                                            
                                         </div>
                                         <div class="time"><?php echo $row['time']; ?></div>
                                         <!-- <?php echo $row['id'] ?> -->
@@ -160,7 +160,7 @@ include("comments.php");
                                                 <p></p>
                                             </div>
                                         </div> -->
-                                        <div class="comments_listing"></div>
+                                        <!-- <div class="comments_listing"></div> -->
                                         <div class="post-after">
                                             <div class="comment-img">
                                                 <?php
@@ -176,6 +176,7 @@ include("comments.php");
                                                 <form action="index.php" method="post">
                                                     <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
                                                     <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
+                                                    <input type="hidden" class="id" name="username" value="<?php echo $row['username']; ?>">
                                                     <div class="add-comment">
                                                         <button type="submit" class="post-comment" name="post-comment">comment</button>
                                                         
@@ -208,7 +209,7 @@ include("comments.php");
         jQuery.ajax({
             url: 'like.php',
             type: 'post',
-            data: 'type=like'+'&id='+id+'&username='+post-user,
+            data: 'type=like'+'&id=' + id,
             success: function(result) {
 
                 // jQuery('#btn-like'+id).attr("disabled", true);
@@ -218,6 +219,7 @@ include("comments.php");
 
 
             }
+        
         });
 
         $(document).on("click", "a", function() {

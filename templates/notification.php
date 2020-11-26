@@ -37,38 +37,28 @@ $comment = mysqli_query($db, "SELECT * FROM comments");
         <div class="head">
             <h3>Notifications</h3>
         </div>
-        <?php while ($row = mysqli_fetch_array($like)) : ?>
-            <div class="noti"><p><?php echo $row['username']; ?> liked your post</p></div>
+
+
+        <?php $noti = "SELECT * FROM notifications " ?>
+        <?php while ($row = mysqli_fetch_array($noti)) : ?>
+            <?php if ($row['type'] == 0): ?>
+                
+            <div class="noti">
+                <i class="far fa-thumbs-up"></i>
+                <p><?php echo $row['originator']; ?> liked your post</p>
+            </div>
+            <?php else: ?>
+            <div class="noti">
+                <i class="far fa-comments"></i>
+                <p><?php echo $row['originator']; ?> commented on your post</p>
+            </div>
+            <?php endif ?>
         <?php endwhile; ?>
 
-        <?php while ($row2 = mysqli_fetch_array($comment)) : ?>
-            <div class="noti"><p><?php echo $row2['comment_author']; ?> commented on your post</p></div>
-        <?php endwhile; ?>
-        <div class="body-wrap">
-            <div class="liked noti">
-                <a href="">
-                <i class="far fa-thumbs-up"></i>
-                <p> Zendaya liked your post.</p>
-                </a>
-               
-            </div>
-            <div class="mention noti">
-                <a href="">
-                <i class="far fa-comments"></i>
-                <p>Zendaya commented on your post.</p>
-                </a>
-                
-            </div>
-            <div class="foll-req noti">
-                <a href="">
-                <i class="fas fa-user-plus"></i>
-                <p>@Zendaya has requested connection.</p>
-                </a>
+        
             
             </div>
-        </div>
-
-    </div>
+     
 </body>
 
 </html>

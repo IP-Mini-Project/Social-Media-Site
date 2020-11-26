@@ -8,6 +8,7 @@
 	    if (isset($_POST['post-comment'])) {
     
     $post_id=mysqli_escape_string($db,$_POST['id']);
+    $username=mysqli_escape_string($db,$_POST['username']);
     
 
         $comment = mysqli_escape_string($db, $_POST['comment']);
@@ -19,8 +20,16 @@
         $query = "INSERT INTO comments (post_id,username,comment,comment_author) VALUES ('$post_id','$username','$comment','$comment_auth')";
 
          mysqli_query($db, $query);
+
+
 }
 
+
+if(isset($_POST['post-comment'])) {
+
+	$noti = "INSERT INTO notifications (type,username,originator,post_id) VALUES (1,'$username','$comment_auth','$post_id')";
+	mysqli_query($db,$noti);
+}
 
 
 
