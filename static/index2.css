@@ -131,12 +131,13 @@ body{
       color: white;
       /*cursor: pointer;*/
       transition: transform .2s;
-  
+    background-image:  linear-gradient(to right, #E69BC2 , #9C92F2);
   }
   
   .btn:hover {
     transform: scale(1.2);
-    background-color: #1DA1F2;
+    background-image:  linear-gradient(to left, #E69BC2 , #9C92F2);
+    transition: ease-in .1s;
   }
   
   .posts{
@@ -190,6 +191,7 @@ body{
     font-size: 12px;
     top: 10px;
     position: relative;
+    margin-top: 2px;
   }
   
   .card .post-img .img{
@@ -215,10 +217,18 @@ body{
   .footer .likes .like-count {
       padding-left: 10px;
   }
-  /* .like-btn{
+  .like-btn{
     background-color: transparent;
     border: none;
-  } */
+    font-size: 12;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    display: inline-block;
+  }
+  .fa-heart{
+    /* margin-top: 5px; */
+    font-size: 10px;
+  }
   
   .footer .description {
       padding-top: 5px;
@@ -271,7 +281,7 @@ body{
     flex-direction: row;
   
   }
-  .username p{
+  .username{
     font-weight: 600;
   }
   .caption{
@@ -279,8 +289,9 @@ body{
   }
   .post-after{
     padding: 3px 3px;
-    border:1px solid #797a7e;
+    /* border:1px solid #797a7e; */
     border-radius: 15px;
+    background-color: #343441;
   }
   .options .fas{
     padding-top: 9px;
