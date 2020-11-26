@@ -139,7 +139,7 @@ include("comments.php");
                                             <div class="like-icon"><a href="javascript:void(0)">
                                                     <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>">
                                                     <input type="hidden" name="post-user" value="<?php echo $row['username']; ?>"> <!-- class="btn btn-info btn-lg" -->
-                                                    <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))"><p><i class="far fa-heart"></i> <span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span> likes</p></button>
+                                                    <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))"><p><i class="far fa-heart"></i> (<span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span>) likes</p></button>
                                                 </a>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@ include("comments.php");
                                                 <form action="index.php" method="post">
                                                     <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
                                                     <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
-                                                    <input type="hidden" class="id" name="username" value="<?php echo $row['username']; ?>">
+                                                    <input type="hidden" class="id" name="username" value="<?php echo $row['username'];?>">
                                                     <div class="add-comment">
                                                         <button type="submit" class="post-comment" name="post-comment">comment</button>
                                                         
