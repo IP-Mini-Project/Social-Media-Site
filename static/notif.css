@@ -7,7 +7,7 @@
     
 }
 body{
-    background-color: #F8F6FC;
+    background-color: #0e0e13;
 }
 .head h3{
     padding: 3px ;
@@ -35,7 +35,7 @@ body{
     margin: 3px 0;
     /* border: 1px solid #71C2FF; */
     border-radius: 10px;
-    background-color: white;
+    background-color: #1C1C24;
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
   
 }

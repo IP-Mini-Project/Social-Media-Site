@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #F8F6FC;
+    background-color: #0e0e13;
 }
 .container-2{
     
@@ -30,7 +30,7 @@ body{
     margin-top: 5px;
     position: sticky;
   top: 12%;
-  background-color: white;
+  background-color: #1C1C24;
 }
 .left .hobb2, .left .fas, .left h4{
     line-height: 25px;
@@ -87,7 +87,7 @@ body{
     /* border: 1px solid #797a7e; */
     margin: 0px 0 25px 0;
     padding: 20px 30px;
-    background-color: white;
+    background-color: #1C1C24;
     box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
 }
 
