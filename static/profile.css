@@ -234,8 +234,8 @@ body{
     
 }
 
-.footer .post-after {
-    display: inline-flex;
+.post-after {
+    display:flex;
     margin-top: 5px;
     width: 100%;
     
@@ -264,15 +264,41 @@ body{
     float: right;
 }
 .comment #text2{
-  width: 100%
+  width: 100%;
+  background-color: transparent;
   /* box-sizing: border-box; */
+  
 }
+.like-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 13;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    outline: none;
+  }
+  .fa-heart::before{
+    /* margin-top: 5px; */
+    font-size: 13;
+  }
+  .like-icon i:hover{
+    color: red;
+}
+.newh{
+    color: red;
+  }
 
 .user{
-  display: flex;
-  flex-direction: row;
-
+    display: flex;
+    flex-direction: row;
+    font-size: 15;
+    padding: 5px 0;
 }
+
+
 .username p{
   font-weight: 600;
 }
@@ -280,9 +306,10 @@ body{
   margin-left: 10px;
 }
 .post-after{
-  padding: 3px 3px;
-  border:1px solid #797a7e;
-  border-radius: 15px;
+    padding: 3px 3px;
+    /* border:1px solid #797a7e; */
+    border-radius: 15px;
+    background-color: #343441;
 }
 .options .fas{
   padding-top: 9px;
@@ -309,7 +336,7 @@ a{
 }
 .btn-trans{
     background-color: transparent;
-    border: none;
+    border: none; 
 }
 .top-section a{
     text-decoration: none;
@@ -317,8 +344,21 @@ a{
     /* color: black; */
     font-weight: bold;
 }
-@media only screen and (max-width: 760px){
+@media only screen and (max-width: 1030px){
     .container, .container-2{
         margin-top: 20%;
+        
+        /* overflow: hidden; */
+        padding: 3% 3%;
+        position: relative;
+    }
+    .left{
+        display: none;
+    }
+    .right{
+        margin-left: 0;
+        margin: auto;
+        padding: 0;
+        width: 90%;
     }
 }

@@ -136,7 +136,7 @@ session_start();
                              </div>
                              <div class="prof-info">
                                 <div class="username"><?php echo $row['username']; ?></div>
-                                <div class="location">Mumbai</div>
+                                <div class="location" style="visibility: hidden;">Mumbai</div>
                             </div>
                             <div class="time"><?php echo $row['time']; ?></div>
                         </div>
@@ -144,13 +144,16 @@ session_start();
                             <?php echo "<img src='../post-images/" . $row['image'] . "' class='img'>"; ?>
                         </div>
                         <div class="footer">
-                        <div class="likes">
-                            
-                            <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
-      <button class="like-btn" name =" type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> Like (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>)</button> 
-     </a>
+                        
+
+                            <div class="like-icon"><a href="javascript:void(0)">
+                                <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="post-user" value="<?php echo $row['username']; ?>"> <!-- class="btn btn-info btn-lg" -->
+                                <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))"><p><i class="far fa-heart"></i> (<span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span>) likes</p></button>
+                                  </a>
                             </div>
                         </div>
+                    
 
                         <div class="description">
                             <div class="user">
@@ -169,8 +172,19 @@ session_start();
                                 echo "<img src='$pfp' alt='nope' id='comment-img'>";
                             ?>    
                             </div>
-                            <div class="comment"><textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text"></textarea></div>
-                            <div class="options"><i class="fas fa-ellipsis-h" ></i></div>
+                            <div class="comment">
+
+                                                <form action="index.php" method="post">
+                                                    <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
+                                                    <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
+                                                    <input type="hidden" class="id" name="username" value="<?php echo $row['username'];?>">
+                                                    <div class="add-comment">
+                                                        <button type="submit" class="post-comment" name="post-comment">comment</button>
+                                                        
+                                                    </div>
+                                                </form>
+                                </div>
+                                          
                         </div>
                     </div>
                     
@@ -253,6 +267,16 @@ session_start();
     }
    });
 }
+
+// animation
+
+$(document).ready(function(){
+        $(".far.fa-heart").click(function(){
+            $(this).removeClass("far fa-heart");
+            $(this).toggleClass("fas fa-heart newh");
+            $(this).addClass("fas fa-heart newh");
+        });
+    });
    </script>
 </body>
 

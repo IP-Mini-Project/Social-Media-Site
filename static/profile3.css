@@ -172,7 +172,8 @@ body{
     display: inline-flex;
     margin-top: 5px;
     width: 100%;
-    
+    border: none;
+    background-color: #343441;
 
 }
 
@@ -198,7 +199,8 @@ body{
     float: right;
 }
 .comment #text2{
-  width: 100%
+  width: 100%;
+  background-color: transparent;
   /* box-sizing: border-box; */
 }
 
@@ -248,8 +250,50 @@ body{
     color: black;
     font-weight: bold;
 }
+.like-btn{
+  background-color: transparent;
+  border: none;
+  font-size: 13;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+.fa-heart::before{
+  /* margin-top: 5px; */
+  font-size: 13;
+}
+.like-icon i:hover{
+  color: red;
+}
+.newh{
+  color: red;
+  font-size: 13;
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  font-size: 15;
+  padding: 5px 0;
+}
 @media only screen and (max-width: 760px){
-    .container, .container-2{
-        margin-top: 20%;
-    }
+  .container, .container-2{
+    margin-top: 20%;
+    
+    /* overflow: hidden; */
+    padding: 3% 3%;
+    position: relative;
+}
+.left{
+    display: none;
+}
+.right{
+    margin-left: 0;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+}
 }

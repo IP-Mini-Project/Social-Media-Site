@@ -248,9 +248,10 @@ body{
   }
   
   .footer .post-after {
-      display: inline-flex;
-      margin-top: 5px;
-      width: 100%;
+    display: inline-flex;
+    margin-top: 5px;
+    width: 100%;
+    
       
   
   }
@@ -320,6 +321,7 @@ body{
   }
   .like-icon i:hover{
       color: red;
+      cursor: pointer;
   }
   .btn-trans{
     background-color: transparent;

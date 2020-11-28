@@ -16,6 +16,8 @@ session_start();
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,452&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +25,7 @@ session_start();
     <div class="navbar">
         <div class="logo">
             <a href="http://">
-                <h3>LOGO</h3>
+                <h3><span class="s">S</span>OCIO</h3>
             </a>
         </div>
         <div class="middle">

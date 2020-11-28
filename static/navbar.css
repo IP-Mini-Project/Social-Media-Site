@@ -3,9 +3,20 @@
     padding: 0;
     box-sizing: border-box;
     color: #D9D9D9;
+    font-family: 'Roboto Slab', serif;
 }
 /* Navbar */
-
+.logo h3{
+    font-family: 'Sedgwick Ave Display', cursive;
+    letter-spacing: 4px;
+    margin-top: 5px;
+    /* font-size: .7rem; */
+    color: #dca2ee;
+}
+.s{
+    color: #eabeee;
+    font-family: 'Sedgwick Ave Display', cursive;
+}
 .navbar{
     padding: 12px 110px 12px 110px;      
     display: flex;
@@ -52,7 +63,7 @@
     height: 20px;
     border-radius: 50%;
     border: 0.5px solid;
-    
+    margin-top: 2px;
 }
 .middle ul, .acc ul{
     list-style: none;
@@ -67,6 +78,7 @@
     padding: 0 5px 0 7px;
     /* border: 1px solid #797a7e; */
     display: flex;
+    margin-top: 2px;
     
 }
 /* .fa-search{
