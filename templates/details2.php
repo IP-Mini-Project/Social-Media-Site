@@ -123,7 +123,7 @@ session_start();
                         <div class="likes">
                             
                             <div class="like-icon"><a href="javascript:void(0)" > <!-- class="btn btn-info btn-lg" -->
-      <button class="like-btn" name =" type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> (<span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span>) likes</button> 
+      <button class="like-btn" name =" type" onclick="like_update('<?php echo $row['id']?>')"><i class="far fa-heart"></i> <span id="like_loop_<?php echo $row['id']?>"> <?php echo $row['likes']?> </span> likes</button> 
      </a>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ session_start();
                             </div>
                             <div class="comment">
 
-                                                <form action="index.php" method="post">
+                                                <form class="down-area" action="index.php" method="post">
                                                     <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
                                                     <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
                                                     <input type="hidden" class="id" name="username" value="<?php echo $row['username'];?>">

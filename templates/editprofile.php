@@ -79,7 +79,11 @@ session_start();
                     <h3>Bio:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="bio" class="txt bio" name="bio">
+                    <input type="text" placeholder="bio" class="txt bio" name="bio" style="
+    border: 1px solid pink;
+    background-color: transparent;
+    border-radius: 5px;
+">
                 </div>
             </div>
             <div class="one">
@@ -87,7 +91,11 @@ session_start();
                     <h3>College:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="College" class="txt" name="college">
+                    <input type="text" placeholder="College" class="txt" name="college" style="
+    border: 1px solid pink;
+    background-color: transparent;
+    border-radius: 5px;
+">
                 </div>
             </div>
             <div class="one">
@@ -95,7 +103,11 @@ session_start();
                     <h3>Country:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="Country" class="txt" name="country">
+                    <input type="text" placeholder="Country" class="txt" name="country" style="
+    border: 1px solid pink;
+    background-color: transparent;
+    border-radius: 5px;
+">
                 </div>
             </div>
             <div class="one">
@@ -103,7 +115,11 @@ session_start();
                     <h3>Hobbie 1:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob1">
+                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob1" style="
+    border: 1px solid pink;
+    background-color: transparent;
+    border-radius: 5px;
+">
                 </div>
             </div>
             <div class="one">
@@ -111,7 +127,11 @@ session_start();
                     <h3>Hobbie 2:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob2">
+                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob2" style="
+    border: 1px solid pink;
+    background-color: transparent;
+    border-radius: 5px;
+">
                 </div>
             </div>
             <div class="one">
@@ -119,7 +139,11 @@ session_start();
                     <h3>Hobbie 3:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob3">
+                    <input type="text" placeholder="e.g. Acting" class="txt" name="hob3" style="
+    border: 1px solid pink;
+    background-color: transparent;
+    border-radius: 5px;
+">
                 </div>
             </div>
             
@@ -128,11 +152,15 @@ session_start();
                     <h3>Password:</h3>
                 </div>
                 <div class="inputb">
-                    <input type="password" placeholder="pw" name="pw">
+                    <input type="password" placeholder="pw" name="pw" style="
+    border: 1px solid pink;
+    background-color: transparent;
+    border-radius: 5px;
+">
                 </div>
             </div>
             <div class="submit-btn">
-                <input type="submit" value="SUBMIT" name="submit">
+                <input class="sb" type="submit" value="SUBMIT" name="submit">
             </div>
         </div>
         </form>

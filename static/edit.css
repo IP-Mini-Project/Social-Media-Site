@@ -24,7 +24,7 @@ img{
     flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
-    background-color: white;
+    background-color: #1C1C24;
     width: 60vw;
     border-radius: 25px;
 }
@@ -47,6 +47,16 @@ input[type='password'] , .un{
     margin-right: 7px;
     box-sizing: content-box;
     margin-left: 20px;
+   
+}
+.sb{
+    background-color: transparent;
+    padding: 5px 10px;
+    border: none;
+    background-image: linear-gradient(to right, #E69BC2 , #9C92F2);
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
 .submit-btn{
     display: flex;
@@ -56,3 +66,22 @@ input[type='password'] , .un{
 .bio{
     margin-left: 25px;
 }
+.btn{
+    background-color: transparent;
+    padding: 5px 10px;
+    border: none;
+    background-image: linear-gradient(to right, #E69BC2 , #9C92F2);
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+input[type=file]::-webkit-file-upload-button {
+    border: none;
+    color: white;
+    padding: 10px 9px;
+    border-radius: 50px;
+    background-color: #343441;
+    transition: 1s;
+    outline: none;
+    cursor: pointer;
+  }

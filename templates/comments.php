@@ -18,10 +18,15 @@
         // $username = mysqli_fetch_assoc($db, $get_username);
 
         $query = "INSERT INTO comments (post_id,username,comment,comment_author) VALUES ('$post_id','$username','$comment','$comment_auth')";
+		echo "<script>console.log('".$query."')</script>";
+        if (mysqli_query($db, $query)) {
+			echo "<script>console.log('DONE')</script>";
+		}
+		else{
+			echo "<script>console.log('notfound')</script>";
+		}
 
-         mysqli_query($db, $query);
-
-
+		
 }
 
 
