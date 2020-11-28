@@ -57,6 +57,7 @@
 .fas{
     font-size: 1.1rem;
     padding-top: 2px;
+    color: #fff;
 }
 .pfp{
     width: 20px;
@@ -201,7 +202,7 @@
 }
 
 .badge {
-    background-color: #777;
+    background-color: #9C92F2;
     border-radius: 50%;
     color: #fff;
     display: inline-block;
