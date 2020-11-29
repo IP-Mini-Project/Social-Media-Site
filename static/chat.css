@@ -57,7 +57,7 @@ box-shadow: 10px 10px 24px 2px rgba(0,0,0,0.75);
     display: none;
 }
 .left .fas{
-    color: #1DA1F2;
+    color: #9C92F2;
 }
 .right{
     
@@ -188,6 +188,16 @@ button img{
     -webkit-box-shadow: 2px 2px 24px 2px rgba(0,0,0,0.75);
 -moz-box-shadow: 2px 2px 24px 2px rgba(0,0,0,0.75);
 box-shadow: 2px 2px 24px 2px rgba(0,0,0,0.75);
+}
+.snd{
+    background-color: transparent;
+    padding: 5px 10px;
+    border: none;
+    background-image: linear-gradient(to right, #E69BC2 , #9C92F2);
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #9C92F2;
 }
 @media only screen and (max-width: 760px){
     .left{

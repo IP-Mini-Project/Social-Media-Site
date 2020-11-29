@@ -130,14 +130,8 @@ session_start();
             <div class="bottom-section">
                 <form action="gen-chat.php" method="post">
                     <textarea class="type-msg" name="type-msg" id="" cols="76" rows="1" placeholder="Type a message"></textarea>
-                    <button type="submit" name="submit"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;">
-                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-                            <path d="M0,172v-172h172v172z" fill="none"></path>
-                            <g fill="#1da1f2">
-                                <path d="M0,7.16667v68.08333l136.16667,10.75l-136.16667,10.75v68.08333l172,-78.83333z"></path>
-                            </g>
-                        </g>
-                    </svg>
+                    <button class="snd" type="submit" name="submit">
+                    <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
 

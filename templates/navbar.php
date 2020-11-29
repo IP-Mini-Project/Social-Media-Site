@@ -34,7 +34,7 @@ session_start();
             <a href="index.php"><i class="fas fa-house-user"></i></a>
             <a href="friends.php"><i class="fas fa-users"></i></a>
             <a href="gen-chat.php"><i class="fas fa-comment-alt"></i></a>
-            <a href="notification.php"><i class="fas fa-bell"></i><span class="badge badge-dark badge-corner radius-3">8</span></a>
+            <a href="notification.php"><i class="fas fa-bell"></i><span class="badge badge-dark badge-corner radius-3">1</span></a>
 
 
         </div>

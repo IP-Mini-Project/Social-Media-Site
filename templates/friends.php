@@ -27,14 +27,14 @@ session_start();
         });
     </script>
     <!-- Navbar 2-->
-    <div id="nav2-placeholder">
+    <!-- <div id="nav2-placeholder">
 
     </div>
     <script>
     $(function(){
     $("#nav2-placeholder").load("navbar2.php");
     });
-    </script>
+    </script> -->
     <!-- End of Nav2 -->
     <!-- container -->
     
