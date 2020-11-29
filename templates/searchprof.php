@@ -248,6 +248,10 @@ if (isset($_POST['submit'])) {
    
     }
    });
+   $(document).on("click", "a", function() {
+            $("#search").val("");
+
+        });
 }
 
 // animation
