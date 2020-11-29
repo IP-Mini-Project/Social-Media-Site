@@ -93,6 +93,9 @@ input[type=file]::-webkit-file-upload-button {
         position: relative;
         width: max-content;
     }
+    .container h2{
+        padding-top: 5%;
+    }
     .div-wrap{
         width: 87vw;
         margin-top: 10%;

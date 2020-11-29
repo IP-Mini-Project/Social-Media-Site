@@ -4,7 +4,7 @@ body{
 .container{
     display: flex;
     padding: 3% 200px;
-    margin-top: 16vh;
+    margin-top: 10vh;
     max-height: auto;
     justify-content: space-around;
     align-items: center;
