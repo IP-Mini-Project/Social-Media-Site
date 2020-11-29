@@ -133,6 +133,19 @@ if (isset($_POST['submit'])) {
                             </div>
                         </div>
 
+                        <div>
+                                        <?php
+                                                $sql = mysqli_query($db, "SELECT * FROM comments WHERE post_id='{$row['id']}'");
+                                                // $row2 = mysqli_fetch_array($sql);
+                                                // $pfp = $row2['pfp'];
+                                                while ($comment=mysqli_fetch_assoc($sql)) {
+                                                    echo $comment['comment_author']."-  ";
+                                                    echo $comment['comment']."<br>";
+                                                }
+
+                                                // echo "<img src='$pfp' alt='nope' id='comment-img'>";
+                                                ?>
+                                        </div>
                         <div class="post-after">
                             <div class="comment-img">
                             <?php 
