@@ -400,16 +400,16 @@ box-shadow: 2px 2px 24px 2px rgba(0,0,0,0.75);
         top: 13.5vh;
         transform: translateX(-100%);
     }
-    .fa-bars::before{
+    /* .fa-bars::before{
       display: block;
       z-index: 100;
-      /* margin: 10px 10px 0 0; */
+     
       position: sticky;
       position: -webkit-sticky;
       top: 15%;
       margin-right: 10px;
 
-    }
+    } */
     .right-part{
       width: -webkit-fill-available;
       margin: auto;
