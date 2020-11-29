@@ -36,8 +36,8 @@ session_start();
         </div>
         <div class="bio">
             <h2>Arts Club</h2><br>
-            <p class="quote">~Some random quote..</p><br>
-            <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="quote">~Let's get creative</p><br>
+            <p class="intro">The Art Club is a place for practicing artists to hone in on their skills, develop their techniques and portfolios, collaborate with other artists like themselves, create bonds with the community through the arts, and learn how to work together through group projects that will beautify the school and community.</p>
     
             <div class="join-btn">
                 <button class="join" name="join">JOIN</button>

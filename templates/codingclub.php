@@ -36,8 +36,8 @@ session_start();
         </div>
         <div class="bio">
             <h2>Coding Club</h2><br>
-            <p class="quote">~Some random quote..</p><br>
-            <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="quote">~Happy coding!</p><br>
+            <p class="intro">Coding Club is a place that brings people together, regardless of their gender or background. We all have the right to learn, and we believe learning is more fun and efficient when we help each other along the way.</p>
     
             <div class="join-btn">
                 <button class="join" name="join">JOIN</button>
