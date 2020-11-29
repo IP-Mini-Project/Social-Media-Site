@@ -85,3 +85,31 @@ input[type=file]::-webkit-file-upload-button {
     outline: none;
     cursor: pointer;
   }
+  @media only screen and (max-width: 1030px){
+    .container{
+        margin-top: 10%;
+        /* overflow: hidden; */
+        padding: 3% 8% 3% 5%;
+        position: relative;
+        width: max-content;
+    }
+    .div-wrap{
+        width: 87vw;
+        margin-top: 10%;
+    }
+    .txt {
+        width: 200px;
+    }
+    input[type='password'], .un {
+        width: 200px;
+        
+    }
+    img {
+        height: auto;
+        width: 250px;
+        margin-left: 30px;
+    }
+    .title h3{
+        margin-left: 30px;
+    }
+}
