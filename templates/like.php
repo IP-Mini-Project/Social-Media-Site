@@ -23,19 +23,19 @@ if($type=='like'){
 // }
  mysqli_query($db,$sql);
 
-if (isset($_POST['type'])) {
+if (isset($_POST['like'])) {
 	
 	$username = $_SESSION['username'];
 	
 
-$query = "INSERT INTO likes (post_id,username,post_username) VALUES ('$id','$username','$post_username')";
+$query = "INSERT INTO likes(post_id,username,post_username) VALUES ('$id','$username','$post_username')";
 	mysqli_query($db,$query);
 	# code...
 }
 
-if(isset($_POST['type'])) {
+if(isset($_POST['like'])) {
 
-	$noti = "INSERT INTO notifications (type,username,originator,post_id) VALUES (0,'$post_username','$username','$id')";
+	$noti = "INSERT INTO notifications(type,username,originator,post_id) VALUES (0,'$post_username','$username','$id')";
 	mysqli_query($db,$noti);
 }
 

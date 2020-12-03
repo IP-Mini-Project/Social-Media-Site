@@ -32,7 +32,9 @@
 
 if(isset($_POST['post-comment'])) {
 
-	$noti = "INSERT INTO notifications (type,username,originator,post_id) VALUES (1,'$username','$comment_auth','$post_id')";
+
+
+	$noti = "INSERT INTO notifications(type,username,originator,post_id) VALUES (1,'$username','$comment_auth','$post_id')";
 	mysqli_query($db,$noti);
 }
 

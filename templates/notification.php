@@ -39,18 +39,20 @@ $comment = mysqli_query($db, "SELECT * FROM comments");
         </div>
 
 
-        <?php $noti = mysqli_query($db,"SELECT * FROM notifications WHERE username='{$_SESSION['username']}'"); ?>
+        <?php $noti = mysqli_query($db,"SELECT * FROM notifications WHERE username='{$_SESSION['username']}' ORDER BY id DESC"); ?>
         <?php while ($row = mysqli_fetch_array($noti)) : ?>
             <?php if ($row['type'] == 0): ?>
                 
             <div class="noti">
                 <i class="far fa-thumbs-up"></i>
                 <p><?php echo $row['originator']; ?> liked your post</p>
+                <span><?php echo $row['time']; ?></span>
             </div>
             <?php else: ?>
             <div class="noti">
                 <i class="far fa-comments"></i>
                 <p><?php echo $row['originator']; ?> commented on your post</p>
+                <span><?php echo $row['time']; ?></span>
             </div>
             <?php endif; ?>
         <?php endwhile; ?>

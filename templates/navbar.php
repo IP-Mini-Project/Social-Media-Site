@@ -29,12 +29,17 @@ session_start();
                 <h3><span class="s">S</span>OCIO</h3>
             </a>
         </div>
+
+        <?php 
+        $noti = mysqli_query($db,"SELECT * FROM notifications WHERE username='{$_SESSION['username']}'"); 
+        $count = mysqli_num_rows($noti);
+        ?>
         <div class="middle">
 
             <a href="index.php"><i class="fas fa-house-user"></i></a>
             <a href="friends.php"><i class="fas fa-users"></i></a>
             <a href="gen-chat.php"><i class="fas fa-comment-alt"></i></a>
-            <a href="notification.php"><i class="fas fa-bell"></i><span class="badge badge-dark badge-corner radius-3">1</span></a>
+            <a href="notification.php"><i class="fas fa-bell"></i><span class="badge badge-dark badge-corner radius-3"><?php echo $count; ?> </span></a>
 
 
         </div>
