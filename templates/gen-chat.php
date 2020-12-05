@@ -110,6 +110,7 @@ session_start();
                     }
                      
                     if (isset($_POST['submit'])) {
+                        echo "<script>console.log('nope');</script>";
                         $message = $_POST['type-msg'];
                         $insert = "INSERT INTO genchat(msg, username) VALUES ('$message', '{$_SESSION['username']}')";
                         $query = mysqli_query($db, $insert);

@@ -248,6 +248,9 @@ box-shadow: 2px 2px 24px 2px rgba(0,0,0,0.75);
     .right .their-msg p , .my-msg p{
         width: 70%;
     }
+    .type-msg{
+        width: 100%;
+    }
 }
 .bottom-section form{
     display: flex;

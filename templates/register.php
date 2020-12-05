@@ -102,7 +102,7 @@
 					<br>
 					<div class="flex-col-c p-t-100">
 
-						<a href="login.php" class="txt2">
+						<a href="../index.php" class="txt2">
 							Or Log In Here
 						</a>
 					</div>

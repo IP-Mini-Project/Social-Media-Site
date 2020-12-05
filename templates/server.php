@@ -104,7 +104,7 @@ if (isset($_POST['login_user'])) {
 		# code...
 		$_SESSION['username'] = $username;
 		$_SESSION['success'] = "YOU are now logged in";
-		header('location: index.php');
+		header('location: templates/home.php');
 	} else {
 		array_push($errors, "wrong combination of username/password.Please try again.");
 	}
