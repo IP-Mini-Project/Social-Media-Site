@@ -46,13 +46,13 @@ $comment = mysqli_query($db, "SELECT * FROM comments");
             <div class="noti">
                 <i class="far fa-thumbs-up"></i>
                 <p><?php echo $row['originator']; ?> liked your post</p>
-                <span><?php echo $row['time']; ?></span>
+                <!-- <span></span> -->
             </div>
             <?php else: ?>
             <div class="noti">
                 <i class="far fa-comments"></i>
                 <p><?php echo $row['originator']; ?> commented on your post</p>
-                <span><?php echo $row['time']; ?></span>
+                <!-- <span></span> -->
             </div>
             <?php endif; ?>
         <?php endwhile; ?>
