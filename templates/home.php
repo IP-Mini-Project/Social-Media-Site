@@ -67,7 +67,7 @@ include("comments.php");
                             echo "<img src='$pfp' alt='nope'>";
                             ?>
                         </div>
-                        <form action="index.php" method="post" enctype="multipart/form-data">
+                        <form action="home.php" method="post" enctype="multipart/form-data">
                             <div class="newpost-text">
                                 <textarea id="text" name="text-box" rows="4" cols="62" placeholder="What's happening?"></textarea>
                             </div>
@@ -187,7 +187,7 @@ include("comments.php");
                                             </div>
                                             <div class="comment">
                                            
-                                                <form class="down-area" action="index.php" method="post">
+                                                <form class="down-area" action="home.php" method="post">
                                                     <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
                                                     <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
                                                     <input type="hidden" class="id" name="username" value="<?php echo $row['username'];?>">
