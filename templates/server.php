@@ -64,6 +64,7 @@ if($user) {
 }
 
 if (count($errors) == 0) {
+	
 	$password = md5($password_1);
 	$profilePic = "../profile-pics/pfp.png";
 	$college= "Your college";
@@ -71,10 +72,13 @@ if (count($errors) == 0) {
 	$bio= "~bio..";
 	$query = "INSERT INTO user (username,name,email,phone,gender,password,pfp,college,country,bio) VALUES ('$username','$name','$email','$phone','$gender','$password','$profilePic','$college','$country','$bio')";
 
-	mysqli_query($db,$query);
+	$res= mysqli_query($db,$query);
 	$_SESSION['username'] = $username;
 	$_SESSION['success'] = "YOU are now logged in";
-	header('location: login.php');
+	if ($res) {
+		header('location: ../index.php');
+	}
+	
 } 
 }
 //login user

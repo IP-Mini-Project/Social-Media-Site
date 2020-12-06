@@ -165,7 +165,7 @@ session_start();
                                                     <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
                                                     <input type="hidden" class="id" name="username" value="<?php echo $row['username'];?>">
                                                     <div class="add-comment">
-                                                        <button type="submit" class="post-comment" name="post-comment">comment</button>
+                                                    <button type="submit" class="post-comment" name="post-comment"><i class="fas fa-paper-plane"></i></button>
                                                         
                                                     </div>
                                                 </form>

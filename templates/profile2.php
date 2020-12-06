@@ -36,69 +36,69 @@ session_start();
     <div class="container-2">
         <div class="left">
             <div class="photo">
-                <?php 
+                <?php
                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
                 $row = mysqli_fetch_array($sql);
                 $pfp = $row['pfp'];
-                
+
                 echo "<img src='$pfp' alt='nope'>";
                 ?>
                 <!-- <img src="../static/zendaya.jpg" alt=""> -->
             </div>
             <?php echo "<h3>{$_SESSION['username']}</h3><br>"; ?>
             <p class="quote2">
-            <?php 
+                <?php
                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
                 $row = mysqli_fetch_array($sql);
                 $bio = $row['bio'];
-                
+
                 echo "$bio";
                 ?>
             </p><br>
             <p><i class="fas fa-university"></i>
-            <?php 
+                <?php
                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
                 $row = mysqli_fetch_array($sql);
                 $college = $row['college'];
-                
+
                 echo "$college";
                 ?>
             </p>
-            <p><i class="fas fa-map-marker-alt"></i> 
-            <?php 
+            <p><i class="fas fa-map-marker-alt"></i>
+                <?php
                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
                 $row = mysqli_fetch_array($sql);
                 $country = $row['country'];
-                
+
                 echo "$country";
                 ?>
             </p>
             </p>
             <h4>Hobbies</h4>
             <p class="hobb2">-
-            <?php 
+                <?php
                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
                 $row = mysqli_fetch_array($sql);
                 $hob1 = $row['hob1'];
-                
+
                 echo "$hob1";
                 ?>
             </p>
             <p class="hobb2">-
-            <?php 
+                <?php
                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
                 $row = mysqli_fetch_array($sql);
                 $hob2 = $row['hob2'];
-                
+
                 echo "$hob2";
                 ?>
             </p>
             <p class="hobb2">-
-            <?php 
+                <?php
                 $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
                 $row = mysqli_fetch_array($sql);
                 $hob3 = $row['hob3'];
-                
+
                 echo "$hob3";
                 ?>
             </p>
@@ -111,107 +111,114 @@ session_start();
                     <a href="">POSTS</a>
                 </div>
                 <div class="edit-btn">
-                <a href="editprofile.php">EDIT PROFILE</a> 
+                    <a href="editprofile.php">EDIT PROFILE</a>
                 </div>
             </div>
 
-            <?php 
-                $result = mysqli_query($db, "SELECT * FROM post WHERE username='{$_SESSION['username']}' ");
-            
-            
+            <?php
+            $result = mysqli_query($db, "SELECT * FROM post WHERE username='{$_SESSION['username']}' ");
+
+
             ?>
 
             <!-- posts code -->
             <div class="post-wrapper" style="display: flex;flex-direction: column-reverse;">
                 <!-- php while loop -->
-                <?php while ($row = mysqli_fetch_array($result)): ?>
+                <?php while ($row = mysqli_fetch_array($result)) : ?>
                     <?php $result2 = mysqli_query($db, "SELECT * FROM user WHERE username= '{$row['username']}'"); ?>
-                    <?php while ($row2 = mysqli_fetch_array($result2)): $pfpurl= $row2['pfp']?>
-                        
-                <div class="posts">
-                 
-                    <section class="card">
-                    	<div class="header">
-                            <div class="prof-img"><?php echo "<img src='$pfpurl' class='top-img'>"; ?>
-                             </div>
-                             <div class="prof-info">
-                                <div class="username"><?php echo $row['username']; ?></div>
-                                <div class="location" style="visibility: hidden;">Mumbai</div>
-                            </div>
-                            <div class="time"><?php echo $row['time']; ?></div>
-                        </div>
-                        <div class="post-img">
-                            <?php echo "<img src='../post-images/" . $row['image'] . "' class='img'>"; ?>
-                        </div>
-                        <div class="footer">
-                        
+                    <?php while ($row2 = mysqli_fetch_array($result2)) : $pfpurl = $row2['pfp'] ?>
 
-                            <div class="like-icon"><a href="javascript:void(0)">
-                                <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>">
-                                <input type="hidden" name="post-user" value="<?php echo $row['username']; ?>"> <!-- class="btn btn-info btn-lg" -->
-                                <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))"><p><i class="far fa-heart"></i> <span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span> likes</p></button>
-                                  </a>
-                            </div>
-                        </div>
-                    
+                        <div class="posts">
 
-                        <div class="description">
-                            <div class="user">
-                            	<div class="username"><p><?php echo $row['username']; ?></p></div>
-                            	<div class="caption"><p><?php echo  $row['text']; ?></p></div>
-                            </div>
-                        </div>
-
-                        <div>
-                                        <?php
-                                                $sql = mysqli_query($db, "SELECT * FROM comments WHERE post_id='{$row['id']}'");
-                                                // $row2 = mysqli_fetch_array($sql);
-                                                // $pfp = $row2['pfp'];
-                                                while ($comment=mysqli_fetch_assoc($sql)) {
-                                                    echo $comment['comment_author']."-  ";
-                                                    echo $comment['comment']."<br>";
-                                                }
-
-                                                // echo "<img src='$pfp' alt='nope' id='comment-img'>";
-                                                ?>
-                                        </div>
-                        <div class="post-after">
-                            <div class="comment-img">
-                            <?php 
-                                $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
-                                $row = mysqli_fetch_array($sql);
-                                $pfp = $row['pfp'];
-                                
-                                echo "<img src='$pfp' alt='nope' id='comment-img'>";
-                            ?>    
-                            </div>
-                            <div class="comment">
-
-                                                <form class="down-area" action="index.php" method="post">
-                                                    <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
-                                                    <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
-                                                    <input type="hidden" class="id" name="username" value="<?php echo $row['username'];?>">
-                                                    <div class="add-comment">
-                                                        <button type="submit" class="post-comment" name="post-comment"><i class="fas fa-paper-plane"></i></button>
-                                                        
-                                                    </div>
-                                                </form>
+                            <section class="card">
+                                <div class="header">
+                                    <div class="prof-img"><?php echo "<img src='$pfpurl' class='top-img'>"; ?>
+                                    </div>
+                                    <div class="prof-info">
+                                        <div class="username"><?php echo $row['username']; ?></div>
+                                        <div class="location" style="visibility: hidden;">Mumbai</div>
+                                    </div>
+                                    <div class="time"><?php echo $row['time']; ?></div>
                                 </div>
-                                          
-                        </div>
-                    </div>
-                    
-                    </section>  
-        
-                       
-    
+                                <div class="post-img">
+                                    <?php echo "<img src='../post-images/" . $row['image'] . "' class='img'>"; ?>
+                                </div>
+                                <div class="footer">
 
-                </div>
-                <?php endwhile; ?>
-                <?php endwhile; ?>
-                </div>
-                <!-- end of posts code -->
-            <!-- <div class="posts">
+
+                                    <div class="like-icon"><a href="javascript:void(0)">
+                                            <input type="hidden" name="post-id" value="<?php echo $row['id']; ?>">
+                                            <input type="hidden" name="post-user" value="<?php echo $row['username']; ?>"> <!-- class="btn btn-info btn-lg" -->
+                                            <button id="btn-like" class="like-btn" name="type" onclick="(like_update('<?php echo $row['id'] ?>'))">
+                                                <p><i class="far fa-heart"></i> <span id="like_loop_<?php echo $row['id'] ?>"> <?php echo $row['likes'] ?> </span> likes</p>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                                <div class="description">
+                                    <div class="user">
+                                        <div class="username">
+                                            <p><?php echo $row['username']; ?></p>
+                                        </div>
+                                        <div class="caption">
+                                            <p><?php echo  $row['text']; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <?php
+                                    $sql = mysqli_query($db, "SELECT * FROM comments WHERE post_id='{$row['id']}'");
+                                    // $row2 = mysqli_fetch_array($sql);
+                                    // $pfp = $row2['pfp'];
+                                    while ($comment = mysqli_fetch_assoc($sql)) {
+                                        echo $comment['comment_author'] . "-  ";
+                                        echo $comment['comment'] . "<br>";
+                                    }
+
+                                    // echo "<img src='$pfp' alt='nope' id='comment-img'>";
+                                    ?>
+                                </div>
+                                <div class="post-after">
+                                    <div class="comment-img">
+                                        <?php
+                                        $sql = mysqli_query($db, "SELECT * FROM user WHERE username='{$_SESSION['username']}'");
+                                        $row = mysqli_fetch_array($sql);
+                                        $pfp = $row['pfp'];
+
+                                        echo "<img src='$pfp' alt='nope' id='comment-img'>";
+                                        ?>
+                                    </div>
+                                    <div class="comment">
+
+                                        <form class="down-area" action="index.php" method="post">
+                                            <textarea id="text2" rows="1" cols="250" placeholder="add a comment..." class="comment-text" name="comment"></textarea>
+                                            <input type="hidden" class="id" name="id" value="<?php echo $row['id']; ?>">
+                                            <input type="hidden" class="id" name="username" value="<?php echo $row['username']; ?>">
+                                            <div class="add-comment">
+                                                <button type="submit" class="post-comment" name="post-comment"><i class="fas fa-paper-plane"></i></button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                        </div>
+
+                        </section>
+
+
+
+
+            
+        <?php endwhile; ?>
+    <?php endwhile; ?>
+    </div>
+        </div>
+        <!-- end of posts code -->
+        <!-- <div class="posts">
                 <section class="card">
                     <div class="header">
                         <div class="prof-img">
@@ -250,51 +257,50 @@ session_start();
                     </div>
                 </section>
             </div> -->
-            
-            
-                    
-                
 
-            </div>
-            
-        </div>
-        
+
+
+
+
+    </div>
+
+    </div>
+
     </div>
 
     <script>
-   
-  function like_update(id){
+        function like_update(id) {
 
-   jQuery.ajax({
-    url:'like.php',
-    type:'post',
-    data:'type=like&id='+id,
-    success:function(result){
+            jQuery.ajax({
+                url: 'like.php',
+                type: 'post',
+                data: 'type=like&id=' + id,
+                success: function(result) {
 
-     // jQuery('#btn-like'+id).attr("disabled", true);
-     var cur_count=jQuery('#like_loop_'+id).html();
-     cur_count++;
-     jQuery('#like_loop_'+id).html(cur_count);
-   
-   
-    }
-   });
-   $(document).on("click", "a", function() {
-            $("#search").val("");
+                    // jQuery('#btn-like'+id).attr("disabled", true);
+                    var cur_count = jQuery('#like_loop_' + id).html();
+                    cur_count++;
+                    jQuery('#like_loop_' + id).html(cur_count);
 
+
+                }
+            });
+            $(document).on("click", "a", function() {
+                $("#search").val("");
+
+            });
+        }
+
+        // animation
+
+        $(document).ready(function() {
+            $(".far.fa-heart").click(function() {
+                $(this).removeClass("far fa-heart");
+                $(this).toggleClass("fas fa-heart newh");
+                $(this).addClass("fas fa-heart newh");
+            });
         });
-}
-
-// animation
-
-$(document).ready(function(){
-        $(".far.fa-heart").click(function(){
-            $(this).removeClass("far fa-heart");
-            $(this).toggleClass("fas fa-heart newh");
-            $(this).addClass("fas fa-heart newh");
-        });
-    });
-   </script>
+    </script>
 </body>
 
 </html>
